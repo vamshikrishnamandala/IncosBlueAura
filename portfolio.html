@@ -155,32 +155,6 @@
         margin: 1rem auto;
       }
 
-      .filter-buttons {
-        display: flex;
-        justify-content: center;
-        gap: 1rem;
-        margin-bottom: 3rem;
-        flex-wrap: wrap;
-      }
-
-      .filter-btn {
-        padding: 0.8rem 2rem;
-        background: #f8f9fa;
-        border: 2px solid #e0e0e0;
-        color: #2c3e50;
-        cursor: pointer;
-        border-radius: 50px;
-        font-weight: 500;
-        transition: all 0.3s;
-      }
-
-      .filter-btn:hover,
-      .filter-btn.active {
-        background: #e74c3c;
-        color: #fff;
-        border-color: #e74c3c;
-      }
-
       .portfolio-grid {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
@@ -522,8 +496,8 @@
         <ul class="nav-links" id="navLinks">
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About</a></li>
-          <li><a href="services.html">Services</a></li>
           <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="services.html">Services</a></li>
           <li><a href="themes.html">Themes</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
@@ -558,18 +532,6 @@
 
     <section>
       <h2 class="section-title">Featured Projects</h2>
-
-      <div class="filter-buttons">
-        <button class="filter-btn active" data-filter="all">
-          All Projects
-        </button>
-        <button class="filter-btn" data-filter="residential">
-          Residential
-        </button>
-        <button class="filter-btn" data-filter="commercial">Commercial</button>
-        <button class="filter-btn" data-filter="luxury">Luxury</button>
-        <button class="filter-btn" data-filter="renovation">Renovation</button>
-      </div>
 
       <div class="portfolio-grid">
         <div class="portfolio-item fade-in" data-category="residential luxury">
@@ -860,7 +822,10 @@
           <ul>
             <li><i class="fas fa-phone"></i> +91 98765 43210</li>
             <li><i class="fas fa-envelope"></i> info@incosblueaura.com</li>
-            <li><i class="fas fa-map-marker-alt"></i> Mumbai, India</li>
+            <li>
+              <i class="fas fa-map-marker-alt"></i> Tummala Residency, Plot no
+              336, Road no 1/2, Mathrusree nagar, Miyapur, Hyderabad
+            </li>
             <li><i class="fas fa-clock"></i> Mon-Sat: 9AM - 7PM</li>
           </ul>
         </div>
@@ -901,34 +866,6 @@
       document.querySelectorAll(".nav-links a").forEach((link) => {
         link.addEventListener("click", () => {
           navLinks.classList.remove("active");
-        });
-      });
-
-      // Filter functionality
-      const filterButtons = document.querySelectorAll(".filter-btn");
-      const portfolioItems = document.querySelectorAll(".portfolio-item");
-
-      filterButtons.forEach((button) => {
-        button.addEventListener("click", () => {
-          const filter = button.getAttribute("data-filter");
-
-          // Update active button
-          filterButtons.forEach((btn) => btn.classList.remove("active"));
-          button.classList.add("active");
-
-          // Filter items
-          portfolioItems.forEach((item) => {
-            if (filter === "all") {
-              item.style.display = "block";
-            } else {
-              const categories = item.getAttribute("data-category");
-              if (categories.includes(filter)) {
-                item.style.display = "block";
-              } else {
-                item.style.display = "none";
-              }
-            }
-          });
         });
       });
 
