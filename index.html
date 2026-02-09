@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="IncosBlueAura - Transform your space with luxury interior design services. Bespoke interiors, renovations, and commercial design solutions.">
+    <title>IncosBlueAura - Luxury Interior Design & Home Renovation</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(44, 62, 80, 0.95);
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: #e74c3c;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            color: #e74c3c;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 4px;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: #fff;
+            transition: 0.3s;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+            overflow: hidden;
+        }
+
+        #hero-video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            transform: translate(-50%, -50%);
+            object-fit: cover;
+            z-index: -2;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: -1;
+        }
+
+        .hero-content {
+            z-index: 1;
+            padding: 2rem;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 15px rgba(231, 76, 60, 0.4);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(231, 76, 60, 0.6);
+        }
+
+        /* Section Styles */
+        section {
+            padding: 5rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: #e74c3c;
+            margin: 1rem auto;
+        }
+
+        /* Rooms Section */
+        .rooms-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .room-card {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+
+        .room-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .room-card img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+
+        .room-info {
+            padding: 1.5rem;
+            background: #fff;
+        }
+
+        .room-info h3 {
+            color: #2c3e50;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .room-info p {
+            color: #666;
+        }
+
+        /* Price CTA */
+        .price-cta {
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+            color: #fff;
+            text-align: center;
+            padding: 4rem 2rem;
+            border-radius: 15px;
+            margin: 3rem 0;
+        }
+
+        .price-cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .service-card i {
+            font-size: 3rem;
+            color: #e74c3c;
+            margin-bottom: 1rem;
+        }
+
+        .service-card h3 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+
+        /* Themes Grid */
+        .themes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .theme-card {
+            position: relative;
+            height: 350px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .theme-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .theme-card:hover img {
+            transform: scale(1.1);
+        }
+
+        .theme-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            padding: 2rem 1rem;
+            color: #fff;
+        }
+
+        .theme-overlay h3 {
+            font-size: 1.5rem;
+        }
+
+        /* Solutions Section */
+        .solutions-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .solution-item {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            border-left: 4px solid #e74c3c;
+            transition: background 0.3s;
+        }
+
+        .solution-item:hover {
+            background: #fff;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .solution-item i {
+            font-size: 2rem;
+            color: #e74c3c;
+            margin-bottom: 0.5rem;
+        }
+
+        /* FAQ Section */
+        .faq-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: #fff;
+            margin-bottom: 1rem;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #f8f9fa;
+            transition: background 0.3s;
+        }
+
+        .faq-question:hover {
+            background: #e9ecef;
+        }
+
+        .faq-question h3 {
+            color: #2c3e50;
+            font-size: 1.2rem;
+        }
+
+        .faq-answer {
+            padding: 0 1.5rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 1.5rem;
+            max-height: 500px;
+        }
+
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+
+        /* Footer */
+        footer {
+            background: #2c3e50;
+            color: #fff;
+            padding: 3rem 5%;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .footer-section h3 {
+            color: #e74c3c;
+            margin-bottom: 1rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: #e74c3c;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            width: 40px;
+            height: 40px;
+            background: #34495e;
+            border-radius: 50%;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s;
+        }
+
+        .social-links a:hover {
+            background: #e74c3c;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid #34495e;
+        }
+
+        /* Floating Action Buttons */
+        .floating-buttons {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            z-index: 999;
+        }
+
+        .float-btn {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-decoration: none;
+        }
+
+        .float-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+        }
+
+        .call-btn {
+            background: #e74c3c;
+        }
+
+        .whatsapp-btn {
+            background: #25D366;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                right: -100%;
+                flex-direction: column;
+                background: #2c3e50;
+                width: 100%;
+                padding: 2rem;
+                transition: right 0.3s;
+                gap: 1rem;
+            }
+
+            .nav-links.active {
+                right: 0;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1.2rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            section {
+                padding: 3rem 5%;
+            }
+
+            .floating-buttons {
+                bottom: 20px;
+                right: 20px;
+            }
+
+            .float-btn {
+                width: 50px;
+                height: 50px;
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <a href="index.html" class="logo">Incos<span>BlueAura</span></a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="themes.html">Themes</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <video id="hero-video" autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=1920&h=1080&fit=crop">
+            <source src="https://cdn.coverr.co/videos/coverr-luxury-interior-design-8534/1080p.mp4" type="video/mp4">
+            <source src="https://player.vimeo.com/external/371433846.hd.mp4?s=1a1f8db0e0e0e0e0e0e0e0e0e0e0e0e0" type="video/mp4">
+        </video>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Elevate Your Lifestyle with IncosBlueAura Interior</h1>
+            <p>Transform Your Space into a Masterpiece</p>
+            <a href="contact.html" class="cta-button">Get Free Consultation</a>
+        </div>
+    </section>
+
+    <!-- Rooms Section -->
+    <section id="rooms">
+        <h2 class="section-title">Explore Our Room Designs</h2>
+        <div class="rooms-grid">
+            <div class="room-card fade-in">
+                <img src="https://images.unsplash.com/photo-1616594039964-ae9021a400a0?w=800&h=600&fit=crop" alt="Master Bedroom">
+                <div class="room-info">
+                    <h3><i class="fas fa-bed"></i> Master Bedroom</h3>
+                    <p>Luxurious and comfortable bedroom designs tailored to your style</p>
+                </div>
+            </div>
+            <div class="room-card fade-in">
+                <img src="https://images.unsplash.com/photo-1556912167-f556f1f39faa?w=800&h=600&fit=crop" alt="Modern Kitchen">
+                <div class="room-info">
+                    <h3><i class="fas fa-utensils"></i> Modern Kitchen</h3>
+                    <p>Functional and stylish kitchens with premium finishes</p>
+                </div>
+            </div>
+            <div class="room-card fade-in">
+                <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=800&h=600&fit=crop" alt="Living Room">
+                <div class="room-info">
+                    <h3><i class="fas fa-couch"></i> Living Room</h3>
+                    <p>Elegant living spaces perfect for family gatherings</p>
+                </div>
+            </div>
+            <div class="room-card fade-in">
+                <img src="https://images.unsplash.com/photo-1617806118233-18e1de247200?w=800&h=600&fit=crop" alt="Kids Room">
+                <div class="room-info">
+                    <h3><i class="fas fa-child"></i> Kids Room</h3>
+                    <p>Playful and safe environments for your little ones</p>
+                </div>
+            </div>
+            <div class="room-card fade-in">
+                <img src="https://images.unsplash.com/photo-1600210492493-0946911123ea?w=800&h=600&fit=crop" alt="Pooja Room">
+                <div class="room-info">
+                    <h3><i class="fas fa-om"></i> Pooja Room</h3>
+                    <p>Sacred spaces designed with traditional aesthetics</p>
+                </div>
+            </div>
+            <div class="room-card fade-in">
+                <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&h=600&fit=crop" alt="Home Office">
+                <div class="room-info">
+                    <h3><i class="fas fa-briefcase"></i> Home Office</h3>
+                    <p>Productive workspaces with ergonomic designs</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Price CTA -->
+    <section class="price-cta fade-in">
+        <h2>Get the Price to Elevate Your Entire Home Interior</h2>
+        <p style="font-size: 1.2rem; margin-bottom: 2rem;">Transparent pricing, no hidden costs. Get your personalized quote today!</p>
+        <a href="contact.html" class="cta-button">Calculate Your Price</a>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <h2 class="section-title">Our Premium Services</h2>
+        <div class="services-grid">
+            <div class="service-card fade-in">
+                <i class="fas fa-gem"></i>
+                <h3>Bespoke Luxury Interiors</h3>
+                <p>Custom-designed luxury spaces that reflect your unique personality and style preferences</p>
+            </div>
+            <div class="service-card fade-in">
+                <i class="fas fa-hammer"></i>
+                <h3>Complete Renovation</h3>
+                <p>Transform your existing space with our comprehensive renovation services</p>
+            </div>
+            <div class="service-card fade-in">
+                <i class="fas fa-home"></i>
+                <h3>Rent Ready Solutions</h3>
+                <p>Quick and affordable interior solutions for rental properties</p>
+            </div>
+            <div class="service-card fade-in">
+                <i class="fas fa-building"></i>
+                <h3>Commercial Interiors</h3>
+                <p>Professional designs for offices, retail spaces, and commercial establishments</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Themes Section -->
+    <section id="themes">
+        <h2 class="section-title">Popular Interior Themes</h2>
+        <div class="themes-grid">
+            <div class="theme-card fade-in">
+                <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&h=600&fit=crop" alt="Scandinavian">
+                <div class="theme-overlay">
+                    <h3>Scandinavian</h3>
+                </div>
+            </div>
+            <div class="theme-card fade-in">
+                <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=800&h=600&fit=crop" alt="Regal Opulence">
+                <div class="theme-overlay">
+                    <h3>Regal Opulence</h3>
+                </div>
+            </div>
+            <div class="theme-card fade-in">
+                <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&h=600&fit=crop" alt="Minimalist">
+                <div class="theme-overlay">
+                    <h3>Minimalist</h3>
+                </div>
+            </div>
+            <div class="theme-card fade-in">
+                <img src="https://images.unsplash.com/photo-1618219908412-a29a1bb7b86e?w=800&h=600&fit=crop" alt="Vintage">
+                <div class="theme-overlay">
+                    <h3>Vintage</h3>
+                </div>
+            </div>
+            <div class="theme-card fade-in">
+                <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=800&h=600&fit=crop" alt="Coastal">
+                <div class="theme-overlay">
+                    <h3>Coastal</h3>
+                </div>
+            </div>
+            <div class="theme-card fade-in">
+                <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=800&h=600&fit=crop" alt="Industrial">
+                <div class="theme-overlay">
+                    <h3>Industrial</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solutions Section -->
+    <section id="solutions">
+        <h2 class="section-title">Complete Interior Solutions</h2>
+        <div class="solutions-list">
+            <div class="solution-item fade-in">
+                <i class="fas fa-bolt"></i>
+                <h4>Electrical Work</h4>
+            </div>
+            <div class="solution-item fade-in">
+                <i class="fas fa-paint-roller"></i>
+                <h4>Premium Painting</h4>
+            </div>
+            <div class="solution-item fade-in">
+                <i class="fas fa-wrench"></i>
+                <h4>Plumbing Services</h4>
+            </div>
+            <div class="solution-item fade-in">
+                <i class="fas fa-layer-group"></i>
+                <h4>Flooring Solutions</h4>
+            </div>
+            <div class="solution-item fade-in">
+                <i class="fas fa-th"></i>
+                <h4>False Ceiling</h4>
+            </div>
+            <div class="solution-item fade-in">
+                <i class="fas fa-hard-hat"></i>
+                <h4>Civil Work</h4>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq">
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <div class="faq-container">
+            <div class="faq-item fade-in">
+                <div class="faq-question">
+                    <h3>What is the typical timeline for a complete home interior project?</h3>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>A complete home interior project typically takes 45-90 days depending on the size and complexity. We provide a detailed timeline during consultation and ensure timely delivery.</p>
+                </div>
+            </div>
+            <div class="faq-item fade-in">
+                <div class="faq-question">
+                    <h3>Do you provide warranty on your interior work?</h3>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes, we provide up to 10 years warranty on our modular products and 1-year warranty on installation and service work.</p>
+                </div>
+            </div>
+            <div class="faq-item fade-in">
+                <div class="faq-question">
+                    <h3>Can I customize the designs according to my preferences?</h3>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Absolutely! We specialize in bespoke designs tailored to your specific requirements, lifestyle, and aesthetic preferences.</p>
+                </div>
+            </div>
+            <div class="faq-item fade-in">
+                <div class="faq-question">
+                    <h3>What is included in your interior design package?</h3>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Our packages include design consultation, 3D visualizations, material procurement, execution, installation, and post-installation support.</p>
+                </div>
+            </div>
+            <div class="faq-item fade-in">
+                <div class="faq-question">
+                    <h3>Do you handle commercial interior projects?</h3>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes, we have extensive experience in commercial interiors including offices, retail spaces, restaurants, and hospitality projects.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact CTA -->
+    <section class="price-cta fade-in">
+        <h2>Ready to Transform Your Space?</h2>
+        <p style="font-size: 1.2rem; margin-bottom: 2rem;">Let's discuss your dream interior project today!</p>
+        <a href="contact.html" class="cta-button">Contact Us Now</a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>IncosBlueAura</h3>
+                <p>Transforming spaces into extraordinary living experiences with innovative design solutions.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-pinterest"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="themes.html">Themes</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Services</h3>
+                <ul>
+                    <li><a href="services.html">Luxury Interiors</a></li>
+                    <li><a href="services.html">Home Renovation</a></li>
+                    <li><a href="services.html">Commercial Design</a></li>
+                    <li><a href="services.html">Modular Kitchen</a></li>
+                    <li><a href="services.html">Wardrobe Design</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <ul>
+                    <li><i class="fas fa-phone"></i> +91 98765 43210</li>
+                    <li><i class="fas fa-envelope"></i> info@incosblueaura.com</li>
+                    <li><i class="fas fa-map-marker-alt"></i> Mumbai, India</li>
+                    <li><i class="fas fa-clock"></i> Mon-Sat: 9AM - 7PM</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 IncosBlueAura. All Rights Reserved. | Designed with ❤️</p>
+        </div>
+    </footer>
+
+    <!-- Floating Action Buttons -->
+    <div class="floating-buttons">
+        <a href="tel:+919876543210" class="float-btn call-btn" aria-label="Call Us">
+            <i class="fas fa-phone"></i>
+        </a>
+        <a href="https://wa.me/919876543210" class="float-btn whatsapp-btn" target="_blank" aria-label="WhatsApp Us">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
+
+    <script>
+        // Mobile Navigation Toggle
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const faqItem = question.parentElement;
+                const isActive = faqItem.classList.contains('active');
+                
+                // Close all FAQ items
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    item.classList.remove('active');
+                });
+                
+                // Open clicked item if it wasn't active
+                if (!isActive) {
+                    faqItem.classList.add('active');
+                }
+            });
+        });
+
+        // Scroll Animation
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(element => {
+            observer.observe(element);
+        });
+
+        // Video Fallback
+        const video = document.getElementById('hero-video');
+        
+        video.addEventListener('error', function() {
+            // If video fails to load, ensure poster image is visible
+            this.style.display = 'none';
+        });
+
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Video autoplay for mobile
+        document.addEventListener('DOMContentLoaded', function() {
+            const video = document.getElementById('hero-video');
+            if (video) {
+                video.play().catch(error => {
+                    console.log('Autoplay prevented:', error);
+                });
+            }
+        });
+    </script>
+</body>
+</html>

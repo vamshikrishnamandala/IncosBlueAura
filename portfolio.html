@@ -1,0 +1,959 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Explore IncosBlueAura's portfolio of stunning interior design projects - residential, commercial, and luxury spaces."
+    />
+    <title>Portfolio - IncosBlueAura Interior Design Projects</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.6;
+        color: #333;
+        overflow-x: hidden;
+      }
+
+      header {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background: rgba(44, 62, 80, 0.95);
+        z-index: 1000;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 5%;
+        max-width: 1400px;
+        margin: 0 auto;
+      }
+
+      .logo {
+        font-size: 1.8rem;
+        font-weight: bold;
+        color: #fff;
+        text-decoration: none;
+      }
+
+      .logo span {
+        color: #e74c3c;
+      }
+
+      .nav-links {
+        display: flex;
+        list-style: none;
+        gap: 2rem;
+      }
+
+      .nav-links a {
+        color: #fff;
+        text-decoration: none;
+        transition: color 0.3s;
+        font-weight: 500;
+      }
+
+      .nav-links a:hover {
+        color: #e74c3c;
+      }
+
+      .hamburger {
+        display: none;
+        flex-direction: column;
+        cursor: pointer;
+        gap: 4px;
+      }
+
+      .hamburger span {
+        width: 25px;
+        height: 3px;
+        background: #fff;
+        transition: 0.3s;
+      }
+
+      .hero {
+        position: relative;
+        height: 60vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: #fff;
+        overflow: hidden;
+        margin-top: 70px;
+      }
+
+      #hero-video {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        min-width: 100%;
+        min-height: 100%;
+        width: auto;
+        height: auto;
+        transform: translate(-50%, -50%);
+        object-fit: cover;
+        z-index: -2;
+      }
+
+      .hero-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.6);
+        z-index: -1;
+      }
+
+      .hero-content {
+        z-index: 1;
+        padding: 2rem;
+      }
+
+      .hero h1 {
+        font-size: 3.5rem;
+        margin-bottom: 1rem;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      }
+
+      section {
+        padding: 5rem 5%;
+        max-width: 1400px;
+        margin: 0 auto;
+      }
+
+      .section-title {
+        text-align: center;
+        font-size: 2.5rem;
+        color: #2c3e50;
+        margin-bottom: 3rem;
+        position: relative;
+      }
+
+      .section-title::after {
+        content: "";
+        display: block;
+        width: 80px;
+        height: 4px;
+        background: #e74c3c;
+        margin: 1rem auto;
+      }
+
+      .filter-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        margin-bottom: 3rem;
+        flex-wrap: wrap;
+      }
+
+      .filter-btn {
+        padding: 0.8rem 2rem;
+        background: #f8f9fa;
+        border: 2px solid #e0e0e0;
+        color: #2c3e50;
+        cursor: pointer;
+        border-radius: 50px;
+        font-weight: 500;
+        transition: all 0.3s;
+      }
+
+      .filter-btn:hover,
+      .filter-btn.active {
+        background: #e74c3c;
+        color: #fff;
+        border-color: #e74c3c;
+      }
+
+      .portfolio-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+        gap: 2rem;
+      }
+
+      .portfolio-item {
+        position: relative;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+        transition:
+          transform 0.3s,
+          box-shadow 0.3s;
+      }
+
+      .portfolio-item:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      }
+
+      .portfolio-item img {
+        width: 100%;
+        height: 350px;
+        object-fit: cover;
+        transition: transform 0.5s;
+      }
+
+      .portfolio-item:hover img {
+        transform: scale(1.1);
+      }
+
+      .portfolio-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+        padding: 2rem 1.5rem;
+        color: #fff;
+        transform: translateY(20px);
+        opacity: 0;
+        transition: all 0.3s;
+      }
+
+      .portfolio-item:hover .portfolio-overlay {
+        transform: translateY(0);
+        opacity: 1;
+      }
+
+      .portfolio-overlay h3 {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .portfolio-overlay p {
+        font-size: 0.9rem;
+        opacity: 0.9;
+      }
+
+      .portfolio-tags {
+        display: flex;
+        gap: 0.5rem;
+        margin-top: 0.5rem;
+        flex-wrap: wrap;
+      }
+
+      .tag {
+        background: rgba(231, 76, 60, 0.8);
+        padding: 0.3rem 0.8rem;
+        border-radius: 20px;
+        font-size: 0.8rem;
+      }
+
+      .testimonials {
+        background: #f8f9fa;
+        padding: 5rem 5%;
+        margin-top: 3rem;
+      }
+
+      .testimonial-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        max-width: 1400px;
+        margin: 3rem auto 0;
+      }
+
+      .testimonial-card {
+        background: #fff;
+        padding: 2rem;
+        border-radius: 15px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        position: relative;
+      }
+
+      .testimonial-card::before {
+        content: '"';
+        position: absolute;
+        top: -20px;
+        left: 20px;
+        font-size: 5rem;
+        color: #e74c3c;
+        opacity: 0.3;
+      }
+
+      .testimonial-text {
+        color: #666;
+        margin-bottom: 1.5rem;
+        font-style: italic;
+      }
+
+      .testimonial-author {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+      }
+
+      .author-image {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background: #e74c3c;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        font-weight: bold;
+        font-size: 1.2rem;
+      }
+
+      .author-info h4 {
+        color: #2c3e50;
+        margin-bottom: 0.2rem;
+      }
+
+      .author-info p {
+        color: #999;
+        font-size: 0.9rem;
+      }
+
+      .stars {
+        color: #ffc107;
+        margin-bottom: 1rem;
+      }
+
+      .cta-section {
+        background: linear-gradient(135deg, #2c3e50, #34495e);
+        color: #fff;
+        text-align: center;
+        border-radius: 15px;
+        padding: 4rem 2rem;
+        margin: 3rem 0;
+      }
+
+      .cta-button {
+        display: inline-block;
+        padding: 1rem 2.5rem;
+        background: linear-gradient(135deg, #e74c3c, #c0392b);
+        color: #fff;
+        text-decoration: none;
+        border-radius: 50px;
+        font-size: 1.1rem;
+        font-weight: bold;
+        transition:
+          transform 0.3s,
+          box-shadow 0.3s;
+        box-shadow: 0 4px 15px rgba(231, 76, 60, 0.4);
+        margin-top: 1rem;
+      }
+
+      .cta-button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 20px rgba(231, 76, 60, 0.6);
+      }
+
+      footer {
+        background: #2c3e50;
+        color: #fff;
+        padding: 3rem 5%;
+      }
+
+      .footer-content {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        max-width: 1400px;
+        margin: 0 auto;
+      }
+
+      .footer-section h3 {
+        color: #e74c3c;
+        margin-bottom: 1rem;
+      }
+
+      .footer-section ul {
+        list-style: none;
+      }
+
+      .footer-section ul li {
+        margin-bottom: 0.5rem;
+      }
+
+      .footer-section a {
+        color: #fff;
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+
+      .footer-section a:hover {
+        color: #e74c3c;
+      }
+
+      .social-links {
+        display: flex;
+        gap: 1rem;
+        margin-top: 1rem;
+      }
+
+      .social-links a {
+        display: inline-flex;
+        width: 40px;
+        height: 40px;
+        background: #34495e;
+        border-radius: 50%;
+        align-items: center;
+        justify-content: center;
+        transition: background 0.3s;
+      }
+
+      .social-links a:hover {
+        background: #e74c3c;
+      }
+
+      .footer-bottom {
+        text-align: center;
+        margin-top: 2rem;
+        padding-top: 2rem;
+        border-top: 1px solid #34495e;
+      }
+
+      .floating-buttons {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        z-index: 999;
+      }
+
+      .float-btn {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        font-size: 1.5rem;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        transition:
+          transform 0.3s,
+          box-shadow 0.3s;
+        text-decoration: none;
+      }
+
+      .float-btn:hover {
+        transform: scale(1.1);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+      }
+
+      .call-btn {
+        background: #e74c3c;
+      }
+
+      .whatsapp-btn {
+        background: #25d366;
+      }
+
+      .fade-in {
+        opacity: 0;
+        transform: translateY(30px);
+        transition:
+          opacity 0.6s ease,
+          transform 0.6s ease;
+      }
+
+      .fade-in.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      @media (max-width: 768px) {
+        .hamburger {
+          display: flex;
+        }
+
+        .nav-links {
+          position: fixed;
+          top: 70px;
+          right: -100%;
+          flex-direction: column;
+          background: #2c3e50;
+          width: 100%;
+          padding: 2rem;
+          transition: right 0.3s;
+          gap: 1rem;
+        }
+
+        .nav-links.active {
+          right: 0;
+        }
+
+        .hero h1 {
+          font-size: 2rem;
+        }
+
+        .portfolio-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .filter-buttons {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        section {
+          padding: 3rem 5%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="index.html" class="logo">Incos<span>BlueAura</span></a>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="themes.html">Themes</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="hamburger" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <video
+        id="hero-video"
+        autoplay
+        muted
+        loop
+        playsinline
+        poster="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=1920&h=1080&fit=crop"
+      >
+        <source
+          src="https://cdn.coverr.co/videos/coverr-elegant-interior-spaces-8536/1080p.mp4"
+          type="video/mp4"
+        />
+      </video>
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <h1>Our Portfolio</h1>
+        <p>Inspiring Spaces We've Created</p>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-title">Featured Projects</h2>
+
+      <div class="filter-buttons">
+        <button class="filter-btn active" data-filter="all">
+          All Projects
+        </button>
+        <button class="filter-btn" data-filter="residential">
+          Residential
+        </button>
+        <button class="filter-btn" data-filter="commercial">Commercial</button>
+        <button class="filter-btn" data-filter="luxury">Luxury</button>
+        <button class="filter-btn" data-filter="renovation">Renovation</button>
+      </div>
+
+      <div class="portfolio-grid">
+        <div class="portfolio-item fade-in" data-category="residential luxury">
+          <img
+            src="https://images.unsplash.com/photo-1600210492493-0946911123ea?w=800&h=600&fit=crop"
+            alt="Modern Villa"
+          />
+          <div class="portfolio-overlay">
+            <h3>Modern Villa Interior</h3>
+            <p>Mumbai | 3500 sq.ft</p>
+            <div class="portfolio-tags">
+              <span class="tag">Residential</span>
+              <span class="tag">Luxury</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="portfolio-item fade-in" data-category="commercial">
+          <img
+            src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=800&h=600&fit=crop"
+            alt="Corporate Office"
+          />
+          <div class="portfolio-overlay">
+            <h3>Tech Corporate Office</h3>
+            <p>Bangalore | 8000 sq.ft</p>
+            <div class="portfolio-tags">
+              <span class="tag">Commercial</span>
+              <span class="tag">Modern</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="portfolio-item fade-in" data-category="residential">
+          <img
+            src="https://images.unsplash.com/photo-1556912167-f556f1f39faa?w=800&h=600&fit=crop"
+            alt="Luxury Kitchen"
+          />
+          <div class="portfolio-overlay">
+            <h3>Contemporary Kitchen Design</h3>
+            <p>Delhi | 450 sq.ft</p>
+            <div class="portfolio-tags">
+              <span class="tag">Residential</span>
+              <span class="tag">Kitchen</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="portfolio-item fade-in" data-category="luxury residential">
+          <img
+            src="https://images.unsplash.com/photo-1616594039964-ae9021a400a0?w=800&h=600&fit=crop"
+            alt="Master Bedroom"
+          />
+          <div class="portfolio-overlay">
+            <h3>Luxury Master Bedroom</h3>
+            <p>Pune | 600 sq.ft</p>
+            <div class="portfolio-tags">
+              <span class="tag">Luxury</span>
+              <span class="tag">Bedroom</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="portfolio-item fade-in" data-category="commercial">
+          <img
+            src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=800&h=600&fit=crop"
+            alt="Restaurant Interior"
+          />
+          <div class="portfolio-overlay">
+            <h3>Fine Dining Restaurant</h3>
+            <p>Mumbai | 5000 sq.ft</p>
+            <div class="portfolio-tags">
+              <span class="tag">Commercial</span>
+              <span class="tag">Restaurant</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="portfolio-item fade-in" data-category="residential">
+          <img
+            src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=800&h=600&fit=crop"
+            alt="Living Room"
+          />
+          <div class="portfolio-overlay">
+            <h3>Minimalist Living Space</h3>
+            <p>Hyderabad | 800 sq.ft</p>
+            <div class="portfolio-tags">
+              <span class="tag">Residential</span>
+              <span class="tag">Minimalist</span>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="portfolio-item fade-in"
+          data-category="renovation residential"
+        >
+          <img
+            src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&h=600&fit=crop"
+            alt="Apartment Renovation"
+          />
+          <div class="portfolio-overlay">
+            <h3>Complete Apartment Renovation</h3>
+            <p>Chennai | 2200 sq.ft</p>
+            <div class="portfolio-tags">
+              <span class="tag">Renovation</span>
+              <span class="tag">Contemporary</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="portfolio-item fade-in" data-category="luxury residential">
+          <img
+            src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=800&h=600&fit=crop"
+            alt="Penthouse"
+          />
+          <div class="portfolio-overlay">
+            <h3>Regal Penthouse Suite</h3>
+            <p>Mumbai | 4500 sq.ft</p>
+            <div class="portfolio-tags">
+              <span class="tag">Luxury</span>
+              <span class="tag">Penthouse</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="portfolio-item fade-in" data-category="commercial">
+          <img
+            src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=800&h=600&fit=crop"
+            alt="Retail Store"
+          />
+          <div class="portfolio-overlay">
+            <h3>Premium Retail Store</h3>
+            <p>Delhi | 3000 sq.ft</p>
+            <div class="portfolio-tags">
+              <span class="tag">Commercial</span>
+              <span class="tag">Retail</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="portfolio-item fade-in" data-category="residential">
+          <img
+            src="https://images.unsplash.com/photo-1617806118233-18e1de247200?w=800&h=600&fit=crop"
+            alt="Kids Room"
+          />
+          <div class="portfolio-overlay">
+            <h3>Creative Kids Bedroom</h3>
+            <p>Bangalore | 350 sq.ft</p>
+            <div class="portfolio-tags">
+              <span class="tag">Residential</span>
+              <span class="tag">Kids Room</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="portfolio-item fade-in" data-category="residential luxury">
+          <img
+            src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=800&h=600&fit=crop"
+            alt="Coastal Theme"
+          />
+          <div class="portfolio-overlay">
+            <h3>Coastal Theme Villa</h3>
+            <p>Goa | 4000 sq.ft</p>
+            <div class="portfolio-tags">
+              <span class="tag">Luxury</span>
+              <span class="tag">Coastal</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="portfolio-item fade-in" data-category="commercial">
+          <img
+            src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=800&h=600&fit=crop"
+            alt="Co-working Space"
+          />
+          <div class="portfolio-overlay">
+            <h3>Modern Co-working Space</h3>
+            <p>Pune | 6000 sq.ft</p>
+            <div class="portfolio-tags">
+              <span class="tag">Commercial</span>
+              <span class="tag">Co-working</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="testimonials">
+      <h2 class="section-title">What Our Clients Say</h2>
+      <div class="testimonial-grid">
+        <div class="testimonial-card fade-in">
+          <div class="stars">★★★★★</div>
+          <p class="testimonial-text">
+            IncosBlueAura transformed our home beyond our expectations. The
+            attention to detail and quality of work is exceptional. Highly
+            recommended!
+          </p>
+          <div class="testimonial-author">
+            <div class="author-image">RS</div>
+            <div class="author-info">
+              <h4>Rajesh Sharma</h4>
+              <p>Mumbai | Villa Project</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card fade-in">
+          <div class="stars">★★★★★</div>
+          <p class="testimonial-text">
+            Professional team, timely delivery, and beautiful designs. Our
+            office looks stunning and our employees love the new workspace!
+          </p>
+          <div class="testimonial-author">
+            <div class="author-image">PM</div>
+            <div class="author-info">
+              <h4>Priya Mehta</h4>
+              <p>Bangalore | Corporate Office</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card fade-in">
+          <div class="stars">★★★★★</div>
+          <p class="testimonial-text">
+            Best decision we made for our renovation project. The team handled
+            everything professionally and the final result is absolutely
+            perfect!
+          </p>
+          <div class="testimonial-author">
+            <div class="author-image">AK</div>
+            <div class="author-info">
+              <h4>Amit Kumar</h4>
+              <p>Delhi | Apartment Renovation</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="cta-section">
+      <h2 style="font-size: 2.5rem; margin-bottom: 1.5rem">
+        Love What You See?
+      </h2>
+      <p style="font-size: 1.2rem; margin-bottom: 2rem">
+        Let's create something amazing for your space!
+      </p>
+      <a href="contact.html" class="cta-button">Start Your Project</a>
+    </section>
+
+    <footer>
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>IncosBlueAura</h3>
+          <p>
+            Transforming spaces into extraordinary living experiences with
+            innovative design solutions.
+          </p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-pinterest"></i></a>
+          </div>
+        </div>
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="themes.html">Themes</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Services</h3>
+          <ul>
+            <li><a href="services.html">Luxury Interiors</a></li>
+            <li><a href="services.html">Home Renovation</a></li>
+            <li><a href="services.html">Commercial Design</a></li>
+            <li><a href="services.html">Modular Kitchen</a></li>
+            <li><a href="services.html">Wardrobe Design</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Contact Info</h3>
+          <ul>
+            <li><i class="fas fa-phone"></i> +91 98765 43210</li>
+            <li><i class="fas fa-envelope"></i> info@incosblueaura.com</li>
+            <li><i class="fas fa-map-marker-alt"></i> Mumbai, India</li>
+            <li><i class="fas fa-clock"></i> Mon-Sat: 9AM - 7PM</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>
+          &copy; 2024 IncosBlueAura. All Rights Reserved. | Designed with ❤️
+        </p>
+      </div>
+    </footer>
+
+    <div class="floating-buttons">
+      <a
+        href="tel:+919876543210"
+        class="float-btn call-btn"
+        aria-label="Call Us"
+      >
+        <i class="fas fa-phone"></i>
+      </a>
+      <a
+        href="https://wa.me/919876543210"
+        class="float-btn whatsapp-btn"
+        target="_blank"
+        aria-label="WhatsApp Us"
+      >
+        <i class="fab fa-whatsapp"></i>
+      </a>
+    </div>
+
+    <script>
+      const hamburger = document.getElementById("hamburger");
+      const navLinks = document.getElementById("navLinks");
+
+      hamburger.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+      });
+
+      document.querySelectorAll(".nav-links a").forEach((link) => {
+        link.addEventListener("click", () => {
+          navLinks.classList.remove("active");
+        });
+      });
+
+      // Filter functionality
+      const filterButtons = document.querySelectorAll(".filter-btn");
+      const portfolioItems = document.querySelectorAll(".portfolio-item");
+
+      filterButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          const filter = button.getAttribute("data-filter");
+
+          // Update active button
+          filterButtons.forEach((btn) => btn.classList.remove("active"));
+          button.classList.add("active");
+
+          // Filter items
+          portfolioItems.forEach((item) => {
+            if (filter === "all") {
+              item.style.display = "block";
+            } else {
+              const categories = item.getAttribute("data-category");
+              if (categories.includes(filter)) {
+                item.style.display = "block";
+              } else {
+                item.style.display = "none";
+              }
+            }
+          });
+        });
+      });
+
+      // Scroll Animation
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: "0px 0px -100px 0px",
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          }
+        });
+      }, observerOptions);
+
+      document.querySelectorAll(".fade-in").forEach((element) => {
+        observer.observe(element);
+      });
+
+      const video = document.getElementById("hero-video");
+      video.addEventListener("error", function () {
+        this.style.display = "none";
+      });
+    </script>
+  </body>
+</html>
