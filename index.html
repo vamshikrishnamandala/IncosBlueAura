@@ -12,6 +12,10 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
     <style>
       * {
         margin: 0;
@@ -31,7 +35,7 @@
         position: fixed;
         top: 0;
         width: 100%;
-        background: rgba(44, 62, 80, 0.95);
+        background: rgba(245, 245, 245, 0.98);
         z-index: 1000;
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
       }
@@ -48,12 +52,12 @@
       .logo {
         font-size: 1.8rem;
         font-weight: bold;
-        color: #fff;
+        color: #2c3e50;
         text-decoration: none;
       }
 
       .logo span {
-        color: #e74c3c;
+        color: #1e73be;
       }
 
       .nav-links {
@@ -63,14 +67,14 @@
       }
 
       .nav-links a {
-        color: #fff;
+        color: #2c3e50;
         text-decoration: none;
         transition: color 0.3s;
         font-weight: 500;
       }
 
       .nav-links a:hover {
-        color: #e74c3c;
+        color: #1e73be;
       }
 
       .hamburger {
@@ -83,7 +87,7 @@
       .hamburger span {
         width: 25px;
         height: 3px;
-        background: #fff;
+        background: #2c3e50;
         transition: 0.3s;
       }
 
@@ -91,6 +95,7 @@
       .hero {
         position: relative;
         height: 100vh;
+        width: 100vw;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -101,14 +106,12 @@
 
       #hero-video {
         position: absolute;
-        top: 50%;
-        left: 50%;
-        min-width: 100%;
-        min-height: 100%;
-        width: auto;
-        height: auto;
-        transform: translate(-50%, -50%);
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
         object-fit: cover;
+        object-position: center 30%; /* Adjust this number (20-40%) */
         z-index: -2;
       }
 
@@ -118,7 +121,7 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background: rgba(0, 0, 0, 0.5);
+        background: rgba(0, 0, 0, 0.3);
         z-index: -1;
       }
 
@@ -142,7 +145,7 @@
       .cta-button {
         display: inline-block;
         padding: 1rem 2.5rem;
-        background: linear-gradient(135deg, #e74c3c, #c0392b);
+        background: linear-gradient(135deg, #1e73be, #155a8a);
         color: #fff;
         text-decoration: none;
         border-radius: 50px;
@@ -151,12 +154,12 @@
         transition:
           transform 0.3s,
           box-shadow 0.3s;
-        box-shadow: 0 4px 15px rgba(231, 76, 60, 0.4);
+        box-shadow: 0 4px 15px rgba(30, 115, 190, 0.4);
       }
 
       .cta-button:hover {
         transform: translateY(-3px);
-        box-shadow: 0 6px 20px rgba(231, 76, 60, 0.6);
+        box-shadow: 0 6px 20px rgba(30, 115, 190, 0.6);
       }
 
       /* Section Styles */
@@ -179,7 +182,7 @@
         display: block;
         width: 80px;
         height: 4px;
-        background: #e74c3c;
+        background: #1e73be;
         margin: 1rem auto;
       }
 
@@ -203,7 +206,7 @@
 
       .room-card:hover {
         transform: translateY(-10px);
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 10px 30px rgba(30, 115, 190, 0.2);
       }
 
       .room-card img {
@@ -223,121 +226,175 @@
         margin-bottom: 0.5rem;
       }
 
+      .room-info h3 i {
+        color: #1e73be;
+      }
+
       .room-info p {
         color: #666;
       }
 
       /* Price CTA */
       .price-cta {
-        background: linear-gradient(135deg, #2c3e50, #34495e);
-        color: #fff;
+        background: linear-gradient(135deg, #f5f5f5, #efefef);
+        color: #2c3e50;
         text-align: center;
         padding: 4rem 2rem;
         border-radius: 15px;
         margin: 3rem 0;
+        border: 2px solid #1e73be;
       }
 
       .price-cta h2 {
         font-size: 2.5rem;
         margin-bottom: 1.5rem;
+        color: #2c3e50;
       }
 
-      /* Complete Interior Solutions Section */
-      .solutions-carousel {
-        position: relative;
-        max-width: 1200px;
+      /* Contact CTA Section */
+      .contact-cta {
+        background: linear-gradient(135deg, #1e73be, #155a8a) !important;
+        color: #fff !important;
+        padding: 3rem 2rem !important;
+        margin: 4rem 0 !important;
+        border: none !important;
+      }
+
+      .contact-cta h2 {
+        color: #fff !important;
+        font-size: 2.2rem;
+      }
+
+      .contact-cta p {
+        color: #e8f0f7 !important;
+      }
+
+      .contact-cta .cta-button {
+        background: linear-gradient(135deg, #f5f5f5, #efefef);
+        color: #1e73be !important;
+        font-weight: bold;
+      }
+
+      .contact-cta .cta-button:hover {
+        background: linear-gradient(135deg, #ffffff, #f5f5f5);
+        box-shadow: 0 6px 20px rgba(255, 255, 255, 0.3);
+      }
+
+      /* Swiper Solutions Carousel */
+      .solutions-swiper {
+        max-width: 1400px;
+        width: 95%;
         margin: 0 auto;
-        overflow: hidden;
+        padding: 3rem 0 80px;
       }
 
-      .carousel-container {
+      .swiper-slide {
         display: flex;
-        transition: transform 0.5s ease;
-      }
-
-      .solution-slide {
-        min-width: 100%;
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 2rem;
+        justify-content: center;
+        align-items: center;
+        width: 550px;
+        height: auto;
       }
 
       .solution-item {
+        width: 100%;
         background: #fff;
-        border-radius: 15px;
+        border-radius: 20px;
         overflow: hidden;
-        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s;
+        box-shadow: 0 15px 50px rgba(0, 0, 0, 0.15);
+        border-top: 5px solid #1e73be;
+        transition: all 0.3s ease;
+        position: relative;
       }
 
-      .solution-item:hover {
-        transform: translateY(-10px);
+      .swiper-slide-active .solution-item {
+        box-shadow: 0 25px 70px rgba(30, 115, 190, 0.35);
+        transform: scale(1.08);
       }
 
       .solution-item img {
         width: 100%;
-        height: 200px;
+        height: 280px;
         object-fit: cover;
+        transition: transform 0.4s ease;
+        display: block;
+      }
+
+      .swiper-slide-active .solution-item img {
+        transform: scale(1.05);
       }
 
       .solution-content {
-        padding: 1.5rem;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 2rem 1.5rem 1.5rem;
         text-align: center;
+        background: linear-gradient(
+          to top,
+          rgba(0, 0, 0, 0.75),
+          rgba(0, 0, 0, 0.4) 50%,
+          transparent
+        );
       }
 
       .solution-content h4 {
-        color: #2c3e50;
-        margin-bottom: 0.5rem;
-        font-size: 1.2rem;
+        color: #fff;
+        margin-bottom: 0;
+        font-size: 1.5rem;
+        font-weight: 600;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
       }
 
       .solution-content p {
         color: #666;
-        font-size: 0.95rem;
+        font-size: 1.05rem;
+        line-height: 1.6;
       }
 
-      .carousel-nav {
-        display: flex;
-        justify-content: center;
-        gap: 1rem;
-        margin-top: 2rem;
+      /* Swiper Navigation Buttons */
+      .solutions-prev,
+      .solutions-next {
+        color: #1e73be !important;
+        background: rgba(255, 255, 255, 0.95) !important;
+        width: 60px !important;
+        height: 60px !important;
+        border-radius: 50% !important;
+        box-shadow: 0 6px 20px rgba(30, 115, 190, 0.25);
+        transition: all 0.3s ease;
+        z-index: 10;
       }
 
-      .carousel-btn {
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        background: #e74c3c;
-        color: #fff;
-        border: none;
-        font-size: 1.2rem;
-        cursor: pointer;
-        transition: all 0.3s;
+      .solutions-prev:hover,
+      .solutions-next:hover {
+        background: #1e73be !important;
+        color: #fff !important;
+        transform: scale(1.15);
+        box-shadow: 0 8px 25px rgba(30, 115, 190, 0.45);
       }
 
-      .carousel-btn:hover {
-        background: #c0392b;
-        transform: scale(1.1);
+      .solutions-prev::after,
+      .solutions-next::after {
+        font-size: 1.3rem;
+        font-weight: bold;
       }
 
-      .carousel-dots {
-        display: flex;
-        justify-content: center;
-        gap: 0.5rem;
-        margin-top: 1.5rem;
+      /* Swiper Pagination */
+      .solutions-pagination {
+        bottom: 20px !important;
       }
 
-      .dot {
+      .solutions-pagination .swiper-pagination-bullet {
+        background: #ddd;
+        opacity: 1;
         width: 12px;
         height: 12px;
-        border-radius: 50%;
-        background: #ddd;
-        cursor: pointer;
-        transition: all 0.3s;
+        transition: all 0.3s ease;
       }
 
-      .dot.active {
-        background: #e74c3c;
+      .solutions-pagination .swiper-pagination-bullet-active {
+        background: #1e73be;
         width: 30px;
         border-radius: 6px;
       }
@@ -373,7 +430,11 @@
         bottom: 0;
         left: 0;
         right: 0;
-        background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+        background: linear-gradient(
+          to top,
+          rgba(30, 115, 190, 0.9),
+          transparent
+        );
         padding: 2rem 1rem;
         color: #fff;
       }
@@ -394,6 +455,7 @@
         border-radius: 10px;
         box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
         overflow: hidden;
+        border-left: 4px solid #1e73be;
       }
 
       .faq-question {
@@ -407,12 +469,17 @@
       }
 
       .faq-question:hover {
-        background: #e9ecef;
+        background: #f0ebe1;
       }
 
       .faq-question h3 {
         color: #2c3e50;
         font-size: 1.2rem;
+      }
+
+      .faq-question i {
+        color: #1e73be;
+        transition: transform 0.3s;
       }
 
       .faq-answer {
@@ -435,9 +502,10 @@
 
       /* Footer */
       footer {
-        background: #2c3e50;
-        color: #fff;
-        padding: 3rem 5%;
+        background: linear-gradient(135deg, #f5f5f5, #efefef);
+        color: #2c3e50;
+        padding: 1.5rem;
+        border-top: 3px solid #1e73be;
       }
 
       .footer-content {
@@ -449,7 +517,7 @@
       }
 
       .footer-section h3 {
-        color: #e74c3c;
+        color: #1e73be;
         margin-bottom: 1rem;
       }
 
@@ -462,14 +530,19 @@
       }
 
       .footer-section a {
-        color: #fff;
+        color: #2c3e50;
         text-decoration: none;
         transition: color 0.3s;
       }
 
       .footer-section a:hover {
-        color: #e74c3c;
+        color: #1e73be;
       }
+
+      /* .footer-section i {
+        color: #1e73be;
+        margin-right: 0.5rem;
+      } */
 
       .social-links {
         display: flex;
@@ -481,22 +554,27 @@
         display: inline-flex;
         width: 40px;
         height: 40px;
-        background: #34495e;
+        background: #1e73be;
         border-radius: 50%;
         align-items: center;
         justify-content: center;
-        transition: background 0.3s;
+        color: #fff;
+        transition:
+          background 0.3s,
+          transform 0.3s;
       }
 
       .social-links a:hover {
-        background: #e74c3c;
+        background: #155a8a;
+        transform: translateY(-3px);
       }
 
       .footer-bottom {
         text-align: center;
-        margin-top: 2rem;
-        padding-top: 2rem;
-        border-top: 1px solid #34495e;
+        margin-top: 1.5rem;
+        padding-top: 1.5rem;
+        border-top: 1px solid #ccc;
+        font-size: 0.9rem;
       }
 
       /* Floating Action Buttons */
@@ -532,7 +610,7 @@
       }
 
       .call-btn {
-        background: #e74c3c;
+        background: #1e73be;
       }
 
       .whatsapp-btn {
@@ -575,7 +653,7 @@
           top: 70px;
           right: -100%;
           flex-direction: column;
-          background: #2c3e50;
+          background: #f5f5f5;
           width: 100%;
           padding: 2rem;
           transition: right 0.3s;
@@ -613,8 +691,36 @@
           font-size: 1.2rem;
         }
 
-        .solution-slide {
-          grid-template-columns: 1fr;
+        .solutions-swiper {
+          padding: 2rem 0 60px;
+          max-width: 95%;
+        }
+
+        .swiper-slide {
+          width: 320px;
+        }
+
+        .solution-item img {
+          height: 240px;
+        }
+
+        .solution-content {
+          padding: 1.5rem 1rem 1rem;
+        }
+
+        .solution-content h4 {
+          font-size: 1.2rem;
+        }
+
+        .solutions-prev,
+        .solutions-next {
+          width: 50px !important;
+          height: 50px !important;
+        }
+
+        .solutions-prev::after,
+        .solutions-next::after {
+          font-size: 1.1rem;
         }
       }
     </style>
@@ -650,14 +756,7 @@
         playsinline
         poster="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=1920&h=1080&fit=crop"
       >
-        <source
-          src="https://cdn.coverr.co/videos/coverr-luxury-interior-design-8534/1080p.mp4"
-          type="video/mp4"
-        />
-        <source
-          src="https://player.vimeo.com/external/371433846.hd.mp4?s=1a1f8db0e0e0e0e0e0e0e0e0e0e0e0e0"
-          type="video/mp4"
-        />
+        <source src="videos/hero_video2.mp4" type="video/mp4" />
       </video>
       <div class="hero-overlay"></div>
       <div class="hero-content">
@@ -685,7 +784,7 @@
         </div>
         <div class="room-card fade-in">
           <img
-            src="https://images.unsplash.com/photo-1556912167-f556f1f39faa?w=800&h=600&fit=crop"
+            src="https://images.unsplash.com/photo-1617806118233-18e1de247200?w=800&h=600&fit=crop"
             alt="Modern Kitchen"
           />
           <div class="room-info">
@@ -704,10 +803,11 @@
           </div>
         </div>
         <div class="room-card fade-in">
-          <img
+          <!-- <img
             src="https://images.unsplash.com/photo-1617806118233-18e1de247200?w=800&h=600&fit=crop"
             alt="Kids Room"
-          />
+          /> -->
+          <img src="images/kids_room.jpg" alt="Kids Room" />
           <div class="room-info">
             <h3><i class="fas fa-child"></i> Kids Room</h3>
             <p>Playful and safe environments for your little ones</p>
@@ -724,10 +824,8 @@
           </div>
         </div>
         <div class="room-card fade-in">
-          <img
-            src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&h=600&fit=crop"
-            alt="Home Office"
-          />
+          <!-- <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&h=600&fit=crop" alt="Home Office" /> -->
+          <img src="images/home_office.jpg" alt="Home Office" />
           <div class="room-info">
             <h3><i class="fas fa-briefcase"></i> Home Office</h3>
             <p>Productive workspaces with ergonomic designs</p>
@@ -737,95 +835,89 @@
     </section>
 
     <!-- Price CTA -->
-    <section class="price-cta fade-in">
+    <!-- <section class="price-cta fade-in">
       <h2>Get the Price to Elevate Your Entire Home Interior</h2>
       <p style="font-size: 1.2rem; margin-bottom: 2rem">
         Transparent pricing, no hidden costs. Get your personalized quote today!
       </p>
       <a href="contact.html" class="cta-button">Calculate Your Price</a>
-    </section>
+    </section> -->
 
     <!-- Complete Interior Solutions Section -->
-    <section id="solutions">
+    <section id="solutions" class="solutions-section">
       <h2 class="section-title">Complete Interior Solutions</h2>
-      <div class="solutions-carousel">
-        <div class="carousel-container" id="carouselContainer">
-          <!-- Slide 1 -->
-          <div class="solution-slide">
-            <div class="solution-item fade-in">
+      <div class="swiper solutions-swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="solution-item">
               <img
-                src="https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=400&h=300&fit=crop"
+                src="https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=1000&h=800&fit=crop"
                 alt="Electrical Work"
               />
               <div class="solution-content">
                 <h4>Electrical Work</h4>
-                <p>Complete electrical installations and upgrades</p>
               </div>
             </div>
-            <div class="solution-item fade-in">
+          </div>
+          <div class="swiper-slide">
+            <div class="solution-item">
               <img
-                src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=400&h=300&fit=crop"
+                src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=1000&h=800&fit=crop"
                 alt="Premium Painting"
               />
               <div class="solution-content">
                 <h4>Premium Painting</h4>
-                <p>High-quality painting with premium finishes</p>
               </div>
             </div>
-            <div class="solution-item fade-in">
+          </div>
+          <div class="swiper-slide">
+            <div class="solution-item">
               <img
-                src="https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?w=400&h=300&fit=crop"
+                src="https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?w=1000&h=800&fit=crop"
                 alt="Plumbing Services"
               />
               <div class="solution-content">
                 <h4>Plumbing Services</h4>
-                <p>Expert plumbing solutions for your home</p>
               </div>
             </div>
           </div>
-          <!-- Slide 2 -->
-          <div class="solution-slide">
-            <div class="solution-item fade-in">
+          <div class="swiper-slide">
+            <div class="solution-item">
               <img
-                src="https://images.unsplash.com/photo-1615875605825-5eb9bb5a095b?w=400&h=300&fit=crop"
+                src="https://images.unsplash.com/photo-1631679706909-1844bbd07221?w=1000&h=800&fit=crop"
                 alt="Flooring Solutions"
               />
               <div class="solution-content">
                 <h4>Flooring Solutions</h4>
-                <p>Premium flooring options for every space</p>
               </div>
             </div>
-            <div class="solution-item fade-in">
+          </div>
+          <div class="swiper-slide">
+            <div class="solution-item">
               <img
-                src="https://images.unsplash.com/photo-1630699144867-37acec97df5a?w=400&h=300&fit=crop"
+                src="https://images.unsplash.com/photo-1630699144867-37acec97df5a?w=1000&h=800&fit=crop"
                 alt="False Ceiling"
               />
               <div class="solution-content">
                 <h4>False Ceiling</h4>
-                <p>Modern false ceiling designs and installation</p>
               </div>
             </div>
-            <div class="solution-item fade-in">
+          </div>
+          <div class="swiper-slide">
+            <div class="solution-item">
               <img
-                src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=400&h=300&fit=crop"
+                src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=1000&h=800&fit=crop"
                 alt="Civil Work"
               />
               <div class="solution-content">
                 <h4>Civil Work</h4>
-                <p>Structural modifications and civil construction</p>
               </div>
             </div>
           </div>
         </div>
-        <div class="carousel-nav">
-          <button class="carousel-btn" id="prevBtn">
-            <i class="fas fa-chevron-left"></i>
-          </button>
-          <button class="carousel-btn" id="nextBtn">
-            <i class="fas fa-chevron-right"></i>
-          </button>
-        </div>
-        <div class="carousel-dots" id="carouselDots"></div>
+        <div class="swiper-button-next solutions-next"></div>
+        <div class="swiper-button-prev solutions-prev"></div>
+        <div class="swiper-pagination solutions-pagination"></div>
       </div>
     </section>
 
@@ -963,7 +1055,7 @@
     </section>
 
     <!-- Contact CTA -->
-    <section class="price-cta fade-in">
+    <section class="price-cta contact-cta fade-in">
       <h2>Ready to Transform Your Space?</h2>
       <p style="font-size: 1.2rem; margin-bottom: 2rem">
         Let's discuss your dream interior project today!
@@ -1047,6 +1139,7 @@
       </a>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
       // Mobile Navigation Toggle
       const hamburger = document.getElementById("hamburger");
@@ -1063,52 +1156,34 @@
         });
       });
 
-      // Carousel functionality
-      const carouselContainer = document.getElementById("carouselContainer");
-      const prevBtn = document.getElementById("prevBtn");
-      const nextBtn = document.getElementById("nextBtn");
-      const dotsContainer = document.getElementById("carouselDots");
-      const slides = document.querySelectorAll(".solution-slide");
-      let currentSlide = 0;
-
-      // Create dots
-      slides.forEach((_, index) => {
-        const dot = document.createElement("span");
-        dot.classList.add("dot");
-        if (index === 0) dot.classList.add("active");
-        dot.addEventListener("click", () => goToSlide(index));
-        dotsContainer.appendChild(dot);
+      // Initialize Swiper.js Carousel with Coverflow Effect
+      const swiper = new Swiper(".solutions-swiper", {
+        effect: "coverflow",
+        grabCursor: true,
+        centeredSlides: true,
+        slidesPerView: "auto",
+        loop: true,
+        coverflowEffect: {
+          rotate: 15,
+          stretch: 0,
+          depth: 100,
+          modifier: 2,
+          slideShadows: true,
+        },
+        autoplay: {
+          delay: 2000,
+          disableOnInteraction: false,
+        },
+        pagination: {
+          el: ".solutions-pagination",
+          clickable: true,
+          dynamicBullets: true,
+        },
+        navigation: {
+          nextEl: ".solutions-next",
+          prevEl: ".solutions-prev",
+        },
       });
-
-      const dots = document.querySelectorAll(".dot");
-
-      function updateDots() {
-        dots.forEach((dot, index) => {
-          dot.classList.toggle("active", index === currentSlide);
-        });
-      }
-
-      function goToSlide(index) {
-        currentSlide = index;
-        carouselContainer.style.transform = `translateX(-${currentSlide * 100}%)`;
-        updateDots();
-      }
-
-      prevBtn.addEventListener("click", () => {
-        currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-        goToSlide(currentSlide);
-      });
-
-      nextBtn.addEventListener("click", () => {
-        currentSlide = (currentSlide + 1) % slides.length;
-        goToSlide(currentSlide);
-      });
-
-      // Auto-play carousel
-      setInterval(() => {
-        currentSlide = (currentSlide + 1) % slides.length;
-        goToSlide(currentSlide);
-      }, 5000);
 
       // FAQ Accordion
       document.querySelectorAll(".faq-question").forEach((question) => {

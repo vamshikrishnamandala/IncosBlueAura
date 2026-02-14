@@ -30,7 +30,7 @@
         position: fixed;
         top: 0;
         width: 100%;
-        background: rgba(44, 62, 80, 0.95);
+        background: rgba(245, 245, 245, 0.98);
         z-index: 1000;
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
       }
@@ -47,12 +47,12 @@
       .logo {
         font-size: 1.8rem;
         font-weight: bold;
-        color: #fff;
+        color: #2c3e50;
         text-decoration: none;
       }
 
       .logo span {
-        color: #e74c3c;
+        color: #1e73be;
       }
 
       .nav-links {
@@ -62,14 +62,14 @@
       }
 
       .nav-links a {
-        color: #fff;
+        color: #2c3e50;
         text-decoration: none;
         transition: color 0.3s;
         font-weight: 500;
       }
 
       .nav-links a:hover {
-        color: #e74c3c;
+        color: #1e73be;
       }
 
       .hamburger {
@@ -82,7 +82,7 @@
       .hamburger span {
         width: 25px;
         height: 3px;
-        background: #fff;
+        background: #2c3e50;
         transition: 0.3s;
       }
 
@@ -117,7 +117,7 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background: rgba(0, 0, 0, 0.6);
+        background: rgba(0, 0, 0, 0.3);
         z-index: -1;
       }
 
@@ -151,7 +151,7 @@
         display: block;
         width: 80px;
         height: 4px;
-        background: #e74c3c;
+        background: #1e73be;
         margin: 1rem auto;
       }
 
@@ -184,29 +184,29 @@
 
       .stats-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 2rem;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 1.5rem;
         text-align: center;
-        margin: 4rem 0;
+        margin: 3rem 0;
       }
 
       .stat-card {
-        background: linear-gradient(135deg, #2c3e50, #34495e);
+        background: linear-gradient(135deg, #1e73be, #155a8a);
         color: #fff;
-        padding: 2rem;
+        padding: 1.5rem 1rem;
         border-radius: 15px;
         box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
       }
 
       .stat-card i {
-        font-size: 3rem;
-        color: #e74c3c;
-        margin-bottom: 1rem;
+        font-size: 2.5rem;
+        color: #fff;
+        margin-bottom: 0.75rem;
       }
 
       .stat-card h3 {
-        font-size: 3rem;
-        margin-bottom: 0.5rem;
+        font-size: 2.5rem;
+        margin-bottom: 0.25rem;
       }
 
       .values-grid {
@@ -221,24 +221,69 @@
         padding: 2rem;
         border-radius: 15px;
         text-align: center;
-        border-top: 4px solid #e74c3c;
-        transition: transform 0.3s;
+        border-top: 4px solid #1e73be;
+        transition: all 0.4s ease;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .value-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(30, 115, 190, 0.1),
+          transparent
+        );
+        transition: left 0.6s ease;
+      }
+
+      .value-card:hover::before {
+        left: 100%;
       }
 
       .value-card:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        transform: translateY(-15px) scale(1.03);
+        box-shadow: 0 15px 40px rgba(30, 115, 190, 0.25);
+        background: linear-gradient(135deg, #ffffff, #f0f7ff);
+        border-top-width: 6px;
       }
 
       .value-card i {
         font-size: 3rem;
-        color: #e74c3c;
+        color: #1e73be;
         margin-bottom: 1rem;
+        transition: all 0.4s ease;
+        display: inline-block;
+      }
+
+      .value-card:hover i {
+        transform: scale(1.2) rotateY(360deg);
+        color: #155a8a;
+        filter: drop-shadow(0 5px 15px rgba(30, 115, 190, 0.4));
       }
 
       .value-card h3 {
         color: #2c3e50;
         margin-bottom: 1rem;
+        transition: color 0.3s ease;
+      }
+
+      .value-card:hover h3 {
+        color: #1e73be;
+      }
+
+      .value-card p {
+        transition: color 0.3s ease;
+      }
+
+      .value-card:hover p {
+        color: #2c3e50;
       }
 
       .team-grid {
@@ -277,14 +322,14 @@
       }
 
       .team-info p {
-        color: #e74c3c;
+        color: #1e73be;
         font-weight: bold;
       }
 
       .cta-button {
         display: inline-block;
         padding: 1rem 2.5rem;
-        background: linear-gradient(135deg, #e74c3c, #c0392b);
+        background: linear-gradient(135deg, #1e73be, #155a8a);
         color: #fff;
         text-decoration: none;
         border-radius: 50px;
@@ -293,18 +338,48 @@
         transition:
           transform 0.3s,
           box-shadow 0.3s;
-        box-shadow: 0 4px 15px rgba(231, 76, 60, 0.4);
+        box-shadow: 0 4px 15px rgba(30, 115, 190, 0.4);
       }
 
       .cta-button:hover {
         transform: translateY(-3px);
-        box-shadow: 0 6px 20px rgba(231, 76, 60, 0.6);
+        box-shadow: 0 6px 20px rgba(30, 115, 190, 0.6);
+      }
+
+      /* Contact CTA Section */
+      .contact-cta {
+        background: linear-gradient(135deg, #1e73be, #155a8a) !important;
+        color: #fff !important;
+        padding: 3rem 2rem !important;
+        margin: 4rem 0 !important;
+        border: none !important;
+      }
+
+      .contact-cta h2 {
+        color: #fff !important;
+        font-size: 2.2rem;
+      }
+
+      .contact-cta p {
+        color: #e8f0f7 !important;
+      }
+
+      .contact-cta .cta-button {
+        background: linear-gradient(135deg, #f5f5f5, #efefef);
+        color: #1e73be !important;
+        font-weight: bold;
+      }
+
+      .contact-cta .cta-button:hover {
+        background: linear-gradient(135deg, #ffffff, #f5f5f5);
+        box-shadow: 0 6px 20px rgba(255, 255, 255, 0.3);
       }
 
       footer {
-        background: #2c3e50;
-        color: #fff;
-        padding: 3rem 5%;
+        background: linear-gradient(135deg, #f5f5f5, #efefef);
+        color: #2c3e50;
+        padding: 1.5rem;
+        border-top: 3px solid #1e73be;
       }
 
       .footer-content {
@@ -316,7 +391,7 @@
       }
 
       .footer-section h3 {
-        color: #e74c3c;
+        color: #1e73be;
         margin-bottom: 1rem;
       }
 
@@ -329,13 +404,13 @@
       }
 
       .footer-section a {
-        color: #fff;
+        color: #2c3e50;
         text-decoration: none;
         transition: color 0.3s;
       }
 
       .footer-section a:hover {
-        color: #e74c3c;
+        color: #1e73be;
       }
 
       .social-links {
@@ -348,22 +423,27 @@
         display: inline-flex;
         width: 40px;
         height: 40px;
-        background: #34495e;
+        background: #1e73be;
         border-radius: 50%;
         align-items: center;
         justify-content: center;
-        transition: background 0.3s;
+        color: #fff;
+        transition:
+          background 0.3s,
+          transform 0.3s;
       }
 
       .social-links a:hover {
-        background: #e74c3c;
+        background: #155a8a;
+        transform: translateY(-3px);
       }
 
       .footer-bottom {
         text-align: center;
-        margin-top: 2rem;
-        padding-top: 2rem;
-        border-top: 1px solid #34495e;
+        margin-top: 1.5rem;
+        padding-top: 1.5rem;
+        border-top: 1px solid #ccc;
+        font-size: 0.9rem;
       }
 
       .floating-buttons {
@@ -398,7 +478,7 @@
       }
 
       .call-btn {
-        background: #e74c3c;
+        background: #1e73be;
       }
 
       .whatsapp-btn {
@@ -428,7 +508,7 @@
           top: 70px;
           right: -100%;
           flex-direction: column;
-          background: #2c3e50;
+          background: #f5f5f5;
           width: 100%;
           padding: 2rem;
           transition: right 0.3s;
@@ -464,8 +544,8 @@
         <ul class="nav-links" id="navLinks">
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About</a></li>
-          <li><a href="services.html">Services</a></li>
           <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="services.html">Services</a></li>
           <li><a href="themes.html">Themes</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
@@ -530,24 +610,29 @@
       </div>
 
       <div class="stats-grid">
-        <div class="stat-card fade-in">
+        <div class="stat-card fade-in" data-target="15" data-suffix="+">
           <i class="fas fa-award"></i>
-          <h3>15+</h3>
+          <h3>0+</h3>
           <p>Years Experience</p>
         </div>
-        <div class="stat-card fade-in">
+        <div class="stat-card fade-in" data-target="500" data-suffix="+">
           <i class="fas fa-home"></i>
-          <h3>500+</h3>
+          <h3>0+</h3>
           <p>Projects Completed</p>
         </div>
-        <div class="stat-card fade-in">
+        <div class="stat-card fade-in" data-target="450" data-suffix="+">
           <i class="fas fa-users"></i>
-          <h3>450+</h3>
+          <h3>0+</h3>
           <p>Happy Clients</p>
         </div>
-        <div class="stat-card fade-in">
+        <div
+          class="stat-card fade-in"
+          data-target="4.9"
+          data-suffix="/5"
+          data-decimal="true"
+        >
           <i class="fas fa-star"></i>
-          <h3>4.9/5</h3>
+          <h3>0/5</h3>
           <p>Client Rating</p>
         </div>
       </div>
@@ -585,6 +670,22 @@
           <h3>Client-Centric</h3>
           <p>
             Your vision and satisfaction are at the heart of everything we do.
+          </p>
+        </div>
+        <div class="value-card fade-in">
+          <i class="fas fa-leaf"></i>
+          <h3>Sustainability</h3>
+          <p>
+            We prioritize eco-friendly materials and sustainable practices for a
+            better future.
+          </p>
+        </div>
+        <div class="value-card fade-in">
+          <i class="fas fa-rocket"></i>
+          <h3>Excellence</h3>
+          <p>
+            We push boundaries and strive for perfection in every aspect of our
+            work.
           </p>
         </div>
       </div>
@@ -636,18 +737,8 @@
       </div>
     </section>
 
-    <section
-      style="
-        background: linear-gradient(135deg, #2c3e50, #34495e);
-        color: #fff;
-        text-align: center;
-        border-radius: 15px;
-        padding: 4rem 2rem;
-      "
-    >
-      <h2 style="font-size: 2.5rem; margin-bottom: 1.5rem">
-        Ready to Start Your Project?
-      </h2>
+    <section class="contact-cta fade-in">
+      <h2>Ready to Start Your Project?</h2>
       <p style="font-size: 1.2rem; margin-bottom: 2rem">
         Let's create something beautiful together!
       </p>
@@ -674,8 +765,8 @@
           <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About Us</a></li>
-            <li><a href="services.html">Services</a></li>
             <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="services.html">Services</a></li>
             <li><a href="themes.html">Themes</a></li>
             <li><a href="contact.html">Contact</a></li>
           </ul>
@@ -695,7 +786,10 @@
           <ul>
             <li><i class="fas fa-phone"></i> +91 98765 43210</li>
             <li><i class="fas fa-envelope"></i> info@incosblueaura.com</li>
-            <li><i class="fas fa-map-marker-alt"></i> Mumbai, India</li>
+            <li>
+              <i class="fas fa-map-marker-alt"></i> Tummala Residency, Plot no
+              336, Road no 1/2, Mathrusree nagar, Miyapur, Hyderabad
+            </li>
             <li><i class="fas fa-clock"></i> Mon-Sat: 9AM - 7PM</li>
           </ul>
         </div>
@@ -748,6 +842,14 @@
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add("visible");
+
+            // Trigger counter animation for stat cards
+            if (
+              entry.target.classList.contains("stat-card") &&
+              !entry.target.dataset.animated
+            ) {
+              animateCounter(entry.target);
+            }
           }
         });
       }, observerOptions);
@@ -755,6 +857,35 @@
       document.querySelectorAll(".fade-in").forEach((element) => {
         observer.observe(element);
       });
+
+      // Counter animation function
+      function animateCounter(statCard) {
+        const target = parseFloat(statCard.dataset.target);
+        const suffix = statCard.dataset.suffix || "";
+        const isDecimal = statCard.dataset.decimal === "true";
+        const h3 = statCard.querySelector("h3");
+        const duration = 2000; // 2 seconds
+        const steps = 60;
+        const stepDuration = duration / steps;
+        const increment = target / steps;
+        let current = 0;
+
+        statCard.dataset.animated = "true";
+
+        const timer = setInterval(() => {
+          current += increment;
+          if (current >= target) {
+            current = target;
+            clearInterval(timer);
+          }
+
+          if (isDecimal) {
+            h3.textContent = current.toFixed(1) + suffix;
+          } else {
+            h3.textContent = Math.floor(current) + suffix;
+          }
+        }, stepDuration);
+      }
 
       const video = document.getElementById("hero-video");
       video.addEventListener("error", function () {
