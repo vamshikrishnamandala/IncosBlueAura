@@ -38,12 +38,11 @@
 
 .chatbot-widget {
   position: fixed;
-  bottom: 10px;
+  bottom: 20px;
   right: 30px;
   width: 380px;
   max-width: calc(100vw - 60px);
-  height: 560px;
-  max-height: calc(115vh - 180px);
+  height: 420px;
   background: #fff;
   border-radius: 20px;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
@@ -164,13 +163,15 @@
    ============================================ */
 
 .chatbot-messages {
-  /* flex: 1; */
+  flex: 1;
   overflow-y: auto;
   padding: 0.85rem 1rem;
   background: #f8f9fa;
   display: flex;
   flex-direction: column;
   gap: 0.6rem;
+  min-height: 100px;
+  max-height: 250px;
 }
 
 .chatbot-messages::-webkit-scrollbar {
@@ -385,7 +386,7 @@
   display: flex;
   flex-direction: column;
   gap: 0.4rem;
-  /* max-height: 220px; */
+  flex: 1;
   overflow-y: auto;
   flex-shrink: 0;
 }
@@ -439,10 +440,13 @@
 @media (max-width: 768px) {
   .chatbot-widget {
     right: 10px;
-    bottom: 10px;
-    width: calc(100vw - 30px);
-    height: calc(100vh - 140px);
-    max-height: calc(110vh - 140px);
+    bottom: 100px;
+    width: calc(100vw - 20px);
+    height: auto;
+    min-height: 350px;
+    max-height: calc(
+      100vh - 200px
+    ); /* Prevent header overlap when content expands */
   }
 
   .chatbot-header {
@@ -478,10 +482,13 @@
 @media (max-width: 480px) {
   .chatbot-widget {
     right: 10px;
-    bottom: 80px;
+    bottom: 100px;
     width: calc(100vw - 20px);
-    height: calc(100vh - 120px);
-    max-height: calc(100vh - 120px);
+    height: auto;
+    min-height: 350px;
+    max-height: calc(
+      100vh - 200px
+    ); /* Prevent header overlap when content expands */
     border-radius: 15px;
   }
 
