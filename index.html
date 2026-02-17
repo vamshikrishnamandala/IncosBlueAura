@@ -18,6 +18,7 @@
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
     />
     <link rel="stylesheet" href="chatbot.css" />
+    <link rel="stylesheet" href="modal.css" />
     <style>
       * {
         margin: 0;
@@ -1284,7 +1285,6 @@
         });
       });
 
-      // Scroll Animation
       const observerOptions = {
         threshold: 0.1,
         rootMargin: "0px 0px -100px 0px",
@@ -1302,14 +1302,12 @@
         observer.observe(element);
       });
 
-      // Video Fallback
       const video = document.getElementById("hero-video");
 
       video.addEventListener("error", function () {
         this.style.display = "none";
       });
 
-      // Smooth Scrolling
       document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
         anchor.addEventListener("click", function (e) {
           e.preventDefault();
@@ -1323,7 +1321,6 @@
         });
       });
 
-      // Video autoplay for mobile
       document.addEventListener("DOMContentLoaded", function () {
         const video = document.getElementById("hero-video");
         if (video) {
@@ -1333,7 +1330,6 @@
         }
       });
 
-      // Set active navigation link
       const currentPage =
         window.location.pathname.split("/").pop() || "index.html";
       document.querySelectorAll(".nav-links a").forEach((link) => {
@@ -1344,8 +1340,10 @@
       });
     </script>
 
-    <!-- Chatbot Scripts -->
     <script src="chatbot-data.js"></script>
     <script src="chatbot.js"></script>
+
+    <!-- Welcome Modal Script -->
+    <script src="modal.js"></script>
   </body>
 </html>
