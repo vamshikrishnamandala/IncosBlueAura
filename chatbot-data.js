@@ -233,12 +233,12 @@ const chatbotData = {
     answers: {
       phone: {
         message:
-          "**Call Us** 📞\n\nSpeak directly with our design consultants:\n\n☎️ **Phone:** +91 98765 43210\n☎️ **Phone:** +91 98765 43211\n\nBest time to call: Mon-Sat, 9:00 AM - 7:00 PM\n\nWe're here to answer all your questions!",
+          "**Call Us** 📞\n\nSpeak directly with our design consultants:\n\n☎️ **Phone:** +91-8142156456\n☎️ **Phone:** +91-9000693988\n\nBest time to call: Mon-Sat, 9:00 AM - 7:00 PM\n\nWe're here to answer all your questions!",
         options: [{ id: "back", label: "← Back to Contact Options" }],
       },
       whatsapp: {
         message:
-          "**WhatsApp Chat** 💬\n\nGet quick responses on WhatsApp:\n\n📱 **WhatsApp:** +91 98765 43210\n\nClick the WhatsApp button (bottom right) to start chatting instantly!\n\nShare images, ask questions, get quotes - all on WhatsApp.",
+          "**WhatsApp Chat** 💬\n\nGet quick responses on WhatsApp:\n\n📱 **WhatsApp:** +91 8142156456\n\nClick the WhatsApp button (bottom right) to start chatting instantly!\n\nShare images, ask questions, get quotes - all on WhatsApp.",
         options: [{ id: "back", label: "← Back to Contact Options" }],
       },
       email: {
@@ -315,14 +315,14 @@ const chatbotData = {
       "**Get Pricing Information** 💳\n\nFor accurate pricing, we need to understand your requirements.\n\nWould you like to:\n\n1. Fill out a quick form on our contact page\n2. Call us for immediate discussion\n3. Schedule a free site visit\n\nAll options are free with no obligation!",
     options: [
       { id: "contact_page", label: "Go to Contact Page" },
-      { id: "phone", label: "Call Now" },
+      // { id: "phone", label: "Call Now" },
       { id: "back", label: "← Back" },
     ],
   },
 
   contact_service: {
     message:
-      "**Let's Get Started!** 🚀\n\nYou can reach us through:\n\n📞 **Call:** +91 98765 43210\n💬 **WhatsApp:** Click button below\n📧 **Email:** info@incosblueaura.com\n📝 **Contact Form:** [Contact Page](contact.html)\n\nOr schedule a free consultation today!",
+      "**Let's Get Started!** 🚀\n\nYou can reach us through:\n\n📞 **Call:** +91-8142156456\n💬 **WhatsApp:** +91-8142156456\n📧 **Email:** info@incosblueaura.com\n📝 **Contact Form:** [Contact Page](contact.html)\n\nOr schedule a free consultation today!",
     options: [{ id: "main", label: "← Back to Main Menu" }],
   },
 
