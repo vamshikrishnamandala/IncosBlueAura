@@ -8,6 +8,7 @@
       content="Explore IncosBlueAura's interior design themes - Scandinavian, Minimalist, Vintage, Coastal, Industrial, and more."
     />
     <title>Interior Design Themes - IncosBlueAura</title>
+    <link rel="icon" type="image/png" href="images/logo.png" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -46,6 +47,9 @@
       }
 
       .logo {
+        display: flex;
+        align-items: center;
+        /* gap: 0.3rem; */
         font-size: 1.8rem;
         font-weight: bold;
         color: #2c3e50;
@@ -54,6 +58,12 @@
 
       .logo span {
         color: #1e73be;
+      }
+
+      .logo-img {
+        width: 40px;
+        height: 40px;
+        object-fit: contain;
       }
 
       .nav-links {
@@ -393,8 +403,17 @@
       }
 
       .footer-section h3 {
+        display: flex;
+        align-items: center;
+        /* gap: 0.5rem; */
         color: #1e73be;
         margin-bottom: 1rem;
+      }
+
+      .footer-logo-img {
+        width: 30px;
+        height: 30px;
+        object-fit: contain;
       }
 
       .footer-section ul {
@@ -501,6 +520,20 @@
       }
 
       @media (max-width: 768px) {
+        .logo {
+          font-size: 1.4rem;
+        }
+
+        .logo-img {
+          width: 32px;
+          height: 32px;
+        }
+
+        .footer-logo-img {
+          width: 24px;
+          height: 24px;
+        }
+
         .hamburger {
           display: flex;
         }
@@ -546,7 +579,13 @@
   <body>
     <header>
       <nav>
-        <a href="index.html" class="logo">Incos<span>BlueAura</span></a>
+        <a href="index.html" class="logo">
+          <img
+            src="images/logo.png"
+            alt="IncosBlueAura Logo"
+            class="logo-img"
+          />Incos<span>BlueAura</span>
+        </a>
         <ul class="nav-links" id="navLinks">
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About</a></li>
@@ -959,7 +998,14 @@
     <footer>
       <div class="footer-content">
         <div class="footer-section">
-          <h3>IncosBlueAura</h3>
+          <h3>
+            <img
+              src="images/logo.png"
+              alt="IncosBlueAura Logo"
+              class="footer-logo-img"
+            />
+            IncosBlueAura
+          </h3>
           <p>
             Transforming spaces into extraordinary living experiences with
             innovative design solutions.
