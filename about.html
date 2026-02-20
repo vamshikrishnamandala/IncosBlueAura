@@ -93,11 +93,22 @@
         content: "";
         position: absolute;
         bottom: 0;
-        left: 0;
-        width: 100%;
+        left: 5%;
+        width: 90%;
         height: 2px;
         background: #1e73be;
         box-shadow: 0 2px 4px rgba(30, 115, 190, 0.4);
+      }
+
+      .nav-links a.active::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 5%;
+        width: 90%;
+        height: 2px;
+        background: #1e73be;
+        box-shadow: 0 -2px 4px rgba(30, 115, 190, 0.4);
       }
 
       .hamburger {
@@ -315,10 +326,97 @@
         color: #2c3e50;
       }
 
+      .vision-mission-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2.5rem;
+        margin-top: 1rem;
+      }
+
+      .vm-card {
+        background: #fff;
+        border-radius: 15px;
+        padding: 2.5rem 2rem;
+        box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
+        border-top: 5px solid #1e73be;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .vm-card::before {
+        content: "";
+        position: absolute;
+        top: -30px;
+        right: -30px;
+        width: 100px;
+        height: 100px;
+        background: rgba(30, 115, 190, 0.05);
+        border-radius: 50%;
+      }
+
+      .vm-card-header {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .vm-card-header i {
+        font-size: 2.2rem;
+        color: #1e73be;
+        background: rgba(30, 115, 190, 0.1);
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+
+      .vm-card-header h3 {
+        color: #2c3e50;
+        font-size: 1.6rem;
+      }
+
+      .vm-card ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      .vm-card ul li {
+        color: #555;
+        font-size: 1rem;
+        line-height: 1.7;
+        padding: 0.5rem 0;
+        padding-left: 1.5rem;
+        border-bottom: 1px dashed #e8ecf0;
+        position: relative;
+      }
+
+      .vm-card ul li:last-child {
+        border-bottom: none;
+      }
+
+      .vm-card ul li::before {
+        content: "▸";
+        color: #1e73be;
+        position: absolute;
+        left: 0;
+        font-size: 0.85rem;
+        top: 0.55rem;
+      }
+
+      @media (max-width: 768px) {
+        .vision-mission-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
       .team-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 2rem;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 1.5rem;
         margin-top: 3rem;
       }
 
@@ -337,8 +435,26 @@
 
       .team-member img {
         width: 100%;
-        height: 300px;
+        height: 220px;
         object-fit: cover;
+        object-position: top;
+        display: block;
+      }
+
+      .team-member-icon {
+        display: none;
+      }
+
+      @media (max-width: 1024px) {
+        .team-grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+
+      @media (max-width: 600px) {
+        .team-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
       }
 
       .team-info {
@@ -644,9 +760,9 @@
           <h3>Our Story</h3>
           <p>
             IncosBlueAura was founded with a vision to transform ordinary spaces
-            into extraordinary living experiences. With over 15 years of
-            expertise in interior design, we have successfully completed 500+
-            residential and commercial projects across India.
+            into extraordinary living experiences. With over 12 years of
+            expertise in interior design, we have successfully completed 300+
+            residential and commercial projects.
           </p>
           <p>
             Our team of passionate designers, architects, and craftsmen work
@@ -656,9 +772,10 @@
             your quality of life.
           </p>
           <p>
-            From luxurious homes to dynamic commercial spaces, we offer
-            end-to-end interior solutions with a commitment to quality,
-            innovation, and customer satisfaction.
+            We offer end-to-end interior solutions with a commitment to quality,
+            innovation, and customer satisfaction. From concept to completion,
+            we ensure every detail is meticulously crafted to exceed your
+            expectations.
           </p>
         </div>
         <div class="about-image">
@@ -670,20 +787,20 @@
       </div>
 
       <div class="stats-grid">
-        <div class="stat-card fade-in" data-target="15" data-suffix="+">
+        <div class="stat-card fade-in" data-target="12" data-suffix="+">
           <i class="fas fa-award"></i>
           <h3>0+</h3>
           <p>Years Experience</p>
         </div>
-        <div class="stat-card fade-in" data-target="500" data-suffix="+">
+        <div class="stat-card fade-in" data-target="300" data-suffix="+">
           <i class="fas fa-home"></i>
           <h3>0+</h3>
           <p>Projects Completed</p>
         </div>
-        <div class="stat-card fade-in" data-target="450" data-suffix="+">
-          <i class="fas fa-users"></i>
-          <h3>0+</h3>
-          <p>Happy Clients</p>
+        <div class="stat-card fade-in" data-target="98" data-suffix="%">
+          <i class="fas fa-clock"></i>
+          <h3>0%</h3>
+          <p>On-Time Deliveries</p>
         </div>
         <div
           class="stat-card fade-in"
@@ -698,43 +815,114 @@
       </div>
     </section>
 
+    <!-- Vision & Mission Section -->
+    <section>
+      <h2 class="section-title">Our Vision & Mission</h2>
+      <div class="vision-mission-grid">
+        <div class="vm-card fade-in">
+          <div class="vm-card-header">
+            <i class="fas fa-eye"></i>
+            <h3>Our Vision</h3>
+          </div>
+          <ul>
+            <li>
+              Transform spaces into meaningful environments that inspire and
+              enhance everyday living.
+            </li>
+            <li>
+              Integrate creativity with practical, functional interior design
+              solutions.
+            </li>
+            <li>
+              Create durable, long-lasting interiors through quality materials
+              and refined execution.
+            </li>
+            <li>
+              Deliver spaces that reflect each client's unique vision,
+              lifestyle, and functional needs.
+            </li>
+            <li>
+              Champion thoughtful design that harmoniously balances aesthetics,
+              comfort, and usability.
+            </li>
+          </ul>
+        </div>
+        <div class="vm-card fade-in">
+          <div class="vm-card-header">
+            <i class="fas fa-bullseye"></i>
+            <h3>Our Mission</h3>
+          </div>
+          <ul>
+            <li>
+              Design interior spaces that seamlessly balance functionality,
+              comfort, and aesthetics tailored to each client's vision.
+            </li>
+            <li>
+              Deliver high-quality, detail-driven solutions through thoughtful
+              planning and reliable execution.
+            </li>
+            <li>
+              Create purposeful, timeless spaces that elevate everyday living
+              and long-term value.
+            </li>
+            <li>
+              Build lasting client relationships grounded in trust,
+              transparency, and evolving design excellence.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
     <section style="background: #f8f9fa">
       <h2 class="section-title">Our Core Values</h2>
       <div class="values-grid">
         <div class="value-card fade-in">
           <i class="fas fa-lightbulb"></i>
-          <h3>Innovation</h3>
+          <h3>
+            <span style="color: #1e73be; font-size: 1.1em">I</span>nnovation
+          </h3>
           <p>
             We constantly explore new design trends and technologies to deliver
             cutting-edge solutions.
           </p>
         </div>
         <div class="value-card fade-in">
-          <i class="fas fa-gem"></i>
-          <h3>Quality</h3>
+          <i class="fas fa-hands"></i>
+          <h3>
+            <span style="color: #1e73be; font-size: 1.1em">N</span>urtured
+            Craftsmanship
+          </h3>
           <p>
-            We never compromise on materials, craftsmanship, or attention to
-            detail in our projects.
-          </p>
-        </div>
-        <div class="value-card fade-in">
-          <i class="fas fa-handshake"></i>
-          <h3>Integrity</h3>
-          <p>
-            Transparency, honesty, and ethical practices are the foundation of
-            our business relationships.
+            We nurture every detail with care and precision, ensuring superior
+            craftsmanship in every project we undertake.
           </p>
         </div>
         <div class="value-card fade-in">
           <i class="fas fa-heart"></i>
-          <h3>Client-Centric</h3>
+          <h3>
+            <span style="color: #1e73be; font-size: 1.1em">C</span>lient-Centric
+          </h3>
           <p>
             Your vision and satisfaction are at the heart of everything we do.
           </p>
         </div>
         <div class="value-card fade-in">
+          <i class="fas fa-clock"></i>
+          <h3>
+            <span style="color: #1e73be; font-size: 1.1em">O</span>n-Time
+            Delivery
+          </h3>
+          <p>
+            We honor our commitments and ensure every project is completed
+            within the promised timeline, without compromise.
+          </p>
+        </div>
+        <div class="value-card fade-in">
           <i class="fas fa-leaf"></i>
-          <h3>Sustainability</h3>
+          <h3>
+            <span style="color: #1e73be; font-size: 1.1em">S</span>ustainability
+          </h3>
           <p>
             We prioritize eco-friendly materials and sustainable practices for a
             better future.
@@ -755,43 +943,38 @@
       <h2 class="section-title">Meet Our Expert Team</h2>
       <div class="team-grid">
         <div class="team-member fade-in">
-          <img
-            src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=500&fit=crop"
-            alt="Team Member"
-          />
+          <img src="team/yoganand.jpeg" alt="Yoganand Goud" />
           <div class="team-info">
-            <h3>Rajesh Kumar</h3>
-            <p>Founder & Lead Designer</p>
+            <h3>Yoganand Goud. E</h3>
+            <p>CEO</p>
           </div>
         </div>
         <div class="team-member fade-in">
-          <img
-            src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=500&fit=crop"
-            alt="Team Member"
-          />
+          <img src="team/kishore.jpeg" alt="Kishore Kumar" />
           <div class="team-info">
-            <h3>Priya Sharma</h3>
-            <p>Interior Architect</p>
+            <h3>Kishore Kumar. B</h3>
+            <p>Co-Founder</p>
           </div>
         </div>
         <div class="team-member fade-in">
-          <img
-            src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=500&fit=crop"
-            alt="Team Member"
-          />
+          <img src="team/varsha.jpeg" alt="Varsha Reddy" />
           <div class="team-info">
-            <h3>Amit Patel</h3>
-            <p>Project Manager</p>
+            <h3>Varsha Reddy. L</h3>
+            <p>Design Director</p>
           </div>
         </div>
         <div class="team-member fade-in">
-          <img
-            src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=500&fit=crop"
-            alt="Team Member"
-          />
+          <img src="team/naveen.jpeg" alt="Naveen G" />
           <div class="team-info">
-            <h3>Neha Verma</h3>
-            <p>Design Consultant</p>
+            <h3>Naveen. G</h3>
+            <p>Sales Director</p>
+          </div>
+        </div>
+        <div class="team-member fade-in">
+          <img src="team/harish.jpeg" alt="Harish E" />
+          <div class="team-info">
+            <h3>Harish. E</h3>
+            <p>Sales Manager</p>
           </div>
         </div>
       </div>
@@ -849,12 +1032,11 @@
         <div class="footer-section">
           <h3>Services</h3>
           <ul>
-            <li><a href="services.html">Luxury Interiors</a></li>
-            <li><a href="services.html">Home Renovation</a></li>
-            <li><a href="services.html">Interior Landscape</a></li>
-            <li><a href="services.html">Commercial Design</a></li>
-            <li><a href="services.html">Modular Kitchen</a></li>
-            <li><a href="services.html">Wardrobe Design</a></li>
+            <li><a href="services.html">Residential Interiors</a></li>
+            <li><a href="services.html">Commercial Interiors</a></li>
+            <li><a href="services.html">Corporate Spaces</a></li>
+            <li><a href="services.html">Renovations</a></li>
+            <li><a href="services.html">Landscaping</a></li>
           </ul>
         </div>
         <div class="footer-section">

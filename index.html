@@ -33,7 +33,7 @@
         overflow-x: hidden;
       }
 
-      /* Header */
+      /* ── Header ── */
       header {
         position: fixed;
         top: 0;
@@ -55,7 +55,6 @@
       .logo {
         display: flex;
         align-items: center;
-        /* gap: 0.3rem; */
         font-size: 1.8rem;
         font-weight: bold;
         color: #2c3e50;
@@ -99,11 +98,22 @@
         content: "";
         position: absolute;
         bottom: 0;
-        left: 0;
-        width: 100%;
+        left: 5%;
+        width: 90%;
         height: 2px;
         background: #1e73be;
         box-shadow: 0 2px 4px rgba(30, 115, 190, 0.4);
+      }
+
+      .nav-links a.active::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 5%;
+        width: 90%;
+        height: 2px;
+        background: #1e73be;
+        box-shadow: 0 -2px 4px rgba(30, 115, 190, 0.4);
       }
 
       .hamburger {
@@ -120,7 +130,7 @@
         transition: 0.3s;
       }
 
-      /* Hero Section */
+      /* ── Hero ── */
       .hero {
         position: relative;
         height: 100vh;
@@ -141,16 +151,13 @@
         width: 100%;
         height: 100%;
         object-fit: cover;
-        object-position: center 30%; /* Adjust this number (20-40%) */
+        object-position: center 30%;
         z-index: -2;
       }
 
       .hero-overlay {
         position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
+        inset: 0;
         background: rgba(0, 0, 0, 0.3);
         z-index: -1;
       }
@@ -172,6 +179,7 @@
         margin-bottom: 2rem;
       }
 
+      /* ── CTA Button ── */
       .cta-button {
         display: inline-block;
         padding: 1rem 2.5rem;
@@ -192,18 +200,30 @@
         box-shadow: 0 6px 20px rgba(30, 115, 190, 0.6);
       }
 
-      /* Section Styles */
+      /* ── Sections ── */
       section {
         padding: 5rem 5%;
         max-width: 1400px;
         margin: 0 auto;
       }
 
+      section.bg-light {
+        max-width: 100%;
+        background: #f8f9fa;
+        padding: 5rem 5%;
+      }
+
+      section.bg-light > * {
+        max-width: 1400px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
       .section-title {
         text-align: center;
         font-size: 2.5rem;
         color: #2c3e50;
-        margin-bottom: 3rem;
+        margin-bottom: 1rem;
         position: relative;
       }
 
@@ -216,7 +236,14 @@
         margin: 1rem auto;
       }
 
-      /* Rooms Section */
+      .section-subtitle {
+        text-align: center;
+        color: #666;
+        font-size: 1.1rem;
+        margin-bottom: 3rem;
+      }
+
+      /* ── Rooms ── */
       .rooms-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -243,6 +270,7 @@
         width: 100%;
         height: 300px;
         object-fit: cover;
+        display: block;
       }
 
       .room-info {
@@ -264,197 +292,175 @@
         color: #666;
       }
 
-      /* Price CTA */
-      .price-cta {
-        background: linear-gradient(135deg, #f5f5f5, #efefef);
-        color: #2c3e50;
+      /* Rooms show-more */
+      .rooms-hidden {
+        display: none;
+      }
+
+      .rooms-show-more-wrap {
         text-align: center;
-        padding: 4rem 2rem;
-        border-radius: 15px;
-        margin: 3rem 0;
-        border: 2px solid #1e73be;
+        margin-top: 2rem;
       }
 
-      .price-cta h2 {
-        font-size: 2.5rem;
-        margin-bottom: 1.5rem;
-        color: #2c3e50;
-      }
-
-      /* Contact CTA Section */
-      .contact-cta {
-        background: linear-gradient(135deg, #1e73be, #155a8a) !important;
-        color: #fff !important;
-        padding: 3rem 5% !important; /* Changed back to 5% to match other sections */
-        margin: 4rem calc(-50vw + 50%) !important; /* NEW: Full viewport width */
-        width: calc(100vw) !important; /* NEW: Full viewport width */
-        max-width: none !important; /* NEW: Override generic section max-width */
-        border: none !important;
-      }
-
-      .contact-cta h2 {
-        color: #fff !important;
-        font-size: 2.2rem;
-      }
-
-      .contact-cta p {
-        color: #e8f0f7 !important;
-      }
-
-      .contact-cta .cta-button {
-        background: linear-gradient(135deg, #f5f5f5, #efefef);
-        color: #1e73be !important;
-        font-weight: bold;
-      }
-
-      .contact-cta .cta-button:hover {
-        background: linear-gradient(135deg, #ffffff, #f5f5f5);
-        box-shadow: 0 6px 20px rgba(255, 255, 255, 0.3);
-      }
-
-      /* Swiper Solutions Carousel */
-      .solutions-swiper {
-        max-width: 1400px;
-        width: 95%;
-        margin: 0 auto;
-        padding: 3rem 0 80px;
-      }
-
-      .swiper-slide {
-        display: flex;
-        justify-content: center;
+      #roomsShowMoreBtn {
+        display: inline-flex;
         align-items: center;
-        width: 550px;
-        height: auto;
+        gap: 0.5rem;
+        padding: 0.75rem 2rem;
+        background: transparent;
+        border: 2px solid #1e73be;
+        color: #1e73be;
+        border-radius: 50px;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition:
+          background 0.3s,
+          color 0.3s;
       }
 
-      .solution-item {
-        width: 100%;
-        background: #fff;
-        border-radius: 20px;
-        overflow: hidden;
-        box-shadow: 0 15px 50px rgba(0, 0, 0, 0.15);
-        border-top: 5px solid #1e73be;
-        transition: all 0.3s ease;
+      #roomsShowMoreBtn:hover {
+        background: #1e73be;
+        color: #fff;
+      }
+
+      /* ── ① Complete Interior Solutions Grid ── */
+      .solutions-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        margin-top: 2rem;
+      }
+
+      .solution-card {
         position: relative;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        transition:
+          transform 0.3s,
+          box-shadow 0.3s;
+        cursor: pointer;
+        background: #fff;
       }
 
-      .swiper-slide-active .solution-item {
-        box-shadow: 0 25px 70px rgba(30, 115, 190, 0.35);
-        transform: scale(1.08);
+      .solution-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 10px 30px rgba(30, 115, 190, 0.2);
       }
 
-      .solution-item img {
+      .solution-card .image-wrapper {
         width: 100%;
-        height: 280px;
-        object-fit: cover;
-        transition: transform 0.4s ease;
-        display: block;
+        aspect-ratio: 4 / 3;
+        overflow: hidden;
+        border-radius: 15px 15px 0 0;
       }
 
-      .swiper-slide-active .solution-item img {
+      .solution-card .image-wrapper img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.4s ease;
+      }
+
+      .solution-card:hover .image-wrapper img {
         transform: scale(1.05);
       }
 
-      .solution-content {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        padding: 2rem 1.5rem 1.5rem;
-        text-align: center;
-        background: linear-gradient(
-          to top,
-          rgba(0, 0, 0, 0.75),
-          rgba(0, 0, 0, 0.4) 50%,
-          transparent
-        );
+      .solution-card-body {
+        padding: 0.75rem 1rem;
+        background: #fff;
       }
 
-      .solution-content h4 {
-        color: #fff;
-        margin-bottom: 0;
-        font-size: 1.5rem;
+      .solution-card-body h4 {
+        color: #2c3e50;
+        font-size: 1.1rem;
         font-weight: 600;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        margin-bottom: 0.25rem;
       }
 
-      .solution-content p {
+      .solution-card-body h4 i {
+        color: #1e73be;
+      }
+
+      .solution-card-body p {
         color: #666;
-        font-size: 1.05rem;
-        line-height: 1.6;
+        font-size: 0.875rem;
       }
 
-      /* Swiper Navigation Buttons */
-      .solutions-prev,
-      .solutions-next {
-        color: #1e73be !important;
-        background: rgba(255, 255, 255, 0.95) !important;
-        width: 60px !important;
-        height: 60px !important;
-        border-radius: 50% !important;
-        box-shadow: 0 6px 20px rgba(30, 115, 190, 0.25);
-        transition: all 0.3s ease;
-        z-index: 10;
+      /* Show More */
+      .solutions-hidden {
+        display: none;
       }
 
-      .solutions-prev:hover,
-      .solutions-next:hover {
-        background: #1e73be !important;
-        color: #fff !important;
-        transform: scale(1.15);
-        box-shadow: 0 8px 25px rgba(30, 115, 190, 0.45);
+      .solutions-show-more-wrap {
+        text-align: center;
+        margin-top: 2rem;
       }
 
-      .solutions-prev::after,
-      .solutions-next::after {
-        font-size: 1.3rem;
-        font-weight: bold;
+      #showMoreBtn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.75rem 2rem;
+        background: transparent;
+        border: 2px solid #1e73be;
+        color: #1e73be;
+        border-radius: 50px;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition:
+          background 0.3s,
+          color 0.3s;
       }
 
-      /* Swiper Pagination */
-      .solutions-pagination {
-        bottom: 20px !important;
-      }
-
-      .solutions-pagination .swiper-pagination-bullet {
-        background: #ddd;
-        opacity: 1;
-        width: 12px;
-        height: 12px;
-        transition: all 0.3s ease;
-      }
-
-      .solutions-pagination .swiper-pagination-bullet-active {
+      #showMoreBtn:hover {
         background: #1e73be;
-        width: 30px;
-        border-radius: 6px;
+        color: #fff;
       }
 
-      /* Themes Grid */
-      .themes-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 2rem;
+      /* ── ② Themes Swiper Carousel ── */
+      .themes-swiper-section {
+        padding: 5rem 0;
+        background: #f8f9fa;
+        overflow: hidden;
+      }
+
+      .themes-swiper-section .section-title,
+      .themes-swiper-section .section-subtitle {
+        padding: 0 5%;
+      }
+
+      .themes-swiper {
+        width: 100%;
+        padding: 1.5rem 0 3.5rem;
+      }
+
+      .themes-swiper .swiper-slide {
+        width: 220px;
       }
 
       .theme-card {
         position: relative;
-        height: 350px;
-        border-radius: 15px;
+        border-radius: 12px;
         overflow: hidden;
-        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.14);
+        cursor: pointer;
+        height: 260px;
       }
 
       .theme-card img {
         width: 100%;
         height: 100%;
         object-fit: cover;
-        transition: transform 0.5s;
+        transition: transform 0.5s ease;
+        display: block;
       }
 
       .theme-card:hover img {
-        transform: scale(1.1);
+        transform: scale(1.08);
       }
 
       .theme-overlay {
@@ -464,20 +470,147 @@
         right: 0;
         background: linear-gradient(
           to top,
-          rgba(30, 115, 190, 0.9),
-          transparent
+          rgba(30, 115, 190, 0.92) 0%,
+          transparent 100%
         );
-        padding: 2rem 1rem;
+        padding: 2rem 1.25rem 1.25rem;
         color: #fff;
       }
 
       .theme-overlay h3 {
-        font-size: 1.5rem;
+        font-size: 1.4rem;
+        font-weight: 700;
       }
 
-      /* FAQ Section */
+      .theme-overlay p {
+        font-size: 0.85rem;
+        opacity: 0.85;
+        margin-top: 0.2rem;
+      }
+
+      /* Themes Swiper nav/pagination */
+      .themes-pagination {
+        bottom: 8px !important;
+      }
+
+      .themes-pagination .swiper-pagination-bullet {
+        background: #aac8e8;
+        opacity: 1;
+        width: 10px;
+        height: 10px;
+        transition: all 0.3s;
+      }
+
+      .themes-pagination .swiper-pagination-bullet-active {
+        background: #1e73be;
+        width: 28px;
+        border-radius: 5px;
+      }
+
+      .themes-prev,
+      .themes-next {
+        color: #1e73be !important;
+        background: rgba(255, 255, 255, 0.95) !important;
+        width: 52px !important;
+        height: 52px !important;
+        border-radius: 50% !important;
+        box-shadow: 0 4px 16px rgba(30, 115, 190, 0.2);
+        transition: all 0.3s ease;
+      }
+
+      .themes-prev:hover,
+      .themes-next:hover {
+        background: #1e73be !important;
+        color: #fff !important;
+        transform: scale(1.1);
+      }
+
+      .themes-prev::after,
+      .themes-next::after {
+        font-size: 1.1rem !important;
+        font-weight: bold !important;
+      }
+
+      /* ── ③ Our Process ── */
+      .process-section {
+        padding: 5rem 5%;
+        max-width: 1400px;
+        margin: 0 auto;
+      }
+
+      .process-steps {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        position: relative;
+        margin-top: 3rem;
+        gap: 1rem;
+      }
+
+      /* Connecting line – modern dotted wave */
+      .process-steps::before {
+        content: "";
+        position: absolute;
+        top: 35px;
+        left: calc(10% + 37px);
+        right: calc(10% + 37px);
+        height: 4px;
+        background-image: radial-gradient(circle, #1e73be 2px, transparent 2px);
+        background-size: 14px 4px;
+        background-repeat: repeat-x;
+        background-position: 0 center;
+        z-index: 0;
+        opacity: 0.8;
+      }
+
+      .process-step {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        position: relative;
+        z-index: 1;
+        padding: 0 0.5rem;
+      }
+
+      .step-number {
+        width: 72px;
+        height: 72px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #1e73be, #155a8a);
+        color: #fff;
+        font-size: 1.4rem;
+        font-weight: 800;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 6px 20px rgba(30, 115, 190, 0.35);
+        margin-bottom: 1.25rem;
+        flex-shrink: 0;
+        transition: transform 0.3s;
+      }
+
+      .process-step:hover .step-number {
+        transform: scale(1.12);
+      }
+
+      .step-content h3 {
+        color: #2c3e50;
+        font-size: 1rem;
+        font-weight: 700;
+        margin-bottom: 0.4rem;
+      }
+
+      .step-content p {
+        color: #666;
+        font-size: 0.875rem;
+        line-height: 1.5;
+      }
+
+      /* ── FAQ ── */
       .faq-container {
-        max-width: 900px;
+        max-width: 900px !important;
         margin: 0 auto;
       }
 
@@ -506,12 +639,14 @@
 
       .faq-question h3 {
         color: #2c3e50;
-        font-size: 1.2rem;
+        font-size: 1.1rem;
       }
 
       .faq-question i {
         color: #1e73be;
         transition: transform 0.3s;
+        flex-shrink: 0;
+        margin-left: 1rem;
       }
 
       .faq-answer {
@@ -532,7 +667,38 @@
         transform: rotate(180deg);
       }
 
-      /* Footer */
+      /* ── Contact CTA ── */
+      .contact-cta {
+        background: linear-gradient(135deg, #1e73be, #155a8a) !important;
+        color: #fff !important;
+        padding: 3rem 5% !important;
+        margin: 4rem calc(-50vw + 50%) !important;
+        width: calc(100vw) !important;
+        max-width: none !important;
+        border: none !important;
+        text-align: center;
+      }
+
+      .contact-cta h2 {
+        color: #fff !important;
+        font-size: 2.2rem;
+      }
+      .contact-cta p {
+        color: #e8f0f7 !important;
+      }
+
+      .contact-cta .cta-button {
+        background: linear-gradient(135deg, #f5f5f5, #efefef);
+        color: #1e73be !important;
+        font-weight: bold;
+      }
+
+      .contact-cta .cta-button:hover {
+        background: linear-gradient(135deg, #ffffff, #f5f5f5);
+        box-shadow: 0 6px 20px rgba(255, 255, 255, 0.3);
+      }
+
+      /* ── Footer ── */
       footer {
         background: linear-gradient(135deg, #f5f5f5, #efefef);
         color: #2c3e50;
@@ -551,7 +717,6 @@
       .footer-section h3 {
         display: flex;
         align-items: center;
-        /* gap: 0.5rem; */
         color: #1e73be;
         margin-bottom: 1rem;
       }
@@ -565,7 +730,6 @@
       .footer-section ul {
         list-style: none;
       }
-
       .footer-section ul li {
         margin-bottom: 0.5rem;
       }
@@ -579,11 +743,6 @@
       .footer-section a:hover {
         color: #1e73be;
       }
-
-      /* .footer-section i {
-        color: #1e73be;
-        margin-right: 0.5rem;
-      } */
 
       .social-links {
         display: flex;
@@ -618,7 +777,7 @@
         font-size: 0.9rem;
       }
 
-      /* Floating Action Buttons */
+      /* ── Floating Buttons ── */
       .floating-buttons {
         position: fixed;
         bottom: 30px;
@@ -653,12 +812,11 @@
       .call-btn {
         background: #1e73be;
       }
-
       .whatsapp-btn {
         background: #25d366;
       }
 
-      /* Animations */
+      /* ── Animations ── */
       @keyframes fadeInUp {
         from {
           opacity: 0;
@@ -683,17 +841,30 @@
         transform: translateY(0);
       }
 
-      /* Responsive */
+      /* ── Responsive ── */
+      @media (max-width: 1024px) {
+        .process-steps {
+          flex-wrap: wrap;
+          gap: 2rem;
+        }
+
+        .process-steps::before {
+          display: none;
+        }
+
+        .process-step {
+          flex: 0 0 calc(50% - 1rem);
+        }
+      }
+
       @media (max-width: 768px) {
         .logo {
           font-size: 1.4rem;
         }
-
         .logo-img {
           width: 32px;
           height: 32px;
         }
-
         .footer-logo-img {
           width: 24px;
           height: 24px;
@@ -713,6 +884,7 @@
           padding: 2rem;
           transition: right 0.3s;
           gap: 1rem;
+          z-index: 999;
         }
 
         .nav-links.active {
@@ -722,7 +894,6 @@
         .hero h1 {
           font-size: 2rem;
         }
-
         .hero p {
           font-size: 1.2rem;
         }
@@ -733,6 +904,56 @@
 
         section {
           padding: 3rem 5%;
+        }
+
+        /* Process vertical on mobile */
+        .process-steps {
+          flex-direction: column;
+          align-items: stretch;
+          gap: 0;
+        }
+
+        .process-step {
+          flex-direction: row;
+          text-align: left;
+          align-items: flex-start;
+          padding: 0 0 2rem 0;
+          position: relative;
+          gap: 1.25rem;
+        }
+
+        /* Vertical connecting line – dotted */
+        .process-step::before {
+          content: "";
+          position: absolute;
+          left: 27px;
+          top: 66px;
+          bottom: 0;
+          width: 4px;
+          background-image: radial-gradient(
+            circle,
+            #1e73be 2px,
+            transparent 2px
+          );
+          background-size: 4px 14px;
+          background-repeat: repeat-y;
+          background-position: center 0;
+        }
+
+        .process-step:last-child::before {
+          display: none;
+        }
+
+        .step-number {
+          width: 56px;
+          height: 56px;
+          font-size: 1.1rem;
+          flex-shrink: 0;
+          margin-bottom: 0;
+        }
+
+        .step-content {
+          padding-top: 0.5rem;
         }
 
         .floating-buttons {
@@ -746,36 +967,25 @@
           font-size: 1.2rem;
         }
 
-        .solutions-swiper {
-          padding: 2rem 0 60px;
-          max-width: 95%;
+        .themes-swiper .swiper-slide {
+          width: 200px;
         }
 
-        .swiper-slide {
-          width: 320px;
+        .themes-prev,
+        .themes-next {
+          display: none !important;
         }
+      }
 
-        .solution-item img {
-          height: 240px;
+      @media (max-width: 480px) {
+        .solutions-grid {
+          gap: 1rem;
         }
-
-        .solution-content {
-          padding: 1.5rem 1rem 1rem;
+        .themes-swiper .swiper-slide {
+          width: calc(100vw - 60px);
         }
-
-        .solution-content h4 {
-          font-size: 1.2rem;
-        }
-
-        .solutions-prev,
-        .solutions-next {
-          width: 50px !important;
-          height: 50px !important;
-        }
-
-        .solutions-prev::after,
-        .solutions-next::after {
-          font-size: 1.1rem;
+        .theme-card {
+          height: 220px;
         }
       }
     </style>
@@ -789,9 +999,9 @@
             src="images/logo.png"
             alt="IncosBlueAura Logo"
             class="logo-img"
-          />Incos<span>BlueAura</span>
+          />
+          Incos<span>BlueAura</span>
         </a>
-
         <ul class="nav-links" id="navLinks">
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About</a></li>
@@ -800,7 +1010,13 @@
           <li><a href="themes.html">Themes</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
-        <div class="hamburger" id="hamburger">
+        <div
+          class="hamburger"
+          id="hamburger"
+          aria-label="Toggle navigation"
+          role="button"
+          tabindex="0"
+        >
           <span></span>
           <span></span>
           <span></span>
@@ -809,7 +1025,7 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="hero">
+    <section class="hero" aria-label="Hero">
       <video
         id="hero-video"
         autoplay
@@ -820,7 +1036,7 @@
       >
         <source src="videos/hero_video2.mp4" type="video/mp4" />
       </video>
-      <div class="hero-overlay"></div>
+      <div class="hero-overlay" aria-hidden="true"></div>
       <div class="hero-content">
         <h1>Elevate Your Lifestyle with IncosBlueAura Interior</h1>
         <p>Transform Your Space into a Masterpiece</p>
@@ -829,248 +1045,602 @@
     </section>
 
     <!-- Rooms Section -->
-    <section id="rooms">
-      <h2 class="section-title">Explore Our Room Designs</h2>
+    <section id="rooms" aria-labelledby="rooms-title">
+      <h2 class="section-title" id="rooms-title">Explore Our Room Designs</h2>
       <div class="rooms-grid">
         <div class="room-card fade-in">
-          <!-- <img
-            src="https://images.unsplash.com/photo-1616594039964-ae9021a400a0?w=800&h=600&fit=crop"
-            alt="Master Bedroom"
-          /> -->
-          <img src="images/masterBedroom.jpeg" alt="Master Bedroom" />
+          <img
+            src="images/shoe_rack.jpeg"
+            alt="Shoe Rack design"
+            loading="lazy"
+          />
           <div class="room-info">
-            <h3><i class="fas fa-bed"></i> Master Bedroom</h3>
+            <h3>
+              <i class="fas fa-shoe-prints" aria-hidden="true"></i> Shoe Rack
+            </h3>
+            <p>Organized and stylish storage for your footwear</p>
+          </div>
+        </div>
+        <div class="room-card fade-in">
+          <img
+            src="images/entrance_panelling.jpeg"
+            alt="Entrance Panelling design"
+            loading="lazy"
+          />
+          <div class="room-info">
+            <h3>
+              <i class="fas fa-layer-group" aria-hidden="true"></i> Entrance
+              Panelling
+            </h3>
+            <p>Stylish and welcoming entrance designs</p>
+          </div>
+        </div>
+        <div class="room-card fade-in">
+          <img src="images/foyer.jpeg" alt="Foyer design" loading="lazy" />
+          <div class="room-info">
+            <h3><i class="fas fa-door-open" aria-hidden="true"></i> Foyer</h3>
+            <p>Functional, welcoming, and stylish transition space</p>
+          </div>
+        </div>
+        <div class="room-card fade-in">
+          <img
+            src="images/livingRoom.jpeg"
+            alt="Living Room design"
+            loading="lazy"
+          />
+          <div class="room-info">
+            <h3><i class="fas fa-couch" aria-hidden="true"></i> Living Room</h3>
+            <p>Elegant living spaces perfect for family gatherings</p>
+          </div>
+        </div>
+        <div class="room-card fade-in">
+          <img
+            src="images/dining_room.jpeg"
+            alt="Dining Room design"
+            loading="lazy"
+          />
+          <div class="room-info">
+            <h3><i class="fas fa-chair" aria-hidden="true"></i> Dining Room</h3>
+            <p>Elegant dining spaces for memorable meals</p>
+          </div>
+        </div>
+        <div class="room-card fade-in">
+          <img
+            src="images/modernKitchen.jpeg"
+            alt="Modern Kitchen design"
+            loading="lazy"
+          />
+          <div class="room-info">
+            <h3>
+              <i class="fas fa-utensils" aria-hidden="true"></i> Modern Kitchen
+            </h3>
+            <p>Functional and stylish kitchens with premium finishes</p>
+          </div>
+        </div>
+        <div class="room-card fade-in rooms-hidden">
+          <img
+            src="images/masterBedroom.jpeg"
+            alt="Master Bedroom design"
+            loading="lazy"
+          />
+          <div class="room-info">
+            <h3>
+              <i class="fas fa-bed" aria-hidden="true"></i> Master Bedroom
+            </h3>
             <p>
               Luxurious and comfortable bedroom designs tailored to your style
             </p>
           </div>
         </div>
-        <div class="room-card fade-in">
-          <!-- <img
-            src="https://images.unsplash.com/photo-1617806118233-18e1de247200?w=800&h=600&fit=crop"
-            alt="Modern Kitchen"
-          /> -->
-          <img src="images/modernKitchen.jpeg" alt="Modern Kitchen" />
+        <div class="room-card fade-in rooms-hidden">
+          <img
+            src="images/kids_bedroom.jpeg"
+            alt="Kids Room design"
+            loading="lazy"
+          />
           <div class="room-info">
-            <h3><i class="fas fa-utensils"></i> Modern Kitchen</h3>
-            <p>Functional and stylish kitchens with premium finishes</p>
-          </div>
-        </div>
-        <div class="room-card fade-in">
-          <!-- <img
-            src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=800&h=600&fit=crop"
-            alt="Living Room"
-          /> -->
-          <img src="images/livingRoom.jpeg" alt="Living Room" />
-          <div class="room-info">
-            <h3><i class="fas fa-couch"></i> Living Room</h3>
-            <p>Elegant living spaces perfect for family gatherings</p>
-          </div>
-        </div>
-        <div class="room-card fade-in">
-          <!-- <img
-            src="https://images.unsplash.com/photo-1617806118233-18e1de247200?w=800&h=600&fit=crop"
-            alt="Kids Room"
-          /> -->
-          <img src="images/kids_room.jpg" alt="Kids Room" />
-          <div class="room-info">
-            <h3><i class="fas fa-child"></i> Kids Room</h3>
+            <h3><i class="fas fa-child" aria-hidden="true"></i> Kids Room</h3>
             <p>Playful and safe environments for your little ones</p>
           </div>
         </div>
-        <div class="room-card fade-in">
+        <div class="room-card fade-in rooms-hidden">
           <img
-            src="https://images.unsplash.com/photo-1600210492493-0946911123ea?w=800&h=600&fit=crop"
-            alt="Pooja Room"
+            src="images/poojaroom.jpeg"
+            alt="Pooja Room design"
+            loading="lazy"
           />
           <div class="room-info">
-            <h3><i class="fas fa-om"></i> Pooja Room</h3>
+            <h3><i class="fas fa-om" aria-hidden="true"></i> Pooja Room</h3>
             <p>Sacred spaces designed with traditional aesthetics</p>
           </div>
         </div>
-        <div class="room-card fade-in">
-          <!-- <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&h=600&fit=crop" alt="Home Office" /> -->
-          <img src="images/home_office.jpg" alt="Home Office" />
+        <div class="room-card fade-in rooms-hidden">
+          <img
+            src="images/home_office2.jpeg"
+            alt="Home Office design"
+            loading="lazy"
+          />
           <div class="room-info">
-            <h3><i class="fas fa-briefcase"></i> Home Office</h3>
+            <h3>
+              <i class="fas fa-briefcase" aria-hidden="true"></i> Home Office
+            </h3>
             <p>Productive workspaces with ergonomic designs</p>
           </div>
         </div>
+        <div class="room-card fade-in rooms-hidden">
+          <img src="images/balcony.jpeg" alt="Balcony design" loading="lazy" />
+          <div class="room-info">
+            <h3><i class="fas fa-sun" aria-hidden="true"></i> Balcony</h3>
+            <p>Relaxing outdoor spaces with beautiful views</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="rooms-show-more-wrap">
+        <button id="roomsShowMoreBtn" aria-expanded="false">
+          <span id="roomsShowMoreLabel">Show More</span>
+          <i
+            class="fas fa-chevron-down"
+            id="roomsShowMoreIcon"
+            aria-hidden="true"
+          ></i>
+        </button>
       </div>
     </section>
 
-    <!-- Price CTA -->
-    <!-- <section class="price-cta fade-in">
-      <h2>Get the Price to Elevate Your Entire Home Interior</h2>
-      <p style="font-size: 1.2rem; margin-bottom: 2rem">
-        Transparent pricing, no hidden costs. Get your personalized quote today!
+    <!-- ① Complete Interior Solutions – Responsive Grid -->
+    <section id="solutions" class="bg-light" aria-labelledby="solutions-title">
+      <h2 class="section-title" id="solutions-title">
+        Complete Interior Solutions
+      </h2>
+      <p class="section-subtitle">
+        From concept to handover — everything your space needs under one roof
       </p>
-      <a href="contact.html" class="cta-button">Calculate Your Price</a>
-    </section> -->
 
-    <!-- Complete Interior Solutions Section -->
-    <section id="solutions" class="solutions-section">
-      <h2 class="section-title">Complete Interior Solutions</h2>
-      <div class="swiper solutions-swiper">
+      <div class="solutions-grid" id="solutionsGrid">
+        <!-- Visible by default (first 6) -->
+        <article class="solution-card fade-in">
+          <div class="image-wrapper">
+            <img
+              src="images/site_visit.jpeg"
+              alt="Site Visits"
+              loading="lazy"
+            />
+          </div>
+          <div class="solution-card-body">
+            <h4>
+              <i class="fas fa-map-marker-alt" aria-hidden="true"></i> Site
+              Visits
+            </h4>
+            <p>On-ground assessment for accurate planning</p>
+          </div>
+        </article>
+        <article class="solution-card fade-in">
+          <div class="image-wrapper">
+            <img src="images/2d_drawing.jpeg" alt="2D Designs" loading="lazy" />
+          </div>
+          <div class="solution-card-body">
+            <h4>
+              <i class="fas fa-pencil-ruler" aria-hidden="true"></i> 2D Designs
+            </h4>
+            <p>Detailed floor plans and layout drawings</p>
+          </div>
+        </article>
+        <article class="solution-card fade-in">
+          <div class="image-wrapper">
+            <img
+              src="images/3dDesign_renders.jpeg"
+              alt="3D Designs & Renders"
+              loading="lazy"
+            />
+          </div>
+          <div class="solution-card-body">
+            <h4>
+              <i class="fas fa-cube" aria-hidden="true"></i> 3D Designs &amp;
+              Renders
+            </h4>
+            <p>Photorealistic visualisations before execution</p>
+          </div>
+        </article>
+        <article class="solution-card fade-in">
+          <div class="image-wrapper">
+            <img
+              src="images/home_Renovations2.jpg"
+              alt="Renovations"
+              loading="lazy"
+            />
+          </div>
+          <div class="solution-card-body">
+            <h4>
+              <i class="fas fa-hammer" aria-hidden="true"></i> Renovations
+            </h4>
+            <p>Complete space transformations, old to new</p>
+          </div>
+        </article>
+        <article class="solution-card fade-in">
+          <div class="image-wrapper">
+            <img
+              src="images/home_ElectricalWork.png"
+              alt="Electrical Work"
+              loading="lazy"
+            />
+          </div>
+          <div class="solution-card-body">
+            <h4>
+              <i class="fas fa-bolt" aria-hidden="true"></i> Electrical Work
+            </h4>
+            <p>Safe, code-compliant electrical installations</p>
+          </div>
+        </article>
+        <article class="solution-card fade-in">
+          <div class="image-wrapper">
+            <img
+              src="images/plumbing.jpeg"
+              alt="Plumbing Services"
+              loading="lazy"
+            />
+          </div>
+          <div class="solution-card-body">
+            <h4>
+              <i class="fas fa-faucet" aria-hidden="true"></i> Plumbing Services
+            </h4>
+            <p>Efficient plumbing for seamless living</p>
+          </div>
+        </article>
+
+        <!-- Hidden by default (shown on "Show More") -->
+        <article class="solution-card fade-in solutions-hidden">
+          <div class="image-wrapper">
+            <img src="images/wallpaper.jpeg" alt="Wall Papers" loading="lazy" />
+          </div>
+          <div class="solution-card-body">
+            <h4>
+              <i class="fas fa-scroll" aria-hidden="true"></i> Wall Papers
+            </h4>
+            <p>Texture and patterns that define your style</p>
+          </div>
+        </article>
+        <article class="solution-card fade-in solutions-hidden">
+          <div class="image-wrapper">
+            <img
+              src="images/home_Furniture.jpg"
+              alt="Furniture"
+              loading="lazy"
+            />
+          </div>
+          <div class="solution-card-body">
+            <h4><i class="fas fa-couch" aria-hidden="true"></i> Furniture</h4>
+            <p>Bespoke and modular furniture solutions</p>
+          </div>
+        </article>
+        <article class="solution-card fade-in solutions-hidden">
+          <div class="image-wrapper">
+            <img src="images/painting2.jpeg" alt="Painting" loading="lazy" />
+          </div>
+          <div class="solution-card-body">
+            <h4>
+              <i class="fas fa-paint-roller" aria-hidden="true"></i> Painting
+            </h4>
+            <p>Premium finishes for every surface</p>
+          </div>
+        </article>
+        <article class="solution-card fade-in solutions-hidden">
+          <div class="image-wrapper">
+            <img
+              src="images/landscaping.jpeg"
+              alt="Landscaping"
+              loading="lazy"
+            />
+          </div>
+          <div class="solution-card-body">
+            <h4><i class="fas fa-leaf" aria-hidden="true"></i> Landscaping</h4>
+            <p>Outdoor and green space design</p>
+          </div>
+        </article>
+        <article class="solution-card fade-in solutions-hidden">
+          <div class="image-wrapper">
+            <img
+              src="images/home_DeepCleaning.jpg"
+              alt="Deep Cleaning"
+              loading="lazy"
+            />
+          </div>
+          <div class="solution-card-body">
+            <h4>
+              <i class="fas fa-broom" aria-hidden="true"></i> Deep Cleaning
+            </h4>
+            <p>Move-in ready handover with thorough cleaning</p>
+          </div>
+        </article>
+      </div>
+
+      <div class="solutions-show-more-wrap">
+        <button id="showMoreBtn" aria-expanded="false">
+          <span id="showMoreLabel">Show More</span>
+          <i
+            class="fas fa-chevron-down"
+            id="showMoreIcon"
+            aria-hidden="true"
+          ></i>
+        </button>
+      </div>
+    </section>
+
+    <!-- ② Popular Interior Themes – Swiper Carousel -->
+    <section
+      class="themes-swiper-section"
+      id="themes"
+      aria-labelledby="themes-title"
+    >
+      <h2 class="section-title" id="themes-title">Popular Interior Themes</h2>
+      <p class="section-subtitle">
+        Discover the perfect aesthetic for your dream space
+      </p>
+
+      <div class="swiper themes-swiper">
         <div class="swiper-wrapper">
           <div class="swiper-slide">
-            <div class="solution-item">
+            <div class="theme-card">
               <img
-                src="https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=1000&h=800&fit=crop"
-                alt="Electrical Work"
+                src="images/traditional.jpeg"
+                alt="Traditional interior theme"
+                loading="lazy"
               />
-              <div class="solution-content">
-                <h4>Electrical Work</h4>
+              <div class="theme-overlay">
+                <h3>Traditional</h3>
+                <p>Classic elegance and warmth</p>
               </div>
             </div>
           </div>
           <div class="swiper-slide">
-            <div class="solution-item">
-              <!-- <img
-                src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=1000&h=800&fit=crop"
-                alt="Premium Painting"
-              /> -->
-              <img src="images/painting.jpg" alt="Premium Painting" />
-              <div class="solution-content">
-                <h4>Premium Painting</h4>
+            <div class="theme-card">
+              <img
+                src="https://images.unsplash.com/photo-1618219908412-a29a1bb7b86e?w=800&h=600&fit=crop"
+                alt="Vintage interior theme"
+                loading="lazy"
+              />
+              <div class="theme-overlay">
+                <h3>Vintage</h3>
+                <p>Timeless retro charm</p>
               </div>
             </div>
           </div>
           <div class="swiper-slide">
-            <div class="solution-item">
+            <div class="theme-card">
               <img
-                src="https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?w=1000&h=800&fit=crop"
-                alt="Plumbing Services"
+                src="images/artDeco.jpeg"
+                alt="Art Deco interior theme"
+                loading="lazy"
               />
-              <div class="solution-content">
-                <h4>Plumbing Services</h4>
+              <div class="theme-overlay">
+                <h3>Art Deco</h3>
+                <p>Glamorous 1920s luxury</p>
               </div>
             </div>
           </div>
           <div class="swiper-slide">
-            <div class="solution-item">
+            <div class="theme-card">
               <img
-                src="https://images.unsplash.com/photo-1631679706909-1844bbd07221?w=1000&h=800&fit=crop"
-                alt="Flooring Solutions"
+                src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&h=600&fit=crop"
+                alt="Scandinavian interior theme"
+                loading="lazy"
               />
-              <div class="solution-content">
-                <h4>Flooring Solutions</h4>
+              <div class="theme-overlay">
+                <h3>Scandinavian</h3>
+                <p>Clean lines and cosy simplicity</p>
               </div>
             </div>
           </div>
           <div class="swiper-slide">
-            <div class="solution-item">
+            <div class="theme-card">
               <img
-                src="https://images.unsplash.com/photo-1630699144867-37acec97df5a?w=1000&h=800&fit=crop"
-                alt="False Ceiling"
+                src="images/home_Minimalist.jpg"
+                alt="Minimalist interior theme"
+                loading="lazy"
               />
-              <div class="solution-content">
-                <h4>False Ceiling</h4>
+              <div class="theme-overlay">
+                <h3>Minimalist</h3>
+                <p>Less is more — refined living</p>
               </div>
             </div>
           </div>
           <div class="swiper-slide">
-            <div class="solution-item">
+            <div class="theme-card">
               <img
-                src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=1000&h=800&fit=crop"
-                alt="Civil Work"
+                src="https://images.unsplash.com/photo-1560185127-6ed189bf02f4?w=800&h=600&fit=crop"
+                alt="Modern interior theme"
+                loading="lazy"
               />
-              <div class="solution-content">
-                <h4>Civil Work</h4>
+              <div class="theme-overlay">
+                <h3>Modern</h3>
+                <p>Sleek, functional contemporary style</p>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="theme-card">
+              <img
+                src="images/contemporary.jpeg"
+                alt="Contemporary interior theme"
+                loading="lazy"
+              />
+              <div class="theme-overlay">
+                <h3>Contemporary</h3>
+                <p>Current design trends redefined</p>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="theme-card">
+              <img
+                src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=800&h=600&fit=crop"
+                alt="Industrial interior theme"
+                loading="lazy"
+              />
+              <div class="theme-overlay">
+                <h3>Industrial</h3>
+                <p>Raw materials, urban aesthetics</p>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="theme-card">
+              <img
+                src="images/mediterranean.jpeg"
+                alt="Mediterranean interior theme"
+                loading="lazy"
+              />
+              <div class="theme-overlay">
+                <h3>Mediterranean</h3>
+                <p>Warm tones, coastal inspiration</p>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="theme-card">
+              <img
+                src="images/bohemian.jpeg"
+                alt="Bohemian interior theme"
+                loading="lazy"
+              />
+              <div class="theme-overlay">
+                <h3>Bohemian</h3>
+                <p>Eclectic and artistic vibes</p>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="theme-card">
+              <img
+                src="images/rustic.jpeg"
+                alt="Rustic interior theme"
+                loading="lazy"
+              />
+              <div class="theme-overlay">
+                <h3>Rustic</h3>
+                <p>Natural textures, earthy warmth</p>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="theme-card">
+              <img
+                src="images/shabbyChic.jpeg"
+                alt="Shabby Chic interior theme"
+                loading="lazy"
+              />
+              <div class="theme-overlay">
+                <h3>Shabby Chic</h3>
+                <p>Soft romance and vintage comfort</p>
               </div>
             </div>
           </div>
         </div>
-        <div class="swiper-button-next solutions-next"></div>
-        <div class="swiper-button-prev solutions-prev"></div>
-        <div class="swiper-pagination solutions-pagination"></div>
+        <div
+          class="swiper-button-prev themes-prev"
+          aria-label="Previous theme"
+        ></div>
+        <div
+          class="swiper-button-next themes-next"
+          aria-label="Next theme"
+        ></div>
+        <div class="swiper-pagination themes-pagination"></div>
       </div>
     </section>
 
-    <!-- Themes Section -->
-    <section id="themes">
-      <h2 class="section-title">Popular Interior Themes</h2>
-      <div class="themes-grid">
-        <div class="theme-card fade-in">
-          <img
-            src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&h=600&fit=crop"
-            alt="Scandinavian"
-          />
-          <div class="theme-overlay">
-            <h3>Scandinavian</h3>
+    <!-- ③ Our Process -->
+    <section
+      class="process-section"
+      id="process"
+      aria-labelledby="process-title"
+    >
+      <h2 class="section-title" id="process-title">Our Process</h2>
+      <p class="section-subtitle">
+        Simple, transparent steps from vision to reality
+      </p>
+
+      <div class="process-steps">
+        <div class="process-step fade-in">
+          <div class="step-number" aria-hidden="true">01</div>
+          <div class="step-content">
+            <h3>Consultation</h3>
+            <p>
+              Share your vision, budget, and requirements with our design
+              experts.
+            </p>
           </div>
         </div>
-        <div class="theme-card fade-in">
-          <img
-            src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=800&h=600&fit=crop"
-            alt="Regal Opulence"
-          />
-          <div class="theme-overlay">
-            <h3>Regal Opulence</h3>
+        <div class="process-step fade-in">
+          <div class="step-number" aria-hidden="true">02</div>
+          <div class="step-content">
+            <h3>Design Development</h3>
+            <p>
+              Receive detailed 3D designs, material selections, and cost
+              estimates.
+            </p>
           </div>
         </div>
-        <div class="theme-card fade-in">
-          <img
-            src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&h=600&fit=crop"
-            alt="Minimalist"
-          />
-          <div class="theme-overlay">
-            <h3>Minimalist</h3>
+        <div class="process-step fade-in">
+          <div class="step-number" aria-hidden="true">03</div>
+          <div class="step-content">
+            <h3>Approval & Planning</h3>
+            <p>
+              Finalise designs, sign agreements, and schedule project timelines.
+            </p>
           </div>
         </div>
-        <div class="theme-card fade-in">
-          <img
-            src="https://images.unsplash.com/photo-1618219908412-a29a1bb7b86e?w=800&h=600&fit=crop"
-            alt="Vintage"
-          />
-          <div class="theme-overlay">
-            <h3>Vintage</h3>
+        <div class="process-step fade-in">
+          <div class="step-number" aria-hidden="true">04</div>
+          <div class="step-content">
+            <h3>Execution</h3>
+            <p>
+              Professional installation with regular quality checks and updates.
+            </p>
           </div>
         </div>
-        <div class="theme-card fade-in">
-          <img
-            src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=800&h=600&fit=crop"
-            alt="Coastal"
-          />
-          <div class="theme-overlay">
-            <h3>Coastal</h3>
-          </div>
-        </div>
-        <div class="theme-card fade-in">
-          <img
-            src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=800&h=600&fit=crop"
-            alt="Industrial"
-          />
-          <div class="theme-overlay">
-            <h3>Industrial</h3>
+        <div class="process-step fade-in">
+          <div class="step-number" aria-hidden="true">05</div>
+          <div class="step-content">
+            <h3>Handover</h3>
+            <p>Final inspection, documentation, and warranty activation.</p>
           </div>
         </div>
       </div>
     </section>
 
     <!-- FAQ Section -->
-    <section id="faq">
-      <h2 class="section-title">Frequently Asked Questions</h2>
+    <section id="faq" class="bg-light" aria-labelledby="faq-title">
+      <h2 class="section-title" id="faq-title">Frequently Asked Questions</h2>
       <div class="faq-container">
         <div class="faq-item fade-in">
-          <div class="faq-question">
+          <div
+            class="faq-question"
+            role="button"
+            tabindex="0"
+            aria-expanded="false"
+          >
             <h3>
               What is the typical timeline for a complete home interior project?
             </h3>
-            <i class="fas fa-chevron-down"></i>
+            <i class="fas fa-chevron-down" aria-hidden="true"></i>
           </div>
           <div class="faq-answer">
             <p>
-              A complete home interior project typically takes 45-90 days
+              A complete home interior project typically takes 45–90 days
               depending on the size and complexity. We provide a detailed
               timeline during consultation and ensure timely delivery.
             </p>
           </div>
         </div>
         <div class="faq-item fade-in">
-          <div class="faq-question">
+          <div
+            class="faq-question"
+            role="button"
+            tabindex="0"
+            aria-expanded="false"
+          >
             <h3>Do you provide warranty on your interior work?</h3>
-            <i class="fas fa-chevron-down"></i>
+            <i class="fas fa-chevron-down" aria-hidden="true"></i>
           </div>
           <div class="faq-answer">
             <p>
@@ -1080,34 +1650,49 @@
           </div>
         </div>
         <div class="faq-item fade-in">
-          <div class="faq-question">
-            <h3>Can I customize the designs according to my preferences?</h3>
-            <i class="fas fa-chevron-down"></i>
+          <div
+            class="faq-question"
+            role="button"
+            tabindex="0"
+            aria-expanded="false"
+          >
+            <h3>Can I customise the designs according to my preferences?</h3>
+            <i class="fas fa-chevron-down" aria-hidden="true"></i>
           </div>
           <div class="faq-answer">
             <p>
-              Absolutely! We specialize in bespoke designs tailored to your
+              Absolutely! We specialise in bespoke designs tailored to your
               specific requirements, lifestyle, and aesthetic preferences.
             </p>
           </div>
         </div>
         <div class="faq-item fade-in">
-          <div class="faq-question">
+          <div
+            class="faq-question"
+            role="button"
+            tabindex="0"
+            aria-expanded="false"
+          >
             <h3>What is included in your interior design package?</h3>
-            <i class="fas fa-chevron-down"></i>
+            <i class="fas fa-chevron-down" aria-hidden="true"></i>
           </div>
           <div class="faq-answer">
             <p>
-              Our packages include design consultation, 3D visualizations,
+              Our packages include design consultation, 3D visualisations,
               material procurement, execution, installation, and
               post-installation support.
             </p>
           </div>
         </div>
         <div class="faq-item fade-in">
-          <div class="faq-question">
+          <div
+            class="faq-question"
+            role="button"
+            tabindex="0"
+            aria-expanded="false"
+          >
             <h3>Do you handle commercial interior projects?</h3>
-            <i class="fas fa-chevron-down"></i>
+            <i class="fas fa-chevron-down" aria-hidden="true"></i>
           </div>
           <div class="faq-answer">
             <p>
@@ -1121,7 +1706,7 @@
     </section>
 
     <!-- Contact CTA -->
-    <section class="price-cta contact-cta fade-in">
+    <section class="contact-cta fade-in" aria-label="Call to action">
       <h2>Ready to Transform Your Space?</h2>
       <p style="font-size: 1.2rem; margin-bottom: 2rem">
         Let's discuss your dream interior project today!
@@ -1146,16 +1731,18 @@
             innovative design solutions.
           </p>
           <div class="social-links">
-            <!-- <a href="#"><i class="fab fa-facebook-f"></i></a> -->
             <a
               href="https://www.instagram.com/incosblueaura_interiors?igsh=aGhydTV2Mnl2amFs"
               target="_blank"
+              rel="noopener"
+              aria-label="Instagram"
               ><i class="fab fa-instagram"></i
             ></a>
-            <!-- <a href="#"><i class="fab fa-linkedin-in"></i></a> -->
             <a
               href="https://www.youtube.com/@IncosBlueAuraDesignStudio"
               target="_blank"
+              rel="noopener"
+              aria-label="YouTube"
               ><i class="fab fa-youtube"></i
             ></a>
           </div>
@@ -1174,24 +1761,32 @@
         <div class="footer-section">
           <h3>Services</h3>
           <ul>
-            <li><a href="services.html">Luxury Interiors</a></li>
-            <li><a href="services.html">Home Renovation</a></li>
-            <li><a href="services.html">Interior Landscape</a></li>
-            <li><a href="services.html">Commercial Design</a></li>
-            <li><a href="services.html">Modular Kitchen</a></li>
-            <li><a href="services.html">Wardrobe Design</a></li>
+            <li><a href="services.html">Residential Interiors</a></li>
+            <li><a href="services.html">Commercial Interiors</a></li>
+            <li><a href="services.html">Corporate Spaces</a></li>
+            <li><a href="services.html">Renovations</a></li>
+            <li><a href="services.html">Landscaping</a></li>
           </ul>
         </div>
         <div class="footer-section">
           <h3>Contact Info</h3>
           <ul>
-            <li><i class="fas fa-phone"></i> +91-8142156456, +91-9000693988</li>
-            <li><i class="fas fa-envelope"></i> info@incosblueaura.com</li>
             <li>
-              <i class="fas fa-map-marker-alt"></i> Tummala Residency, Plot no
-              336, Road no 1/2, Mathrusree nagar, Miyapur, Hyderabad
+              <i class="fas fa-phone" aria-hidden="true"></i> +91-8142156456,
+              +91-9000693988
             </li>
-            <li><i class="fas fa-clock"></i> Mon-Sat: 9AM - 7PM</li>
+            <li>
+              <i class="fas fa-envelope" aria-hidden="true"></i>
+              info@incosblueaura.com
+            </li>
+            <li>
+              <i class="fas fa-map-marker-alt" aria-hidden="true"></i> Tummala
+              Residency, Plot no 336, Road no 1/2, Mathrusree nagar, Miyapur,
+              Hyderabad
+            </li>
+            <li>
+              <i class="fas fa-clock" aria-hidden="true"></i> Mon-Sat: 9AM - 7PM
+            </li>
           </ul>
         </div>
       </div>
@@ -1209,141 +1804,220 @@
         class="float-btn call-btn"
         aria-label="Call Us"
       >
-        <i class="fas fa-phone"></i>
+        <i class="fas fa-phone" aria-hidden="true"></i>
       </a>
       <a
         href="https://wa.me/918142156456"
         class="float-btn whatsapp-btn"
         target="_blank"
+        rel="noopener"
         aria-label="WhatsApp Us"
       >
-        <i class="fab fa-whatsapp"></i>
+        <i class="fab fa-whatsapp" aria-hidden="true"></i>
       </a>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
-      // Mobile Navigation Toggle
+      // ── Mobile Navigation ──
       const hamburger = document.getElementById("hamburger");
       const navLinks = document.getElementById("navLinks");
 
-      hamburger.addEventListener("click", () => {
-        navLinks.classList.toggle("active");
+      hamburger.addEventListener("click", () =>
+        navLinks.classList.toggle("active"),
+      );
+      hamburger.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ")
+          navLinks.classList.toggle("active");
       });
 
-      // Close mobile menu when clicking on a link
-      document.querySelectorAll(".nav-links a").forEach((link) => {
-        link.addEventListener("click", () => {
-          navLinks.classList.remove("active");
-        });
-      });
+      document
+        .querySelectorAll(".nav-links a")
+        .forEach((link) =>
+          link.addEventListener("click", () =>
+            navLinks.classList.remove("active"),
+          ),
+        );
 
-      // Initialize Swiper.js Carousel with Coverflow Effect
-      const swiper = new Swiper(".solutions-swiper", {
+      // ── Themes Swiper (replaces old grid) ──
+      new Swiper(".themes-swiper", {
         effect: "coverflow",
         grabCursor: true,
         centeredSlides: true,
-        slidesPerView: "auto",
         loop: true,
         coverflowEffect: {
-          rotate: 15,
-          stretch: 0,
-          depth: 100,
-          modifier: 2,
+          rotate: 0,
+          stretch: 30,
+          depth: 120,
+          modifier: 1.5,
           slideShadows: true,
         },
         autoplay: {
           delay: 2000,
           disableOnInteraction: false,
+          pauseOnMouseEnter: true,
         },
         pagination: {
-          el: ".solutions-pagination",
+          el: ".themes-pagination",
           clickable: true,
           dynamicBullets: true,
         },
         navigation: {
-          nextEl: ".solutions-next",
-          prevEl: ".solutions-prev",
+          nextEl: ".themes-next",
+          prevEl: ".themes-prev",
+        },
+        breakpoints: {
+          0: { slidesPerView: 1 },
+          640: {
+            slidesPerView: 2,
+            coverflowEffect: { depth: 80, modifier: 1 },
+          },
+          1024: {
+            slidesPerView: 3,
+            coverflowEffect: { depth: 120, modifier: 1.5 },
+          },
         },
       });
 
-      // FAQ Accordion
+      // ── Rooms Show More / Show Less ──
+      const roomsShowMoreBtn = document.getElementById("roomsShowMoreBtn");
+      const roomsShowMoreLabel = document.getElementById("roomsShowMoreLabel");
+      const roomsShowMoreIcon = document.getElementById("roomsShowMoreIcon");
+      const hiddenRooms = document.querySelectorAll(".rooms-hidden");
+      let roomsExpanded = false;
+
+      // Initialise hidden room cards
+      hiddenRooms.forEach((card) => (card.style.display = "none"));
+
+      roomsShowMoreBtn.addEventListener("click", () => {
+        roomsExpanded = !roomsExpanded;
+        hiddenRooms.forEach((card) => {
+          if (roomsExpanded) {
+            card.classList.remove("rooms-hidden");
+            card.style.display = "";
+            observer.observe(card);
+          } else {
+            card.classList.add("rooms-hidden");
+            card.style.display = "none";
+          }
+        });
+        roomsShowMoreLabel.textContent = roomsExpanded
+          ? "Show Less"
+          : "Show More";
+        roomsShowMoreIcon.style.transform = roomsExpanded
+          ? "rotate(180deg)"
+          : "rotate(0deg)";
+        roomsShowMoreBtn.setAttribute("aria-expanded", roomsExpanded);
+      });
+
+      // ── Show More / Show Less ──
+      const showMoreBtn = document.getElementById("showMoreBtn");
+      const showMoreLabel = document.getElementById("showMoreLabel");
+      const showMoreIcon = document.getElementById("showMoreIcon");
+      const hiddenCards = document.querySelectorAll(".solutions-hidden");
+      let expanded = false;
+
+      showMoreBtn.addEventListener("click", () => {
+        expanded = !expanded;
+        hiddenCards.forEach((card) => {
+          if (expanded) {
+            card.classList.remove("solutions-hidden");
+            card.style.display = "";
+          } else {
+            card.classList.add("solutions-hidden");
+            card.style.display = "none";
+          }
+        });
+        showMoreLabel.textContent = expanded ? "Show Less" : "Show More";
+        showMoreIcon.style.transform = expanded
+          ? "rotate(180deg)"
+          : "rotate(0deg)";
+        showMoreBtn.setAttribute("aria-expanded", expanded);
+
+        // Re-observe any newly visible fade-in cards
+        document
+          .querySelectorAll(".solutions-hidden.fade-in, .solution-card.fade-in")
+          .forEach((el) => observer.observe(el));
+      });
+
+      // Initialise hidden cards as display:none
+      hiddenCards.forEach((card) => (card.style.display = "none"));
+
+      // ── FAQ Accordion ──
       document.querySelectorAll(".faq-question").forEach((question) => {
-        question.addEventListener("click", () => {
-          const faqItem = question.parentElement;
-          const isActive = faqItem.classList.contains("active");
-
-          // Close all FAQ items
-          document.querySelectorAll(".faq-item").forEach((item) => {
-            item.classList.remove("active");
-          });
-
-          // Open clicked item if it wasn't active
-          if (!isActive) {
-            faqItem.classList.add("active");
+        question.addEventListener("click", toggleFaq);
+        question.addEventListener("keydown", (e) => {
+          if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            toggleFaq.call(question);
           }
         });
       });
 
+      function toggleFaq() {
+        const faqItem = this.parentElement;
+        const isActive = faqItem.classList.contains("active");
+        document.querySelectorAll(".faq-item").forEach((item) => {
+          item.classList.remove("active");
+          item
+            .querySelector(".faq-question")
+            .setAttribute("aria-expanded", "false");
+        });
+        if (!isActive) {
+          faqItem.classList.add("active");
+          this.setAttribute("aria-expanded", "true");
+        }
+      }
+
+      // ── Scroll Fade-in ──
       const observerOptions = {
         threshold: 0.1,
-        rootMargin: "0px 0px -100px 0px",
+        rootMargin: "0px 0px -80px 0px",
       };
-
       const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
           }
         });
       }, observerOptions);
 
-      document.querySelectorAll(".fade-in").forEach((element) => {
-        observer.observe(element);
-      });
+      document
+        .querySelectorAll(".fade-in")
+        .forEach((el) => observer.observe(el));
 
+      // ── Hero video fallback ──
       const video = document.getElementById("hero-video");
-
       video.addEventListener("error", function () {
         this.style.display = "none";
       });
 
+      document.addEventListener("DOMContentLoaded", () => {
+        video.play().catch((err) => console.log("Autoplay prevented:", err));
+      });
+
+      // ── Smooth scroll for anchor links ──
       document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
         anchor.addEventListener("click", function (e) {
           e.preventDefault();
           const target = document.querySelector(this.getAttribute("href"));
-          if (target) {
-            target.scrollIntoView({
-              behavior: "smooth",
-              block: "start",
-            });
-          }
+          if (target)
+            target.scrollIntoView({ behavior: "smooth", block: "start" });
         });
       });
 
-      document.addEventListener("DOMContentLoaded", function () {
-        const video = document.getElementById("hero-video");
-        if (video) {
-          video.play().catch((error) => {
-            console.log("Autoplay prevented:", error);
-          });
-        }
-      });
-
+      // ── Active nav link ──
       const currentPage =
         window.location.pathname.split("/").pop() || "index.html";
       document.querySelectorAll(".nav-links a").forEach((link) => {
-        const linkPage = link.getAttribute("href");
-        if (linkPage === currentPage) {
+        if (link.getAttribute("href") === currentPage)
           link.classList.add("active");
-        }
       });
     </script>
 
     <script src="chatbot-data.js"></script>
     <script src="chatbot.js"></script>
-
-    <!-- Welcome Modal Script -->
     <script src="modal.js"></script>
   </body>
 </html>

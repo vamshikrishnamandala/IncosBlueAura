@@ -93,11 +93,22 @@
         content: "";
         position: absolute;
         bottom: 0;
-        left: 0;
-        width: 100%;
+        left: 5%;
+        width: 90%;
         height: 2px;
         background: #1e73be;
         box-shadow: 0 2px 4px rgba(30, 115, 190, 0.4);
+      }
+
+      .nav-links a.active::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 5%;
+        width: 90%;
+        height: 2px;
+        background: #1e73be;
+        box-shadow: 0 -2px 4px rgba(30, 115, 190, 0.4);
       }
 
       .hamburger {
@@ -670,28 +681,27 @@
       <div class="service-detailed fade-in">
         <div class="service-image">
           <img
-            src="https://images.unsplash.com/photo-1600210492493-0946911123ea?w=800&h=600&fit=crop"
-            alt="Luxury Interior"
+            src="images/services_Residential.jpg"
+            alt="Residential Interior Design"
           />
         </div>
         <div class="service-content">
-          <h3><i class="fas fa-gem"></i> Bespoke Luxury Interiors</h3>
+          <h3><i class="fas fa-home"></i> Residential Interiors</h3>
           <p>
-            Experience unparalleled elegance with our custom luxury interior
-            solutions. We create sophisticated spaces that reflect your unique
-            taste and lifestyle, combining premium materials, exquisite
-            craftsmanship, and timeless design principles.
+            Transform your home into a personalised sanctuary with our
+            comprehensive residential interior design services. From cosy
+            apartments to spacious villas, we craft spaces that perfectly
+            reflect your lifestyle, preferences, and personality — blending
+            functionality with timeless aesthetics.
           </p>
           <ul class="service-features">
             <li>
-              <i class="fas fa-check"></i> Personalized design consultation
+              <i class="fas fa-check"></i> Personalised design consultation
             </li>
-            <li>
-              <i class="fas fa-check"></i> 3D visualization and walkthroughs
-            </li>
-            <li><i class="fas fa-check"></i> Premium material procurement</li>
-            <li><i class="fas fa-check"></i> Dedicated project management</li>
-            <li><i class="fas fa-check"></i> 10-year warranty on products</li>
+            <li><i class="fas fa-check"></i> 2D & 3D design visualisations</li>
+            <li><i class="fas fa-check"></i> Modular kitchens & wardrobes</li>
+            <li><i class="fas fa-check"></i> Premium material selection</li>
+            <li><i class="fas fa-check"></i> End-to-end project management</li>
           </ul>
           <a href="contact.html" class="cta-button">Get Quote</a>
         </div>
@@ -700,20 +710,82 @@
       <div class="service-detailed fade-in">
         <div class="service-image">
           <img
-            src="https://images.unsplash.com/photo-1581858726788-75bc0f6a952d?w=800&h=600&fit=crop"
-            alt="Home Renovation"
+            src="images/services_CommercialInterior.jpg"
+            alt="Commercial Interior Design"
           />
         </div>
         <div class="service-content">
-          <h3><i class="fas fa-hammer"></i> Complete Home Renovation</h3>
+          <h3><i class="fas fa-store"></i> Commercial Interiors</h3>
           <p>
-            Transform your existing space with our comprehensive renovation
-            services. From structural modifications to aesthetic upgrades, we
-            handle every aspect of your home transformation with precision and
-            care.
+            Elevate your business environment with our professional commercial
+            interior design services. We create productive, visually impressive
+            spaces for retail outlets, restaurants, showrooms, and service
+            centres — designed to align with your brand identity and enhance
+            customer experience.
           </p>
           <ul class="service-features">
-            <li><i class="fas fa-check"></i> Space planning & optimization</li>
+            <li>
+              <i class="fas fa-check"></i> Brand-aligned interior concepts
+            </li>
+            <li><i class="fas fa-check"></i> Retail & hospitality design</li>
+            <li>
+              <i class="fas fa-check"></i> Customer-flow optimised layouts
+            </li>
+            <li><i class="fas fa-check"></i> Sustainable material choices</li>
+            <li><i class="fas fa-check"></i> Fast-track execution timelines</li>
+          </ul>
+          <a href="contact.html" class="cta-button">Get Quote</a>
+        </div>
+      </div>
+
+      <div class="service-detailed fade-in">
+        <div class="service-image">
+          <img
+            src="images/services_CorporateSpace.jpg"
+            alt="Corporate Space Design"
+          />
+        </div>
+        <div class="service-content">
+          <h3><i class="fas fa-building"></i> Corporate Spaces</h3>
+          <p>
+            Design corporate environments that inspire productivity, creativity,
+            and collaboration. Our corporate space solutions are tailored for
+            modern enterprises — from executive suites and boardrooms to
+            open-plan offices and reception lobbies — crafted to leave a lasting
+            impression on clients and employees alike.
+          </p>
+          <ul class="service-features">
+            <li>
+              <i class="fas fa-check"></i> Executive & boardroom interiors
+            </li>
+            <li><i class="fas fa-check"></i> Reception & lobby design</li>
+            <li><i class="fas fa-check"></i> Acoustic & privacy solutions</li>
+            <li>
+              <i class="fas fa-check"></i> Smart lighting & AV integration
+            </li>
+            <li>
+              <i class="fas fa-check"></i> Employee well-being focused design
+            </li>
+          </ul>
+          <a href="contact.html" class="cta-button">Get Quote</a>
+        </div>
+      </div>
+
+      <div class="service-detailed fade-in">
+        <div class="service-image">
+          <img src="images/services_Renovations.jpg" alt="Home Renovation" />
+        </div>
+        <div class="service-content">
+          <h3><i class="fas fa-hammer"></i> Renovations</h3>
+          <p>
+            Breathe new life into your existing space with our comprehensive
+            renovation services. Whether it's a single room refresh or a
+            complete home overhaul, we handle every aspect of your
+            transformation — from structural changes to finishing touches — with
+            precision, care, and minimal disruption.
+          </p>
+          <ul class="service-features">
+            <li><i class="fas fa-check"></i> Space planning & optimisation</li>
             <li><i class="fas fa-check"></i> Structural modifications</li>
             <li><i class="fas fa-check"></i> Electrical & plumbing upgrades</li>
             <li><i class="fas fa-check"></i> Complete material replacement</li>
@@ -725,23 +797,21 @@
 
       <div class="service-detailed fade-in">
         <div class="service-image">
-          <!-- <img
-            src="https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?w=800&h=600&fit=crop"
-            alt="Interior Landscape"
-          /> -->
-          <img src="images/interior_landscape3.jpg" alt="Interior Landscape" />
+          <img src="images/services_Landscaping.jpg" alt="Landscaping" />
         </div>
         <div class="service-content">
-          <h3><i class="fas fa-leaf"></i> Interior Landscape</h3>
+          <h3><i class="fas fa-leaf"></i> Landscaping</h3>
           <p>
-            Bring nature indoors with our expert interior landscaping services.
-            We design and install living green spaces that enhance air quality,
-            boost well-being, and create stunning natural focal points within
-            your home or office environment.
+            Bring the beauty of nature into your interiors and outdoor spaces
+            with our expert landscaping services. We design and install living
+            green environments — from lush indoor plant arrangements and
+            vertical gardens to serene outdoor landscapes — that enhance
+            well-being, air quality, and aesthetic appeal.
           </p>
           <ul class="service-features">
             <li>
-              <i class="fas fa-check"></i> Custom plant selection & placement
+              <i class="fas fa-check"></i> Custom indoor plant selection &
+              placement
             </li>
             <li><i class="fas fa-check"></i> Vertical gardens & green walls</li>
             <li>
@@ -753,59 +823,9 @@
           <a href="contact.html" class="cta-button">Get Quote</a>
         </div>
       </div>
-
-      <div class="service-detailed fade-in">
-        <div class="service-image">
-          <img
-            src="https://images.unsplash.com/photo-1600210492493-0946911123ea?w=800&h=600&fit=crop"
-            alt="Modular Kitchen"
-          />
-        </div>
-        <div class="service-content">
-          <h3><i class="fas fa-utensils"></i> Modular Kitchen Design</h3>
-          <p>
-            Create your dream kitchen with our innovative modular solutions. We
-            design functional, stylish kitchens that maximize space efficiency
-            while incorporating the latest technology and premium finishes.
-          </p>
-          <ul class="service-features">
-            <li><i class="fas fa-check"></i> Customized layouts & designs</li>
-            <li><i class="fas fa-check"></i> Premium hardware & accessories</li>
-            <li><i class="fas fa-check"></i> Smart storage solutions</li>
-            <li><i class="fas fa-check"></i> Integrated appliances</li>
-            <li><i class="fas fa-check"></i> Easy maintenance materials</li>
-          </ul>
-          <a href="contact.html" class="cta-button">Get Quote</a>
-        </div>
-      </div>
-
-      <div class="service-detailed fade-in">
-        <div class="service-image">
-          <img
-            src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=800&h=600&fit=crop"
-            alt="Commercial Interior"
-          />
-        </div>
-        <div class="service-content">
-          <h3><i class="fas fa-building"></i> Commercial Interiors</h3>
-          <p>
-            Elevate your business environment with our professional commercial
-            interior services. We create productive, impressive spaces for
-            offices, retail outlets, restaurants, and corporate establishments.
-          </p>
-          <ul class="service-features">
-            <li><i class="fas fa-check"></i> Brand-aligned designs</li>
-            <li><i class="fas fa-check"></i> Ergonomic workspaces</li>
-            <li><i class="fas fa-check"></i> Collaborative zones</li>
-            <li><i class="fas fa-check"></i> Sustainable materials</li>
-            <li><i class="fas fa-check"></i> Fast-track execution</li>
-          </ul>
-          <a href="contact.html" class="cta-button">Get Quote</a>
-        </div>
-      </div>
     </section>
 
-    <section>
+    <!-- <section>
       <h2 class="section-title">Our Process</h2>
       <div class="process-timeline">
         <div class="timeline-item fade-in">
@@ -859,7 +879,7 @@
           <div></div>
         </div>
       </div>
-    </section>
+    </section> -->
 
     <section class="contact-cta fade-in">
       <h2>Ready to Get Started?</h2>
@@ -913,12 +933,11 @@
         <div class="footer-section">
           <h3>Services</h3>
           <ul>
-            <li><a href="services.html">Luxury Interiors</a></li>
-            <li><a href="services.html">Home Renovation</a></li>
-            <li><a href="services.html">Interior Landscape</a></li>
-            <li><a href="services.html">Commercial Design</a></li>
-            <li><a href="services.html">Modular Kitchen</a></li>
-            <li><a href="services.html">Wardrobe Design</a></li>
+            <li><a href="services.html">Residential Interiors</a></li>
+            <li><a href="services.html">Commercial Interiors</a></li>
+            <li><a href="services.html">Corporate Spaces</a></li>
+            <li><a href="services.html">Renovations</a></li>
+            <li><a href="services.html">Landscaping</a></li>
           </ul>
         </div>
         <div class="footer-section">
