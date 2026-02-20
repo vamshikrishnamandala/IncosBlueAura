@@ -93,11 +93,22 @@
         content: "";
         position: absolute;
         bottom: 0;
-        left: 0;
-        width: 100%;
+        left: 5%;
+        width: 90%;
         height: 2px;
         background: #1e73be;
         box-shadow: 0 2px 4px rgba(30, 115, 190, 0.4);
+      }
+
+      .nav-links a.active::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 5%;
+        width: 90%;
+        height: 2px;
+        background: #1e73be;
+        box-shadow: 0 -2px 4px rgba(30, 115, 190, 0.4);
       }
 
       .hamburger {
@@ -281,6 +292,7 @@
         width: 60px;
         height: 60px;
         border-radius: 10px;
+        /* border-radius: 50%; */
         box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
       }
 
@@ -633,99 +645,48 @@
       <div class="theme-detailed fade-in">
         <div class="theme-images">
           <div class="main-image">
-            <img
-              src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&h=600&fit=crop"
-              alt="Scandinavian Design"
-            />
+            <img src="images/traditional.jpeg" alt="Traditional Design" />
           </div>
         </div>
         <div class="theme-content">
-          <h2>Scandinavian</h2>
+          <h2>Traditional</h2>
           <p>
-            Embrace simplicity and functionality with Scandinavian design. This
-            theme features clean lines, natural materials, and a neutral color
-            palette that creates bright, airy spaces filled with hygge
-            (coziness).
+            Timeless elegance meets classic comfort with traditional design.
+            Rich wood tones, ornate detailing, and warm colour palettes create
+            inviting spaces that honour heritage and craftsmanship — perfect for
+            those who appreciate enduring style over fleeting trends.
           </p>
           <div class="theme-features">
             <h4>Key Characteristics:</h4>
             <ul class="features-list">
               <li>
-                <i class="fas fa-check-circle"></i> Minimalist furniture with
-                functional design
+                <i class="fas fa-check-circle"></i> Rich wood furniture &
+                detailed millwork
               </li>
               <li>
-                <i class="fas fa-check-circle"></i> Natural wood and light
-                finishes
+                <i class="fas fa-check-circle"></i> Symmetrical, balanced
+                layouts
               </li>
               <li>
-                <i class="fas fa-check-circle"></i> Abundant natural light
+                <i class="fas fa-check-circle"></i> Warm, inviting colour
+                palettes
               </li>
               <li>
-                <i class="fas fa-check-circle"></i> Neutral color palette with
-                pops of pastels
+                <i class="fas fa-check-circle"></i> Classic patterns like damask
+                & floral
               </li>
               <li>
-                <i class="fas fa-check-circle"></i> Plants and organic textures
+                <i class="fas fa-check-circle"></i> Elegant drapery &
+                upholstered seating
               </li>
             </ul>
           </div>
           <h4>Ideal Color Palette:</h4>
           <div class="color-palette">
-            <div class="color-box" style="background: #ffffff"></div>
-            <div class="color-box" style="background: #f5f5f5"></div>
-            <div class="color-box" style="background: #d4b996"></div>
-            <div class="color-box" style="background: #b8c5d6"></div>
-          </div>
-          <a href="contact.html" class="cta-button">Get This Theme</a>
-        </div>
-      </div>
-
-      <div class="theme-detailed fade-in">
-        <div class="theme-images">
-          <div class="main-image">
-            <img
-              src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=800&h=600&fit=crop"
-              alt="Regal Opulence"
-            />
-          </div>
-        </div>
-        <div class="theme-content">
-          <h2>Regal Opulence</h2>
-          <p>
-            Indulge in luxury with the Regal Opulence theme. Rich fabrics,
-            ornate details, and sophisticated color schemes create spaces that
-            exude elegance and grandeur reminiscent of palatial aesthetics.
-          </p>
-          <div class="theme-features">
-            <h4>Key Characteristics:</h4>
-            <ul class="features-list">
-              <li>
-                <i class="fas fa-check-circle"></i> Velvet and silk upholstery
-              </li>
-              <li>
-                <i class="fas fa-check-circle"></i> Crystal chandeliers and gold
-                accents
-              </li>
-              <li>
-                <i class="fas fa-check-circle"></i> Ornate furniture with carved
-                details
-              </li>
-              <li>
-                <i class="fas fa-check-circle"></i> Rich jewel-toned colors
-              </li>
-              <li>
-                <i class="fas fa-check-circle"></i> Luxurious drapery and
-                moldings
-              </li>
-            </ul>
-          </div>
-          <h4>Ideal Color Palette:</h4>
-          <div class="color-palette">
-            <div class="color-box" style="background: #2c3e50"></div>
             <div class="color-box" style="background: #8b4513"></div>
-            <div class="color-box" style="background: #daa520"></div>
-            <div class="color-box" style="background: #800020"></div>
+            <div class="color-box" style="background: #d2b48c"></div>
+            <div class="color-box" style="background: #800000"></div>
+            <div class="color-box" style="background: #2c3e50"></div>
           </div>
           <a href="contact.html" class="cta-button">Get This Theme</a>
         </div>
@@ -734,59 +695,7 @@
       <div class="theme-detailed fade-in">
         <div class="theme-images">
           <div class="main-image">
-            <img
-              src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&h=600&fit=crop"
-              alt="Minimalist"
-            />
-          </div>
-        </div>
-        <div class="theme-content">
-          <h2>Minimalist</h2>
-          <p>
-            Less is more with minimalist design. This theme focuses on essential
-            elements, clean lines, and clutter-free spaces that promote
-            tranquility and mindful living through simplicity.
-          </p>
-          <div class="theme-features">
-            <h4>Key Characteristics:</h4>
-            <ul class="features-list">
-              <li>
-                <i class="fas fa-check-circle"></i> Clean, uncluttered spaces
-              </li>
-              <li>
-                <i class="fas fa-check-circle"></i> Monochromatic color schemes
-              </li>
-              <li>
-                <i class="fas fa-check-circle"></i> Functional furniture with
-                simple forms
-              </li>
-              <li>
-                <i class="fas fa-check-circle"></i> Hidden storage solutions
-              </li>
-              <li>
-                <i class="fas fa-check-circle"></i> Focus on quality over
-                quantity
-              </li>
-            </ul>
-          </div>
-          <h4>Ideal Color Palette:</h4>
-          <div class="color-palette">
-            <div class="color-box" style="background: #ffffff"></div>
-            <div class="color-box" style="background: #000000"></div>
-            <div class="color-box" style="background: #808080"></div>
-            <div class="color-box" style="background: #f5f5f5"></div>
-          </div>
-          <a href="contact.html" class="cta-button">Get This Theme</a>
-        </div>
-      </div>
-
-      <div class="theme-detailed fade-in">
-        <div class="theme-images">
-          <div class="main-image">
-            <img
-              src="https://images.unsplash.com/photo-1618219908412-a29a1bb7b86e?w=800&h=600&fit=crop"
-              alt="Vintage"
-            />
+            <img src="images/themes_Vintage.jpg" alt="Vintage Design" />
           </div>
         </div>
         <div class="theme-content">
@@ -832,45 +741,245 @@
       <div class="theme-detailed fade-in">
         <div class="theme-images">
           <div class="main-image">
-            <img
-              src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=800&h=600&fit=crop"
-              alt="Coastal"
-            />
+            <img src="images/artDeco.jpeg" alt="Art Deco Design" />
           </div>
         </div>
         <div class="theme-content">
-          <h2>Coastal</h2>
+          <h2>Art Deco</h2>
           <p>
-            Bring the beach indoors with coastal design. Light, breezy spaces
-            featuring ocean-inspired colors, natural textures, and nautical
-            accents create a relaxing, vacation-like atmosphere year-round.
+            Glamorous and bold, Art Deco design draws from the roaring 1920s
+            with geometric patterns, luxurious materials, and striking
+            contrasts. It's a celebration of opulence, symmetry, and the modern
+            machine age fused with artistic elegance.
           </p>
           <div class="theme-features">
             <h4>Key Characteristics:</h4>
             <ul class="features-list">
               <li>
-                <i class="fas fa-check-circle"></i> Light, airy color schemes
+                <i class="fas fa-check-circle"></i> Bold geometric patterns &
+                motifs
               </li>
               <li>
-                <i class="fas fa-check-circle"></i> Natural materials like
-                rattan and jute
-              </li>
-              <li><i class="fas fa-check-circle"></i> Ocean-inspired decor</li>
-              <li>
-                <i class="fas fa-check-circle"></i> Striped patterns and
-                nautical motifs
+                <i class="fas fa-check-circle"></i> Mirrored surfaces &
+                lacquered finishes
               </li>
               <li>
-                <i class="fas fa-check-circle"></i> Weathered wood finishes
+                <i class="fas fa-check-circle"></i> Gold, chrome & black accents
+              </li>
+              <li>
+                <i class="fas fa-check-circle"></i> Luxurious materials —
+                marble, velvet, brass
+              </li>
+              <li>
+                <i class="fas fa-check-circle"></i> Dramatic lighting &
+                statement pieces
+              </li>
+            </ul>
+          </div>
+          <h4>Ideal Color Palette:</h4>
+          <div class="color-palette">
+            <div class="color-box" style="background: #000000"></div>
+            <div class="color-box" style="background: #daa520"></div>
+            <div class="color-box" style="background: #2c3e50"></div>
+            <div class="color-box" style="background: #c0c0c0"></div>
+          </div>
+          <a href="contact.html" class="cta-button">Get This Theme</a>
+        </div>
+      </div>
+
+      <div class="theme-detailed fade-in">
+        <div class="theme-images">
+          <div class="main-image">
+            <img
+              src="images/themes_scandinavian.jpg"
+              alt="Scandinavian Design"
+            />
+          </div>
+        </div>
+        <div class="theme-content">
+          <h2>Scandinavian</h2>
+          <p>
+            Embrace simplicity and functionality with Scandinavian design. This
+            theme features clean lines, natural materials, and a neutral colour
+            palette that creates bright, airy spaces filled with hygge
+            (cosiness).
+          </p>
+          <div class="theme-features">
+            <h4>Key Characteristics:</h4>
+            <ul class="features-list">
+              <li>
+                <i class="fas fa-check-circle"></i> Minimalist furniture with
+                functional design
+              </li>
+              <li>
+                <i class="fas fa-check-circle"></i> Natural wood and light
+                finishes
+              </li>
+              <li>
+                <i class="fas fa-check-circle"></i> Abundant natural light
+              </li>
+              <li>
+                <i class="fas fa-check-circle"></i> Neutral colour palette with
+                pops of pastels
+              </li>
+              <li>
+                <i class="fas fa-check-circle"></i> Plants and organic textures
               </li>
             </ul>
           </div>
           <h4>Ideal Color Palette:</h4>
           <div class="color-palette">
             <div class="color-box" style="background: #ffffff"></div>
-            <div class="color-box" style="background: #4682b4"></div>
-            <div class="color-box" style="background: #f0e68c"></div>
-            <div class="color-box" style="background: #87ceeb"></div>
+            <div class="color-box" style="background: #f5f5f5"></div>
+            <div class="color-box" style="background: #d4b996"></div>
+            <div class="color-box" style="background: #b8c5d6"></div>
+          </div>
+          <a href="contact.html" class="cta-button">Get This Theme</a>
+        </div>
+      </div>
+
+      <div class="theme-detailed fade-in">
+        <div class="theme-images">
+          <div class="main-image">
+            <img src="images/themes_Minimalist.jpg" alt="Minimalist Design" />
+          </div>
+        </div>
+        <div class="theme-content">
+          <h2>Minimalist</h2>
+          <p>
+            Less is more with minimalist design. This theme focuses on essential
+            elements, clean lines, and clutter-free spaces that promote
+            tranquility and mindful living through simplicity.
+          </p>
+          <div class="theme-features">
+            <h4>Key Characteristics:</h4>
+            <ul class="features-list">
+              <li>
+                <i class="fas fa-check-circle"></i> Clean, uncluttered spaces
+              </li>
+              <li>
+                <i class="fas fa-check-circle"></i> Monochromatic colour schemes
+              </li>
+              <li>
+                <i class="fas fa-check-circle"></i> Functional furniture with
+                simple forms
+              </li>
+              <li>
+                <i class="fas fa-check-circle"></i> Hidden storage solutions
+              </li>
+              <li>
+                <i class="fas fa-check-circle"></i> Focus on quality over
+                quantity
+              </li>
+            </ul>
+          </div>
+          <h4>Ideal Color Palette:</h4>
+          <div class="color-palette">
+            <div class="color-box" style="background: #ffffff"></div>
+            <div class="color-box" style="background: #000000"></div>
+            <div class="color-box" style="background: #808080"></div>
+            <div class="color-box" style="background: #f5f5f5"></div>
+          </div>
+          <a href="contact.html" class="cta-button">Get This Theme</a>
+        </div>
+      </div>
+
+      <div class="theme-detailed fade-in">
+        <div class="theme-images">
+          <div class="main-image">
+            <img
+              src="https://images.unsplash.com/photo-1560185127-6ed189bf02f4?w=800&h=600&fit=crop"
+              alt="Modern Design"
+            />
+          </div>
+        </div>
+        <div class="theme-content">
+          <h2>Modern</h2>
+          <p>
+            Sleek, functional, and intentional — modern design celebrates clean
+            geometry, open floor plans, and a restrained yet sophisticated
+            palette. It blends form with function to create spaces that feel
+            effortlessly current and timelessly stylish.
+          </p>
+          <div class="theme-features">
+            <h4>Key Characteristics:</h4>
+            <ul class="features-list">
+              <li>
+                <i class="fas fa-check-circle"></i> Clean lines & geometric
+                forms
+              </li>
+              <li>
+                <i class="fas fa-check-circle"></i> Open, uncluttered floor
+                plans
+              </li>
+              <li>
+                <i class="fas fa-check-circle"></i> Neutral tones with bold
+                accents
+              </li>
+              <li>
+                <i class="fas fa-check-circle"></i> Metal, glass & polished
+                stone surfaces
+              </li>
+              <li>
+                <i class="fas fa-check-circle"></i> Integrated smart home
+                features
+              </li>
+            </ul>
+          </div>
+          <h4>Ideal Color Palette:</h4>
+          <div class="color-palette">
+            <div class="color-box" style="background: #f5f5f5"></div>
+            <div class="color-box" style="background: #333333"></div>
+            <div class="color-box" style="background: #1e73be"></div>
+            <div class="color-box" style="background: #c0c0c0"></div>
+          </div>
+          <a href="contact.html" class="cta-button">Get This Theme</a>
+        </div>
+      </div>
+
+      <div class="theme-detailed fade-in">
+        <div class="theme-images">
+          <div class="main-image">
+            <img src="images/contemporary.jpeg" alt="Contemporary Design" />
+          </div>
+        </div>
+        <div class="theme-content">
+          <h2>Contemporary</h2>
+          <p>
+            Contemporary design captures the spirit of today — ever-evolving,
+            fluid, and fresh. It borrows from multiple styles to create spaces
+            that feel current and relevant, combining comfort with cutting-edge
+            aesthetics in a balanced, liveable way.
+          </p>
+          <div class="theme-features">
+            <h4>Key Characteristics:</h4>
+            <ul class="features-list">
+              <li>
+                <i class="fas fa-check-circle"></i> Fluid forms & curved
+                silhouettes
+              </li>
+              <li>
+                <i class="fas fa-check-circle"></i> Mix of textures — wood,
+                fabric, metal
+              </li>
+              <li>
+                <i class="fas fa-check-circle"></i> Bold statement art & décor
+              </li>
+              <li>
+                <i class="fas fa-check-circle"></i> Layered, flexible lighting
+              </li>
+              <li>
+                <i class="fas fa-check-circle"></i> Eco-conscious material
+                choices
+              </li>
+            </ul>
+          </div>
+          <h4>Ideal Color Palette:</h4>
+          <div class="color-palette">
+            <div class="color-box" style="background: #e8e8e8"></div>
+            <div class="color-box" style="background: #4a4a4a"></div>
+            <div class="color-box" style="background: #8fbc8f"></div>
+            <div class="color-box" style="background: #cd853f"></div>
           </div>
           <a href="contact.html" class="cta-button">Get This Theme</a>
         </div>
@@ -881,7 +990,7 @@
           <div class="main-image">
             <img
               src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=800&h=600&fit=crop"
-              alt="Industrial"
+              alt="Industrial Design"
             />
           </div>
         </div>
@@ -915,6 +1024,201 @@
             <div class="color-box" style="background: #5d4e37"></div>
             <div class="color-box" style="background: #708090"></div>
             <div class="color-box" style="background: #b87333"></div>
+          </div>
+          <a href="contact.html" class="cta-button">Get This Theme</a>
+        </div>
+      </div>
+
+      <div class="theme-detailed fade-in">
+        <div class="theme-images">
+          <div class="main-image">
+            <img src="images/mediterranean.jpeg" alt="Mediterranean Design" />
+          </div>
+        </div>
+        <div class="theme-content">
+          <h2>Mediterranean</h2>
+          <p>
+            Sun-drenched and soulful, Mediterranean design draws inspiration
+            from the coastal regions of Southern Europe. Warm earthy tones,
+            terracotta, mosaic tiles, and flowing fabrics create a relaxed,
+            luxurious ambience reminiscent of seaside villas.
+          </p>
+          <div class="theme-features">
+            <h4>Key Characteristics:</h4>
+            <ul class="features-list">
+              <li>
+                <i class="fas fa-check-circle"></i> Terracotta tiles & arched
+                doorways
+              </li>
+              <li>
+                <i class="fas fa-check-circle"></i> Wrought iron accents &
+                mosaic details
+              </li>
+              <li>
+                <i class="fas fa-check-circle"></i> Warm earthy & ochre tones
+              </li>
+              <li>
+                <i class="fas fa-check-circle"></i> Natural linen & cotton
+                textiles
+              </li>
+              <li>
+                <i class="fas fa-check-circle"></i> Indoor plants & flowing
+                curtains
+              </li>
+            </ul>
+          </div>
+          <h4>Ideal Color Palette:</h4>
+          <div class="color-palette">
+            <div class="color-box" style="background: #c8860a"></div>
+            <div class="color-box" style="background: #e8d5a3"></div>
+            <div class="color-box" style="background: #4682b4"></div>
+            <div class="color-box" style="background: #8b4513"></div>
+          </div>
+          <a href="contact.html" class="cta-button">Get This Theme</a>
+        </div>
+      </div>
+
+      <div class="theme-detailed fade-in">
+        <div class="theme-images">
+          <div class="main-image">
+            <img src="images/bohemian2.jpeg" alt="Bohemian Design" />
+          </div>
+        </div>
+        <div class="theme-content">
+          <h2>Bohemian</h2>
+          <p>
+            Free-spirited and eclectic, Bohemian design is a vibrant mix of
+            cultures, textures, and eras. Layered patterns, rich jewel tones,
+            global artefacts, and lush greenery come together to create uniquely
+            personal, soulful spaces that defy convention.
+          </p>
+          <div class="theme-features">
+            <h4>Key Characteristics:</h4>
+            <ul class="features-list">
+              <li>
+                <i class="fas fa-check-circle"></i> Layered rugs, cushions &
+                textiles
+              </li>
+              <li>
+                <i class="fas fa-check-circle"></i> Global-inspired artefacts &
+                art
+              </li>
+              <li>
+                <i class="fas fa-check-circle"></i> Lush indoor plants & macramé
+              </li>
+              <li>
+                <i class="fas fa-check-circle"></i> Mixed metals & natural
+                materials
+              </li>
+              <li>
+                <i class="fas fa-check-circle"></i> Jewel tones with earthy
+                neutrals
+              </li>
+            </ul>
+          </div>
+          <h4>Ideal Color Palette:</h4>
+          <div class="color-palette">
+            <div class="color-box" style="background: #8b0000"></div>
+            <div class="color-box" style="background: #daa520"></div>
+            <div class="color-box" style="background: #2e8b57"></div>
+            <div class="color-box" style="background: #9b59b6"></div>
+          </div>
+          <a href="contact.html" class="cta-button">Get This Theme</a>
+        </div>
+      </div>
+
+      <div class="theme-detailed fade-in">
+        <div class="theme-images">
+          <div class="main-image">
+            <img src="images/rustic2.jpeg" alt="Rustic Design" />
+          </div>
+        </div>
+        <div class="theme-content">
+          <h2>Rustic</h2>
+          <p>
+            Rooted in nature, rustic design brings the warmth and authenticity
+            of the outdoors inside. Raw wood, stone, and handcrafted elements
+            create cosy, grounded spaces that feel genuine, welcoming, and
+            deeply connected to the natural world.
+          </p>
+          <div class="theme-features">
+            <h4>Key Characteristics:</h4>
+            <ul class="features-list">
+              <li>
+                <i class="fas fa-check-circle"></i> Reclaimed & raw wood
+                surfaces
+              </li>
+              <li>
+                <i class="fas fa-check-circle"></i> Stone walls & exposed beams
+              </li>
+              <li>
+                <i class="fas fa-check-circle"></i> Handcrafted & artisanal
+                décor
+              </li>
+              <li>
+                <i class="fas fa-check-circle"></i> Earthy, muted colour tones
+              </li>
+              <li>
+                <i class="fas fa-check-circle"></i> Cosy textiles — wool, linen,
+                jute
+              </li>
+            </ul>
+          </div>
+          <h4>Ideal Color Palette:</h4>
+          <div class="color-palette">
+            <div class="color-box" style="background: #8b6914"></div>
+            <div class="color-box" style="background: #a0522d"></div>
+            <div class="color-box" style="background: #d2b48c"></div>
+            <div class="color-box" style="background: #556b2f"></div>
+          </div>
+          <a href="contact.html" class="cta-button">Get This Theme</a>
+        </div>
+      </div>
+
+      <div class="theme-detailed fade-in">
+        <div class="theme-images">
+          <div class="main-image">
+            <img src="images/shabbyChic2.jpeg" alt="Shabby Chic Design" />
+          </div>
+        </div>
+        <div class="theme-content">
+          <h2>Shabby Chic</h2>
+          <p>
+            Soft, romantic, and effortlessly charming, Shabby Chic blends
+            vintage aesthetics with a light, feminine touch. Distressed
+            furniture, floral prints, and pastel hues come together to create
+            spaces that feel both nostalgic and timelessly beautiful.
+          </p>
+          <div class="theme-features">
+            <h4>Key Characteristics:</h4>
+            <ul class="features-list">
+              <li>
+                <i class="fas fa-check-circle"></i> Distressed & whitewashed
+                furniture
+              </li>
+              <li>
+                <i class="fas fa-check-circle"></i> Floral prints & lace
+                detailing
+              </li>
+              <li>
+                <i class="fas fa-check-circle"></i> Soft pastel & chalky white
+                tones
+              </li>
+              <li>
+                <i class="fas fa-check-circle"></i> Vintage-inspired accessories
+              </li>
+              <li>
+                <i class="fas fa-check-circle"></i> Layered, cosy soft
+                furnishings
+              </li>
+            </ul>
+          </div>
+          <h4>Ideal Color Palette:</h4>
+          <div class="color-palette">
+            <div class="color-box" style="background: #f5e6e8"></div>
+            <div class="color-box" style="background: #d4a5b5"></div>
+            <div class="color-box" style="background: #f0ede0"></div>
+            <div class="color-box" style="background: #a8d5b5"></div>
           </div>
           <a href="contact.html" class="cta-button">Get This Theme</a>
         </div>
