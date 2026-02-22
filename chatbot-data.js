@@ -20,60 +20,50 @@ const chatbotData = {
   services: {
     message: "What service are you interested in?",
     options: [
-      { id: "luxury", label: "Luxury Interiors" },
-      { id: "renovation", label: "Home Renovation" },
-      { id: "landscape", label: "Interior Landscape" },
-      { id: "commercial", label: "Commercial Design" },
-      { id: "kitchen", label: "Modular Kitchen" },
-      { id: "wardrobe", label: "Wardrobe Design" },
+      { id: "residential", label: "Residential Interiors" },
+      { id: "commercial", label: "Commercial Interiors" },
+      { id: "corporate", label: "Corporate Spaces" },
+      { id: "renovation", label: "Renovations" },
+      { id: "landscape", label: "Landscaping" },
     ],
     answers: {
-      luxury: {
+      residential: {
         message:
-          "**Luxury Interiors** 🏛️\n\nWe craft bespoke luxury interiors that reflect your personality and lifestyle. Our services include:\n\n✓ Personalized design consultation\n✓ 3D visualization and walkthroughs\n✓ Premium material procurement\n✓ Dedicated project management\n✓ 10-year warranty on products\n\nWould you like to know more?",
+          "**Residential Interiors** 🏠\n\nTransform your home into a personalised sanctuary:\n\n✓ Personalised design consultation\n✓ 2D & 3D design visualisations\n✓ Modular kitchens & wardrobes\n✓ Premium material selection\n✓ End-to-end project management\n\nFrom cosy apartments to spacious villas — we craft spaces that reflect your lifestyle.",
         options: [
-          { id: "pricing", label: "Get Pricing Info" },
-          { id: "contact_service", label: "Schedule Consultation" },
-          { id: "back", label: "← Back to Services" },
-        ],
-      },
-      renovation: {
-        message:
-          "**Complete Home Renovation** 🔨\n\nTransform your existing space with our comprehensive renovation services:\n\n✓ Space planning & optimization\n✓ Structural modifications\n✓ Electrical & plumbing upgrades\n✓ Complete material replacement\n✓ Minimal disruption guarantee\n\nTypical timeline: 45-90 days depending on project size.",
-        options: [
-          { id: "contact_service", label: "Get Free Quote" },
-          { id: "back", label: "← Back to Services" },
-        ],
-      },
-      landscape: {
-        message:
-          "**Interior Landscape** 🌿\n\nBring nature indoors with our expert interior landscaping:\n\n✓ Custom plant selection & placement\n✓ Vertical gardens & green walls\n✓ Low-maintenance plant solutions\n✓ Automated irrigation systems\n✓ Ongoing maintenance support\n\nCreate a healthier, more vibrant living space!",
-        options: [
-          { id: "contact_service", label: "Discuss My Project" },
+          { id: "contact_service", label: "Get Quote" },
           { id: "back", label: "← Back to Services" },
         ],
       },
       commercial: {
         message:
-          "**Commercial Interiors** 🏢\n\nElevate your business environment:\n\n✓ Brand-aligned designs\n✓ Ergonomic workspaces\n✓ Collaborative zones\n✓ Sustainable materials\n✓ Fast-track execution\n\nPerfect for offices, retail, restaurants, and corporate spaces.",
+          "**Commercial Interiors** 🏢\n\nElevate your business environment:\n\n✓ Brand-aligned interior concepts\n✓ Retail & hospitality design\n✓ Customer-flow optimised layouts\n✓ Sustainable material choices\n✓ Fast-track execution timelines\n\nPerfect for retail outlets, restaurants, showrooms, and service centres.",
         options: [
-          { id: "contact_service", label: "Get Commercial Quote" },
+          { id: "contact_service", label: "Get Quote" },
           { id: "back", label: "← Back to Services" },
         ],
       },
-      kitchen: {
+      corporate: {
         message:
-          "**Modular Kitchen Design** 🍳\n\nFunctional and stylish kitchens:\n\n✓ Space-efficient layouts\n✓ Premium hardware & fittings\n✓ Durable materials\n✓ Smart storage solutions\n✓ Easy maintenance materials\n\nCustomized to your cooking style and space.",
+          "**Corporate Spaces** 🏙️\n\nDesign inspiring workplaces that boost productivity:\n\n✓ Executive & boardroom interiors\n✓ Reception & lobby design\n✓ Acoustic & privacy solutions\n✓ Smart lighting & AV integration\n✓ Employee well-being focused design\n\nFrom executive suites to open-plan offices — crafted to leave a lasting impression.",
         options: [
-          { id: "contact_service", label: "Design My Kitchen" },
+          { id: "contact_service", label: "Get Quote" },
           { id: "back", label: "← Back to Services" },
         ],
       },
-      wardrobe: {
+      renovation: {
         message:
-          "**Custom Wardrobe Design** 👔\n\nMaximize your storage with style:\n\n✓ Custom configurations\n✓ Soft-close mechanisms\n✓ Interior organizers\n✓ Mirror & lighting options\n✓ Wide material choices\n\nTailored to your space and needs.",
+          "**Renovations** 🔨\n\nBreathe new life into your existing space:\n\n✓ Space planning & optimisation\n✓ Structural modifications\n✓ Electrical & plumbing upgrades\n✓ Complete material replacement\n✓ Minimal disruption guarantee\n\nFrom a single room refresh to a complete home overhaul — handled with precision and care.",
         options: [
-          { id: "contact_service", label: "Get Wardrobe Quote" },
+          { id: "contact_service", label: "Get Quote" },
+          { id: "back", label: "← Back to Services" },
+        ],
+      },
+      landscape: {
+        message:
+          "**Landscaping** 🌿\n\nBring the beauty of nature into your interiors and outdoor spaces:\n\n✓ Custom indoor plant selection & placement\n✓ Vertical gardens & green walls\n✓ Low-maintenance plant solutions\n✓ Automated irrigation systems\n✓ Ongoing maintenance support\n\nEnhance well-being, air quality, and aesthetic appeal!",
+        options: [
+          { id: "contact_service", label: "Get Quote" },
           { id: "back", label: "← Back to Services" },
         ],
       },
@@ -87,27 +77,36 @@ const chatbotData = {
       { id: "experience", label: "Our Experience" },
       { id: "values", label: "Our Values" },
       { id: "process", label: "Our Process" },
+      { id: "team", label: "Meet Our Team" },
     ],
     answers: {
       company: {
         message:
-          "**About IncosBlueAura** 🏆\n\nWe are a leading interior design company with 15+ years of experience in creating extraordinary living and working spaces.\n\n📊 **Our Numbers:**\n• 500+ Projects Completed\n• 450+ Happy Clients\n• 4.9/5 Client Rating\n• 15+ Years Experience\n\nWe transform spaces into masterpieces through innovation, quality, and client-centric designs.",
+          "**About IncosBlueAura** 🏆\n\nWe are a leading interior design company transforming spaces into extraordinary living experiences with innovative design solutions.\n\n📊 **Our Numbers:**\n• 300+ Projects Completed\n• 98% On-Time Deliveries\n• 4.9/5 Client Rating\n• 12+ Years Experience\n\nWe transform spaces into masterpieces through innovation, quality, and client-centric designs.",
         options: [{ id: "back", label: "← Back" }],
       },
       experience: {
         message:
-          "**Our Expertise** 💼\n\nWith over 15 years in the industry, we've mastered:\n\n✓ Residential luxury interiors\n✓ Commercial space design\n✓ Complete home renovations\n✓ Modular solutions\n✓ Sustainable design practices\n\nWe've successfully delivered 500+ projects across India, earning a 4.9/5 client satisfaction rating.",
+          "**Our Expertise** 💼\n\nWith over 12 years in the industry, we've mastered:\n\n✓ Residential luxury interiors\n✓ Commercial & corporate space design\n✓ Complete home renovations\n✓ Modular kitchen & wardrobe solutions\n✓ Interior landscaping\n✓ Sustainable design practices\n\nWe've successfully delivered 300+ projects, earning a 4.9/5 client satisfaction rating.",
         options: [{ id: "back", label: "← Back" }],
       },
       values: {
         message:
-          "**Our Core Values** 💎\n\n🔹 **Innovation** - Exploring cutting-edge design trends\n🔹 **Quality** - Never compromising on materials or craftsmanship\n🔹 **Integrity** - Transparent and ethical practices\n🔹 **Client-Centric** - Your vision is our priority\n🔹 **Sustainability** - Eco-friendly materials and practices\n🔹 **Excellence** - Perfection in every detail",
+          "**Our Core Values — INCOS** 💎\n\n🔵 **I — Innovation** - Exploring cutting-edge design trends\n🔵 **N — Nurtured Craftsmanship** - Quality in every detail and material\n🔵 **C — Client-Centric** - Your vision is our priority\n🔵 **O — On-Time Delivery** - We honour timelines, every time\n🔵 **S — Sustainability** - Eco-friendly materials and practices",
         options: [{ id: "back", label: "← Back" }],
       },
       process: {
         message:
           "**Our 6-Step Process** 📋\n\n1️⃣ **Consultation** - Share your vision and requirements\n2️⃣ **Design Development** - Create concepts and 3D renders\n3️⃣ **Approval** - Finalize design and materials\n4️⃣ **Execution** - Professional installation begins\n5️⃣ **Quality Check** - Thorough inspection\n6️⃣ **Handover** - Your dream space delivered!\n\nTypical timeline: 45-90 days",
         options: [{ id: "back", label: "← Back" }],
+      },
+      team: {
+        message:
+          "**Meet Our Expert Team** 👥\n\nThe talented people behind IncosBlueAura:\n\n👤 **Yoganand Goud. E** - CEO\n👤 **Kishore Kumar. B** - Co-Founder\n👤 **Varsha Reddy. L** - Design Director\n👤 **Naveen. G** - Sales Director\n👤 **Harish. E** - Sales Manager\n\nOur team brings together creativity, expertise, and passion for design.",
+        options: [
+          { id: "contact_service", label: "Work With Us" },
+          { id: "back", label: "← Back" },
+        ],
       },
     },
   },
@@ -123,7 +122,7 @@ const chatbotData = {
     answers: {
       residential: {
         message:
-          "**Residential Projects** 🏠\n\nWe've designed beautiful homes across India including:\n\n• Modern Villa Interior (Mumbai, 3500 sq.ft)\n• Minimalist Living Spaces\n• Contemporary Kitchen Designs\n• Complete Apartment Renovations\n• Coastal Beach Houses\n\nEach project reflects our commitment to quality and client satisfaction.",
+          "**Residential Projects** 🏠\n\nWe've designed beautiful homes across India including:\n\n• Modern Villa Interiors\n• Minimalist Living Spaces\n• Contemporary Kitchen Designs\n• Complete Apartment Renovations\n\nEach project reflects our commitment to quality and client satisfaction.",
         options: [
           { id: "view_all", label: "See Portfolio Page" },
           { id: "contact_service", label: "Start My Project" },
@@ -132,7 +131,7 @@ const chatbotData = {
       },
       commercial_work: {
         message:
-          "**Commercial Projects** 🏢\n\nOur commercial portfolio includes:\n\n• Tech Corporate Offices (8000 sq.ft)\n• Fine Dining Restaurants (5000 sq.ft)\n• Premium Retail Stores\n• Modern Co-working Spaces\n• Hospitality Interiors\n\nWe create spaces that enhance productivity and brand identity.",
+          "**Commercial Projects** 🏢\n\nOur commercial portfolio includes:\n\n• Tech Corporate Offices\n• Fine Dining Restaurants\n• Premium Retail Stores\n• Modern Co-working Spaces\n• Hospitality Interiors\n\nWe create spaces that enhance productivity and brand identity.",
         options: [
           { id: "view_all", label: "See Portfolio Page" },
           { id: "contact_service", label: "Discuss Commercial Project" },
@@ -141,7 +140,7 @@ const chatbotData = {
       },
       luxury_work: {
         message:
-          "**Luxury Projects** 💎\n\nExperience opulence in our luxury projects:\n\n• Regal Penthouse Suites (4500 sq.ft)\n• High-end Villa Interiors\n• Premium Apartments\n• Luxury Hotel Suites\n\nFeaturing premium materials, custom furniture, and impeccable craftsmanship.",
+          "**Luxury Projects** 💎\n\nExperience opulence in our luxury projects:\n\n• Regal Penthouse Suites\n• High-end Villa Interiors\n• Premium Apartments\n• Luxury Hotel Suites\n\nFeaturing premium materials, custom furniture, and impeccable craftsmanship.",
         options: [
           { id: "view_all", label: "See Portfolio Page" },
           { id: "contact_service", label: "Plan Luxury Project" },
@@ -162,25 +161,30 @@ const chatbotData = {
   themes: {
     message: "Which design theme interests you?",
     options: [
+      { id: "traditional", label: "Traditional" },
+      { id: "art_deco", label: "Art Deco" },
+      { id: "vintage", label: "Vintage" },
       { id: "scandinavian", label: "Scandinavian" },
       { id: "minimalist", label: "Minimalist" },
-      { id: "vintage", label: "Vintage" },
-      { id: "coastal", label: "Coastal" },
-      { id: "industrial", label: "Industrial" },
-      { id: "regal", label: "Regal Opulence" },
+      { id: "modern", label: "Modern" },
+      { id: "contemporary", label: "Contemporary" },
+      { id: "mediterranean", label: "Mediterranean" },
+      { id: "bohemian", label: "Bohemian" },
+      { id: "rustic", label: "Rustic" },
+      { id: "shabby_chic", label: "Shabby Chic" },
     ],
     answers: {
-      scandinavian: {
+      traditional: {
         message:
-          "**Scandinavian Style** 🏔️\n\nEmbracing Nordic simplicity and functionality:\n\n✓ Light, neutral color palettes\n✓ Natural wood elements\n✓ Minimalist furniture\n✓ Abundant natural light\n✓ Cozy textiles\n\n**Color Palette:** White, Gray, Beige, Light Blue\n\nPerfect for creating serene, clutter-free spaces!",
+          "**Traditional Style** 🏛️\n\nTimeless elegance meets classic comfort:\n\n✓ Rich wood tones & ornate detailing\n✓ Warm colour palettes\n✓ Classic architectural elements\n✓ Symmetrical layouts\n✓ Luxurious fabrics and textures\n\n**Color Palette:** Saddle Brown, Tan, Dark Red, Dark Green\n\nBring timeless sophistication to your home!",
         options: [
           { id: "contact_service", label: "Get This Theme" },
           { id: "back", label: "← Back to Themes" },
         ],
       },
-      minimalist: {
+      art_deco: {
         message:
-          "**Minimalist Design** ⚪\n\nLess is more:\n\n✓ Clean, uncluttered spaces\n✓ Monochromatic color schemes\n✓ Functional furniture with simple forms\n✓ Hidden storage solutions\n✓ Focus on quality over quantity\n\n**Color Palette:** White, Black, Gray\n\nIdeal for modern, peaceful living.",
+          "**Art Deco** ✨\n\nGlamorous and bold, inspired by the roaring 1920s:\n\n✓ Bold geometric patterns\n✓ Luxurious materials & striking contrasts\n✓ Symmetrical, opulent forms\n✓ Metallic accents (gold, silver, brass)\n✓ Rich jewel-toned upholstery\n\n**Color Palette:** Black, Gold, Navy, Silver\n\nA celebration of opulence, symmetry, and artistic elegance!",
         options: [
           { id: "contact_service", label: "Get This Theme" },
           { id: "back", label: "← Back to Themes" },
@@ -188,31 +192,71 @@ const chatbotData = {
       },
       vintage: {
         message:
-          "**Vintage Charm** 🕰️\n\nNostalgic elegance:\n\n✓ Antique furniture pieces\n✓ Classic patterns and fabrics\n✓ Ornate mirrors and frames\n✓ Warm, earthy tones\n✓ Handcrafted details\n\n**Color Palette:** Cream, Brown, Gold, Burgundy\n\nBring timeless beauty to your home!",
+          "**Vintage Charm** 🕰️\n\nCelebrate nostalgia with timeless beauty:\n\n✓ Antique furniture pieces\n✓ Retro patterns and classic fabrics\n✓ Ornate mirrors and frames\n✓ Warm, earthy tones\n✓ Handcrafted details\n\n**Color Palette:** Tan, Chocolate, Sandy Brown, Dark Goldenrod\n\nBring stories of bygone eras to your home!",
         options: [
           { id: "contact_service", label: "Get This Theme" },
           { id: "back", label: "← Back to Themes" },
         ],
       },
-      coastal: {
+      scandinavian: {
         message:
-          "**Coastal Style** 🌊\n\nBeach-inspired tranquility:\n\n✓ Light, airy color schemes\n✓ Natural materials (rattan, jute)\n✓ Ocean-inspired decor\n✓ Striped patterns & nautical motifs\n✓ Weathered wood finishes\n\n**Color Palette:** White, Blue, Sandy Beige\n\nCreate a vacation-like atmosphere year-round!",
+          "**Scandinavian Style** 🏔️\n\nEmbracing Nordic simplicity and functionality:\n\n✓ Clean lines & natural materials\n✓ Light, neutral colour palettes\n✓ Minimalist furniture\n✓ Abundant natural light\n✓ Cozy hygge-inspired textiles\n\n**Color Palette:** White, Off-White, Warm Beige, Light Blue\n\nPerfect for creating serene, clutter-free spaces!",
         options: [
           { id: "contact_service", label: "Get This Theme" },
           { id: "back", label: "← Back to Themes" },
         ],
       },
-      industrial: {
+      minimalist: {
         message:
-          "**Industrial Design** 🏭\n\nUrban warehouse aesthetics:\n\n✓ Exposed brick and concrete\n✓ Metal and steel furniture\n✓ Edison bulb lighting\n✓ Open floor plans\n✓ Reclaimed wood elements\n\n**Color Palette:** Dark Gray, Brown, Slate, Copper\n\nPerfect for modern, edgy spaces!",
+          "**Minimalist Design** ⚪\n\nLess is more:\n\n✓ Clean, uncluttered spaces\n✓ Monochromatic color schemes\n✓ Functional furniture with simple forms\n✓ Hidden storage solutions\n✓ Focus on quality over quantity\n\n**Color Palette:** White, Black, Gray, Off-White\n\nIdeal for modern, peaceful living.",
         options: [
           { id: "contact_service", label: "Get This Theme" },
           { id: "back", label: "← Back to Themes" },
         ],
       },
-      regal: {
+      modern: {
         message:
-          "**Regal Opulence** 👑\n\nLuxurious grandeur:\n\n✓ Rich, bold colors\n✓ Ornate furniture and moldings\n✓ Luxurious fabrics (velvet, silk)\n✓ Crystal chandeliers\n✓ Gold and brass accents\n\n**Color Palette:** Deep Purple, Gold, Burgundy, Navy\n\nExperience royal living!",
+          "**Modern Design** 🏙️\n\nSleek, functional, and intentional:\n\n✓ Clean geometry & open floor plans\n✓ Restrained yet sophisticated palette\n✓ Mixed materials (glass, steel, wood)\n✓ Statement lighting & minimal decor\n✓ Form meets function in every detail\n\n**Color Palette:** Off-White, Charcoal, Steel Blue, Silver\n\nTimeless style that feels effortlessly current!",
+        options: [
+          { id: "contact_service", label: "Get This Theme" },
+          { id: "back", label: "← Back to Themes" },
+        ],
+      },
+      contemporary: {
+        message:
+          "**Contemporary Design** 🌿\n\nCapturing the spirit of today:\n\n✓ Fluid, ever-evolving aesthetics\n✓ Borrows from multiple styles\n✓ Comfort with cutting-edge design\n✓ Organic shapes & mixed textures\n✓ Balanced, liveable spaces\n\n**Color Palette:** Light Gray, Dark Gray, Sage Green, Caramel\n\nFresh, relevant, and deeply liveable!",
+        options: [
+          { id: "contact_service", label: "Get This Theme" },
+          { id: "back", label: "← Back to Themes" },
+        ],
+      },
+      mediterranean: {
+        message:
+          "**Mediterranean Style** 🌊\n\nSun-drenched and soulful, inspired by Southern Europe:\n\n✓ Warm earthy tones & terracotta\n✓ Mosaic tiles & textured walls\n✓ Flowing fabrics & arched doorways\n✓ Wrought iron accents\n✓ Lush greenery & natural stone\n\n**Color Palette:** Terracotta, Sandy Beige, Steel Blue, Saddle Brown\n\nA relaxed, luxurious ambience of seaside villas!",
+        options: [
+          { id: "contact_service", label: "Get This Theme" },
+          { id: "back", label: "← Back to Themes" },
+        ],
+      },
+      bohemian: {
+        message:
+          "**Bohemian Style** 🌸\n\nFree-spirited and eclectic:\n\n✓ Layered textiles and global patterns\n✓ Rich jewel tones & mixed textures\n✓ Plants, natural elements & global artefacts\n✓ Vintage & handcrafted pieces\n✓ Soulful, uniquely personal spaces\n\n**Color Palette:** Wheat, Rosy Brown, Olive Green, Dark Brown\n\nCreate a space that defies convention and celebrates you!",
+        options: [
+          { id: "contact_service", label: "Get This Theme" },
+          { id: "back", label: "← Back to Themes" },
+        ],
+      },
+      rustic: {
+        message:
+          "**Rustic Style** 🪵\n\nRooted in nature, warm and authentic:\n\n✓ Raw, natural wood & stone elements\n✓ Handcrafted & distressed finishes\n✓ Cozy, grounded atmosphere\n✓ Earthy colour palette\n✓ Deeply connected to the natural world\n\n**Color Palette:** Dark Goldenrod, Sienna, Tan, Dark Olive Green\n\nBring the warmth of the outdoors inside!",
+        options: [
+          { id: "contact_service", label: "Get This Theme" },
+          { id: "back", label: "← Back to Themes" },
+        ],
+      },
+      shabby_chic: {
+        message:
+          "**Shabby Chic** 🌷\n\nSoft romance and vintage comfort:\n\n✓ Soft, muted pastel colors\n✓ Distressed & whitewashed furniture\n✓ Floral patterns and lace details\n✓ Vintage accessories & mirrors\n✓ Cozy, romantic atmosphere\n\n**Color Palette:** Soft White, Blush Pink, Mint, Lavender\n\nCreate a charming, effortlessly elegant space!",
         options: [
           { id: "contact_service", label: "Get This Theme" },
           { id: "back", label: "← Back to Themes" },
@@ -238,12 +282,12 @@ const chatbotData = {
       },
       whatsapp: {
         message:
-          "**WhatsApp Chat** 💬\n\nGet quick responses on WhatsApp:\n\n📱 **WhatsApp:** +91 8142156456\n\nClick the WhatsApp button (bottom right) to start chatting instantly!\n\nShare images, ask questions, get quotes - all on WhatsApp.",
+          "**WhatsApp Chat** 💬\n\nGet quick responses on WhatsApp:\n\n📱 **WhatsApp:** +91-8142156456\n\nClick the WhatsApp button (bottom right) to start chatting instantly!\n\nShare images, ask questions, get quotes - all on WhatsApp.",
         options: [{ id: "back", label: "← Back to Contact Options" }],
       },
       email: {
         message:
-          "**Email Us** 📧\n\nSend detailed project requirements:\n\n✉️ **Email:** info@incosblueaura.com\n✉️ **Email:** projects@incosblueaura.com\n\n⏱️ **Response Time:** Within 24 hours\n\nInclude photos, plans, or inspiration images for better assistance!",
+          "**Email Us** 📧\n\nSend detailed project requirements:\n\n✉️ **Email:** incosblueaura@gmail.com\n\n⏱️ **Response Time:** Within 24 hours\n\nInclude photos, plans, or inspiration images for better assistance!",
         options: [{ id: "back", label: "← Back to Contact Options" }],
       },
       visit: {
@@ -266,43 +310,46 @@ const chatbotData = {
     message: "Common questions we receive:",
     options: [
       { id: "timeline", label: "Project Timeline?" },
-      { id: "cost", label: "Pricing & Packages?" },
-      { id: "warranty", label: "Warranty & Support?" },
-      { id: "materials", label: "Material Sourcing?" },
-      { id: "consultation", label: "Free Consultation?" },
+      { id: "warranty", label: "Warranty on Work?" },
+      { id: "customise", label: "Can I Customise?" },
+      { id: "package", label: "What's Included?" },
+      { id: "commercial", label: "Commercial Projects?" },
     ],
     answers: {
       timeline: {
         message:
-          "**Project Timeline** ⏱️\n\nTypical timelines:\n\n🏠 **Complete Home Interior:** 45-90 days\n🔨 **Renovation:** 30-60 days\n🍳 **Modular Kitchen:** 15-30 days\n👔 **Wardrobe:** 15-25 days\n\nTimeline depends on:\n• Project size and complexity\n• Material availability\n• Approval speed\n\nWe provide detailed schedules during consultation.",
+          "**How long does it take to complete a home interior project?** ⏱️\n\nA complete home interior project typically takes **45–60 days** depending on holidays and the size and complexity of your space.\n\nWe provide a detailed timeline during consultation and ensure timely delivery.",
         options: [
-          { id: "contact_service", label: "Get Project Estimate" },
-          { id: "back", label: "← Back to FAQ" },
-        ],
-      },
-      cost: {
-        message:
-          "**Pricing Information** 💰\n\nOur packages are customized based on:\n\n• Project size (sq.ft)\n• Design complexity\n• Material selection\n• Finish quality\n\n**Typical Ranges:**\n• Basic: ₹1,200 - ₹1,800 per sq.ft\n• Premium: ₹1,800 - ₹2,500 per sq.ft\n• Luxury: ₹2,500+ per sq.ft\n\n*Prices are indicative. Final quote after consultation.*",
-        options: [
-          { id: "contact_service", label: "Get Detailed Quote" },
+          { id: "contact_service", label: "Get a Consultation" },
           { id: "back", label: "← Back to FAQ" },
         ],
       },
       warranty: {
         message:
-          "**Warranty & Support** 🛡️\n\nWe stand behind our work:\n\n✓ **10-year warranty** on modular products\n✓ **1-year** on installation and finishing\n✓ Free service visits during warranty period\n✓ Lifetime support and maintenance guidance\n✓ Quick response to issues\n\nYour satisfaction is guaranteed!",
+          "**Do you provide warranty on your interior work?** 🛡️\n\nYes, we provide up to **10 years warranty** on our interior works.",
         options: [{ id: "back", label: "← Back to FAQ" }],
       },
-      materials: {
+      customise: {
         message:
-          "**Material Sourcing** 🏗️\n\nWe use premium materials from trusted brands:\n\n✓ Direct partnerships with top manufacturers\n✓ Certified & eco-friendly materials\n✓ Wide variety of finishes and styles\n✓ Transparent pricing\n✓ Material samples provided before finalization\n\nYou'll see and approve everything before execution!",
-        options: [{ id: "back", label: "← Back to FAQ" }],
-      },
-      consultation: {
-        message:
-          "**Free Consultation** 🎯\n\nYes! We offer a **completely FREE** initial consultation:\n\n✓ Site visit and measurements\n✓ Requirement discussion\n✓ Design ideas and inspiration\n✓ Preliminary budget estimation\n✓ No obligation to proceed\n\nSchedule yours today!",
+          "**Can I customise the designs according to my preferences?** 🎨\n\nAbsolutely! We specialise in **bespoke designs** tailored to your specific requirements, lifestyle, and aesthetic preferences.",
         options: [
-          { id: "contact_service", label: "Book Free Consultation" },
+          { id: "contact_service", label: "Start My Design" },
+          { id: "back", label: "← Back to FAQ" },
+        ],
+      },
+      package: {
+        message:
+          "**What is included in your interior design package?** 📋\n\nOur packages include:\n\n✓ Design consultation\n✓ 3D visualisations\n✓ Material procurement\n✓ Execution & installation\n✓ Post-installation support",
+        options: [
+          { id: "contact_service", label: "Get a Quote" },
+          { id: "back", label: "← Back to FAQ" },
+        ],
+      },
+      commercial: {
+        message:
+          "**Do you handle commercial interior projects?** 🏢\n\nYes! We have extensive experience in commercial interiors including:\n\n✓ Offices\n✓ Retail spaces\n✓ Restaurants\n✓ Hospitality projects",
+        options: [
+          { id: "contact_service", label: "Discuss Commercial Project" },
           { id: "back", label: "← Back to FAQ" },
         ],
       },
@@ -322,7 +369,7 @@ const chatbotData = {
 
   contact_service: {
     message:
-      "**Let's Get Started!** 🚀\n\nYou can reach us through:\n\n📞 **Call:** +91-8142156456\n💬 **WhatsApp:** +91-8142156456\n📧 **Email:** info@incosblueaura.com\n📝 **Contact Form:** [Contact Page](contact.html)\n\nOr schedule a free consultation today!",
+      "**Let's Get Started!** 🚀\n\nYou can reach us through:\n\n📞 **Call:** +91-8142156456\n💬 **WhatsApp:** +91-8142156456\n📧 **Email:** incosblueaura@gmail.com\n📝 **Contact Form:** [Contact Page](contact.html)\n\nOr schedule a free consultation today!",
     options: [{ id: "main", label: "← Back to Main Menu" }],
   },
 
