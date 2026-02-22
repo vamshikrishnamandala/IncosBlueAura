@@ -100,7 +100,7 @@
         bottom: 0;
         left: 5%;
         width: 90%;
-        height: 2px;
+        height: 1px;
         background: #1e73be;
         box-shadow: 0 2px 4px rgba(30, 115, 190, 0.4);
       }
@@ -111,7 +111,7 @@
         top: 0;
         left: 5%;
         width: 90%;
-        height: 2px;
+        height: 1px;
         background: #1e73be;
         box-shadow: 0 -2px 4px rgba(30, 115, 190, 0.4);
       }
@@ -439,7 +439,7 @@
       }
 
       .themes-swiper .swiper-slide {
-        width: 220px;
+        width: 260px;
       }
 
       .theme-card {
@@ -448,7 +448,7 @@
         overflow: hidden;
         box-shadow: 0 4px 16px rgba(0, 0, 0, 0.14);
         cursor: pointer;
-        height: 260px;
+        height: 300px;
       }
 
       .theme-card img {
@@ -985,7 +985,7 @@
           width: calc(100vw - 60px);
         }
         .theme-card {
-          height: 220px;
+          height: 250px;
         }
       }
     </style>
@@ -1095,6 +1095,17 @@
         </div>
         <div class="room-card fade-in">
           <img
+            src="images/poojaroom.jpeg"
+            alt="Pooja Room design"
+            loading="lazy"
+          />
+          <div class="room-info">
+            <h3><i class="fas fa-om" aria-hidden="true"></i> Pooja Room</h3>
+            <p>Sacred spaces designed with traditional aesthetics</p>
+          </div>
+        </div>
+        <div class="room-card fade-in">
+          <img
             src="images/dining_room.jpeg"
             alt="Dining Room design"
             loading="lazy"
@@ -1104,7 +1115,7 @@
             <p>Elegant dining spaces for memorable meals</p>
           </div>
         </div>
-        <div class="room-card fade-in">
+        <div class="room-card fade-in rooms-hidden">
           <img
             src="images/modernKitchen.jpeg"
             alt="Modern Kitchen design"
@@ -1141,17 +1152,6 @@
           <div class="room-info">
             <h3><i class="fas fa-child" aria-hidden="true"></i> Kids Room</h3>
             <p>Playful and safe environments for your little ones</p>
-          </div>
-        </div>
-        <div class="room-card fade-in rooms-hidden">
-          <img
-            src="images/poojaroom.jpeg"
-            alt="Pooja Room design"
-            loading="lazy"
-          />
-          <div class="room-info">
-            <h3><i class="fas fa-om" aria-hidden="true"></i> Pooja Room</h3>
-            <p>Sacred spaces designed with traditional aesthetics</p>
           </div>
         </div>
         <div class="room-card fade-in rooms-hidden">
@@ -1395,6 +1395,19 @@
           <div class="swiper-slide">
             <div class="theme-card">
               <img
+                src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&h=600&fit=crop"
+                alt="Scandinavian interior theme"
+                loading="lazy"
+              />
+              <div class="theme-overlay">
+                <h3>Scandinavian</h3>
+                <p>Clean lines and cosy simplicity</p>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="theme-card">
+              <img
                 src="https://images.unsplash.com/photo-1618219908412-a29a1bb7b86e?w=800&h=600&fit=crop"
                 alt="Vintage interior theme"
                 loading="lazy"
@@ -1415,19 +1428,6 @@
               <div class="theme-overlay">
                 <h3>Art Deco</h3>
                 <p>Glamorous 1920s luxury</p>
-              </div>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="theme-card">
-              <img
-                src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&h=600&fit=crop"
-                alt="Scandinavian interior theme"
-                loading="lazy"
-              />
-              <div class="theme-overlay">
-                <h3>Scandinavian</h3>
-                <p>Clean lines and cosy simplicity</p>
               </div>
             </div>
           </div>
@@ -1470,7 +1470,7 @@
               </div>
             </div>
           </div>
-          <div class="swiper-slide">
+          <!-- <div class="swiper-slide">
             <div class="theme-card">
               <img
                 src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=800&h=600&fit=crop"
@@ -1482,7 +1482,7 @@
                 <p>Raw materials, urban aesthetics</p>
               </div>
             </div>
-          </div>
+          </div> -->
           <div class="swiper-slide">
             <div class="theme-card">
               <img
@@ -1573,24 +1573,34 @@
         <div class="process-step fade-in">
           <div class="step-number" aria-hidden="true">02</div>
           <div class="step-content">
-            <h3>Design Development</h3>
+            <h3>Site Visit</h3>
             <p>
-              Receive detailed 3D designs, material selections, and cost
-              estimates.
+              On-ground assessment of your space for accurate measurements and
+              planning.
             </p>
           </div>
         </div>
         <div class="process-step fade-in">
           <div class="step-number" aria-hidden="true">03</div>
           <div class="step-content">
-            <h3>Approval & Planning</h3>
+            <h3>Design Discussions</h3>
             <p>
-              Finalise designs, sign agreements, and schedule project timelines.
+              Explore 3D concepts, finishes, and material selections tailored to
+              your style.
             </p>
           </div>
         </div>
         <div class="process-step fade-in">
           <div class="step-number" aria-hidden="true">04</div>
+          <div class="step-content">
+            <h3>Final Approval</h3>
+            <p>
+              Confirm designs, sign agreements, and lock in project timelines.
+            </p>
+          </div>
+        </div>
+        <div class="process-step fade-in">
+          <div class="step-number" aria-hidden="true">05</div>
           <div class="step-content">
             <h3>Execution</h3>
             <p>
@@ -1599,7 +1609,7 @@
           </div>
         </div>
         <div class="process-step fade-in">
-          <div class="step-number" aria-hidden="true">05</div>
+          <div class="step-number" aria-hidden="true">06</div>
           <div class="step-content">
             <h3>Handover</h3>
             <p>Final inspection, documentation, and warranty activation.</p>
@@ -1619,16 +1629,15 @@
             tabindex="0"
             aria-expanded="false"
           >
-            <h3>
-              What is the typical timeline for a complete home interior project?
-            </h3>
+            <h3>How long does it take to complete a home interior project?</h3>
             <i class="fas fa-chevron-down" aria-hidden="true"></i>
           </div>
           <div class="faq-answer">
             <p>
-              A complete home interior project typically takes 45–90 days
-              depending on the size and complexity. We provide a detailed
-              timeline during consultation and ensure timely delivery.
+              A complete home interior project typically takes 45–60 days
+              depending on holidays and the size and complexity of your space.
+              We provide a detailed timeline during consultation and ensure
+              timely delivery.
             </p>
           </div>
         </div>
@@ -1644,8 +1653,7 @@
           </div>
           <div class="faq-answer">
             <p>
-              Yes, we provide up to 10 years warranty on our modular products
-              and 1-year warranty on installation and service work.
+              Yes, we provide up to 10 years warranty on our interior works.
             </p>
           </div>
         </div>
@@ -1845,6 +1853,7 @@
         grabCursor: true,
         centeredSlides: true,
         loop: true,
+        initialSlide: 0,
         coverflowEffect: {
           rotate: 0,
           stretch: 30,
