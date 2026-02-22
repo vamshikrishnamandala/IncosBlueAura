@@ -243,7 +243,7 @@ const chatbotData = {
       },
       email: {
         message:
-          "**Email Us** 📧\n\nSend detailed project requirements:\n\n✉️ **Email:** info@incosblueaura.com\n✉️ **Email:** projects@incosblueaura.com\n\n⏱️ **Response Time:** Within 24 hours\n\nInclude photos, plans, or inspiration images for better assistance!",
+          "**Email Us** 📧\n\nSend detailed project requirements:\n\n✉️ **Email:** incosblueaura@gmail.com\n✉️ **Email:** projects@incosblueaura.com\n\n⏱️ **Response Time:** Within 24 hours\n\nInclude photos, plans, or inspiration images for better assistance!",
         options: [{ id: "back", label: "← Back to Contact Options" }],
       },
       visit: {
@@ -322,7 +322,7 @@ const chatbotData = {
 
   contact_service: {
     message:
-      "**Let's Get Started!** 🚀\n\nYou can reach us through:\n\n📞 **Call:** +91-8142156456\n💬 **WhatsApp:** +91-8142156456\n📧 **Email:** info@incosblueaura.com\n📝 **Contact Form:** [Contact Page](contact.html)\n\nOr schedule a free consultation today!",
+      "**Let's Get Started!** 🚀\n\nYou can reach us through:\n\n📞 **Call:** +91-8142156456\n💬 **WhatsApp:** +91-8142156456\n📧 **Email:** incosblueaura@gmail.com\n📝 **Contact Form:** [Contact Page](contact.html)\n\nOr schedule a free consultation today!",
     options: [{ id: "main", label: "← Back to Main Menu" }],
   },
 
