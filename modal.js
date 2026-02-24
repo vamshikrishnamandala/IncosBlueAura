@@ -8,7 +8,7 @@
 
   const MODAL_STORAGE_KEY = "incosblueaura_visited";
   const WEB_APP_URL =
-    "https://script.google.com/macros/s/AKfycbz9qDuiZCZ5tuPjyq_entsM_WOtgeuzV9PGVBdLM5SL4TYlURsiV1E3ce9paQu2p0S6rQ/exec";
+    "https://script.google.com/macros/s/AKfycbwFMM5E2327p7okcV6p8ISjAEjJJwivWRqOVrz-ObDp0cagWTUz29pSvbaGINq8YH5E/exec";
 
   class WelcomeModal {
     constructor() {
