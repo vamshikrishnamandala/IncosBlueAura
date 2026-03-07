@@ -38,7 +38,12 @@
         position: fixed;
         top: 0;
         width: 100%;
-        background: rgba(245, 245, 245, 0.98);
+        background: rgba(
+          240,
+          239,
+          237,
+          0.98
+        ); /* was rgba(245, 245, 245, 0.98) */
         z-index: 1000;
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
       }
@@ -209,7 +214,7 @@
 
       section.bg-light {
         max-width: 100%;
-        background: #f8f9fa;
+        background: rgb(240, 239, 237); /* was #f8f9fa */
         padding: 5rem 5%;
       }
 
@@ -217,6 +222,10 @@
         max-width: 1400px;
         margin-left: auto;
         margin-right: auto;
+      }
+
+      #faq.bg-light {
+        background: #ffffff;
       }
 
       .section-title {
@@ -424,7 +433,7 @@
       /* ── ② Themes Swiper Carousel ── */
       .themes-swiper-section {
         padding: 5rem 0;
-        background: #f8f9fa;
+        background: #ffffff;
         overflow: hidden;
       }
 
@@ -534,8 +543,8 @@
       /* ── ③ Our Process ── */
       .process-section {
         padding: 5rem 5%;
-        max-width: 1400px;
-        margin: 0 auto;
+        max-width: 100%;
+        background: rgb(240, 239, 237);
       }
 
       .process-steps {
@@ -629,7 +638,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        background: #f8f9fa;
+        background: rgb(240, 239, 237); /* was #f8f9fa */
         transition: background 0.3s;
       }
 
@@ -688,19 +697,31 @@
       }
 
       .contact-cta .cta-button {
-        background: linear-gradient(135deg, #f5f5f5, #efefef);
+        background: linear-gradient(
+          135deg,
+          rgb(240, 239, 237),
+          rgb(200, 199, 197)
+        ); /* was #f5f5f5, #efefef */
         color: #1e73be !important;
         font-weight: bold;
       }
 
       .contact-cta .cta-button:hover {
-        background: linear-gradient(135deg, #ffffff, #f5f5f5);
+        background: linear-gradient(
+          135deg,
+          #ffffff,
+          rgb(240, 239, 237)
+        ); /* was #ffffff, #f5f5f5 */
         box-shadow: 0 6px 20px rgba(255, 255, 255, 0.3);
       }
 
       /* ── Footer ── */
       footer {
-        background: linear-gradient(135deg, #f5f5f5, #efefef);
+        background: linear-gradient(
+          135deg,
+          rgb(240, 239, 237),
+          rgb(200, 199, 197)
+        ); /* was #f5f5f5, #efefef */
         color: #2c3e50;
         padding: 1.5rem;
         border-top: 3px solid #1e73be;
@@ -879,7 +900,7 @@
           top: 70px;
           right: -100%;
           flex-direction: column;
-          background: #f5f5f5;
+          background: rgb(240, 239, 237); /* was #f5f5f5 */
           width: 100%;
           padding: 2rem;
           transition: right 0.3s;
